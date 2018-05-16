@@ -1,0 +1,96 @@
+.responsive-calendar .controls {
+  text-align: center;
+}
+.responsive-calendar .controls a {
+  cursor: pointer;
+}
+.responsive-calendar .controls h4 {
+  display: inline;
+}
+.responsive-calendar .day-headers,
+.responsive-calendar .days {
+  font-size: 0;
+}
+.responsive-calendar .day {
+  display: inline-block;
+  position: relative;
+  font-size: 14px;
+  width: 14.285714285714286%;
+  text-align: center;
+}
+.responsive-calendar .day a {
+  color: #000000;
+  display: block;
+  cursor: pointer;
+  padding: 20% 0 20% 0;
+}
+.responsive-calendar .day a:hover {
+  background-color: #eee;
+  text-decoration: none;
+}
+.responsive-calendar .day.header {
+  border-bottom: 1px gray solid;
+}
+.responsive-calendar .day.active a {
+  background-color: #1d86c8;
+  color: #ffffff;
+}
+.responsive-calendar .day.active a:hover {
+  background-color: #36a0e2;
+}
+.responsive-calendar .day.active .not-current {
+  background-color: #8fcaef;
+  color: #ffffff;
+}
+.responsive-calendar .day.active .not-current:hover {
+  background-color: #bcdff5;
+}
+.responsive-calendar .day.not-current a {
+  color: #ddd;
+}
+.responsive-calendar .day .badge {
+
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  z-index: 1;
+
+}
+
+
+/* checkbox*/
+
+.box{
+  padding: 50px;
+  height: 400px;
+  width: 500px;
+}
+.box-label{
+  display: inline-block;
+  margin: 5px;
+}
+.box-text:before{
+  content:"\f096";
+  font-family: "FontAwesome";
+  font-weight: normal;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  margin-right: 5px;
+  width: 1em;
+  display: inline-block;
+}
+.box-check:checked + .box-text:before{
+  content:"\f14a";
+  color: #1e88e5;
+  animation: checkanimate 200ms;
+}
+.box-label input[type="checkbox"]{
+  display: none;
+}
+@keyframes checkanimate{
+  0% {transform: scale(0);}
+  90% {transform: scale(1.4);}
+  100% {transform: scale(1);}
+}
