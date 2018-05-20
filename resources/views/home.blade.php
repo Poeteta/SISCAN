@@ -14,6 +14,28 @@
   margin: 0;
   box-sizing: border-box;
 }
+.datepicker {
+   width: 54px;
+   -webkit-transition: all .5s ease;
+   -moz-transition: all .5s ease;
+   transition: all .5s ease;
+}
+.datepicker:focus {
+   width: 100px;
+}
+.hide{
+    display: none;
+}
+.resp {
+   width: 100px;
+   -webkit-transition: all .5s ease;
+   -moz-transition: all .5s ease;
+   transition: all .5s ease;
+}
+.resp:focus {
+   width: 170px;
+}
+
 </style>
 <div class="main-panel">
     <!-- Navbar -->
@@ -83,26 +105,23 @@
                         <!--        You can switch " data-color="primary" "  with one of the next bright colors: "green", "orange", "red", "blue"       -->
 
                         <div class="card-header text-center" data-background-color="orange">
-                            <h3 class="card-title">
-                                Carnet Familiar
-                            </h3>
                             <div class="wizard-navigation" id="tabs">
                                 <ul>
                                     <li class="nav-item">
                                         <a class="nav-link active" href="#about" data-toggle="tab">
-                                            <i class="now-ui-icons users_circle-08"></i>
+                                        
                                             Familia
                                         </a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="#account" data-toggle="tab">
-                                            <i class="now-ui-icons ui-1_settings-gear-63"></i>
+                                           
                                             Madre
                                         </a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="#address" data-toggle="tab">
-                                            <i class="now-ui-icons ui-1_email-85"></i>
+                                            
                                             Niño
                                         </a>
                                     </li> 
@@ -189,7 +208,7 @@
 
                                         <div class="col-md-9">
                                             <div class="form-group">
-                                                <input type="text" class="" style="border: none;border-bottom: 2px dotted black;">
+                                                <input type="number" class="" style="border: none;border-bottom: 2px dotted black;">
                                             </div>
                                         </div>
                                     </div>
@@ -202,7 +221,7 @@
                                         <div class="col-sm-10 checkbox-radios">
                                         <div class="form-check form-check-radio">
                                             <label class="form-check-label">
-                                                <input class="form-check-input" type="radio" name="exampleRadio" id="exampleRadios3" value="option1">
+                                                <input class="form-check-input" type="radio" name="exampleRadio" id="exampleRadios3" value="option1" onclick="show2();">
                                                 <span class="form-check-sign"></span>
                                                 Nueva
                                             </label>
@@ -210,21 +229,22 @@
 
                                         <div class="form-check form-check-radio">
                                             <label class="form-check-label">
-                                                <input class="form-check-input" type="radio" name="exampleRadio" id="exampleRadios4" value="option2" checked>
+                                                <input class="form-check-input" type="radio" name="exampleRadio" id="exampleRadios4" value="option2" onclick="show1();">
                                                 <span class="form-check-sign"></span>
                                                 Continuadora
                                             </label>
                                         </div>
                                         <div class="form-check form-check-radio">
                                             <label class="form-check-label">
-                                                <input class="form-check-input" type="radio" name="exampleRadio" id="exampleRadios4" value="option2" checked>
+                                                <input class="form-check-input" type="radio" name="exampleRadio" id="exampleRadios4" value="option2" onclick="show2();">
                                                 <span class="form-check-sign"></span>
                                                 Reingresante
                                             </label>
                                         </div>
                                     </div>
                                     </div>
-                                    <div class="article">
+                                    <!-- Cap div, hide don't forget -->
+                                    <div class="article hide" id="divcap">
                                        <h6>Modo de Captacion</h6>
                                         <div class="col-sm-12 checkbox-radios">
                                         <div class="form-check form-check-radio">
@@ -237,27 +257,28 @@
 
                                         <div class="form-check form-check-radio">
                                             <label class="form-check-label">
-                                                <input class="form-check-input" type="radio" name="exampleRadio2" id="" value="option2" checked>
+                                                <input class="form-check-input" type="radio" name="exampleRadio2" id="" value="option2">
                                                 <span class="form-check-sign"></span>
                                                 Hospital
                                             </label>
                                         </div>
                                         <div class="form-check form-check-radio">
                                             <label class="form-check-label">
-                                                <input class="form-check-input" type="radio" name="exampleRadio2" id="" value="option2" checked>
+                                                <input class="form-check-input" type="radio" name="exampleRadio2" id="" value="option2">
                                                 <span class="form-check-sign"></span>
                                                 Campaña de Salud
                                             </label>
                                         </div>
                                         <div class="form-check form-check-radio">
                                             <label class="form-check-label">
-                                                <input class="form-check-input" type="radio" name="exampleRadio2" id="" value="option2" checked>
+                                                <input class="form-check-input" type="radio" name="exampleRadio2" id="" value="option2">
                                                 <span class="form-check-sign"></span>
                                                 Otros
                                             </label>
                                         </div>
                                     </div>
-                                     </div>
+                                </div>
+                                <!-- End div of cap-->
                                   </div>
                                     <div style="border:none; border-top: 2px solid black; border-bottom: 2px solid black;" class="row">
                                         <label class="col-md-10 col-form-label" style="left: 30%;"><strong>ASISTENCIA A SESIONES</strong></label>
@@ -266,7 +287,7 @@
                                   <table class="table-bordered">
                                    <tbody>
                                     <tr>
-                                     <td>TEMA</td>
+                                     <td class="text-center">TEMA</td>
                                      <td>Fecha</td>
                                      <td>Fecha</td>
                                      <td>Fecha</td>
@@ -274,15 +295,15 @@
                                      <td>Fecha</td>
                                     </tr>
                                     <tr>
-                                     <td>Alimentacion y Nutricion</td>
+                                     <td class="text-center">Alimentacion y Nutrición</td>
                                      <td><input  name="" class="form-control datepicker" id="datepicker"></td>
-                                     <td><input  name="" class="form-control datepicker" id="datepicker"></td>
-                                     <td><input  name="" class="form-control datepicker" id="datepicker"></td>
+                                     <td><input  name="" class="form-control datepicker" id="datepicker2"></td>
+                                     <td><input  name="" class="form-control datepicker" id="datepicker3"></td>
                                      <td><input  name="" class="form-control datepicker" id="datepicker"></td>
                                      <td><input  name="" class="form-control datepicker" id="datepicker"></td>
                                     </tr>
                                   <tr>
-                                  <td>Salud Sexual y Reproductiva</td>
+                                  <td>SSyR</td>
                                   <td><input  name="" class="form-control datepicker" id="datepicker"></td>
                                      <td><input  name="" class="form-control datepicker" id="datepicker"></td>
                                      <td><input  name="" class="form-control datepicker" id="datepicker"></td>
@@ -291,7 +312,7 @@
      
                                    </tr>
                                   <tr>
-                                  <td>Higiene y Ambiente</td>
+                                  <td>HyA</td>
                                      <td><input  name="" class="form-control datepicker" id="datepicker"></td>
                                      <td><input  name="" class="form-control datepicker" id="datepicker"></td>
                                      <td><input  name="" class="form-control datepicker" id="datepicker"></td>
@@ -299,7 +320,7 @@
                                      <td><input  name="" class="form-control datepicker" id="datepicker"></td>
                                   </tr>
                                  <tr>
-                                 <td>Habilidades para la Vida</td>
+                                 <td>HpV</td>
                                      <td><input  name="" class="form-control datepicker" id="datepicker"></td>
                                      <td><input  name="" class="form-control datepicker" id="datepicker"></td>
                                      <td><input  name="" class="form-control datepicker" id="datepicker"></td>
@@ -307,7 +328,7 @@
                                      <td><input  name="" class="form-control datepicker" id="datepicker"></td>
                                   </tr>
                                  <tr>
-                                 <td>Seguridad Vial</td>
+                                 <td>SV</td>
                                      <td><input  name="" class="form-control datepicker" id="datepicker"></td>
                                      <td><input  name="" class="form-control datepicker" id="datepicker"></td>
                                      <td><input  name="" class="form-control datepicker" id="datepicker"></td>
@@ -448,26 +469,25 @@
                                     </div>
                                     <div>
                                     <label class="col-md-10 col-form-label"><strong>Durante el Programa</strong></label>
-                                        <table class="table table-bordered">
+                                        <table class="table-bordered" id="cpntable">
                                            <thead>
                                             <tr>
-                                            <th></th>
-                                            <th scope="col" style="font-size: 1;">N° CPN</th>
-                                            <th scope="col">Fecha</th>
-                                            <th scope="col">Responsable</th>
+                                            <th>N° CPN</th>
+                                            <th>Fecha</th>
+                                            <th>Responsable</th>
+                                            <th><a class="" type="btn-success" id="addcpn"><i class="now-ui-icons ui-1_simple-add"></i></a></th>
                                             </tr>
                                            </thead>
                                         <tbody>
-                                         <tr>
-                                          <td><i class="now-ui-icons ui-1_simple-add"></i></td>
-                                          <td><input type="" name="" class="form-control"></td>
-                                          <td><input type="" name="" class="form-control"></td>
-                                          <td><input type="" name="" class="form-control"></td>
+                                         <tr>             
+                                          <td><input type="number"  class="form-control"></td>
+                                          <td><input type="date"  class="form-control"></td>
+                                          <td><input type="text"  class="form-control resp"></td>
                                          </tr>
-
                                        </tbody>
                                        </table>
                                     </div>
+
                                     <div style="border:none; border-top: 2px solid black; border-bottom: 2px solid black;" class="row">
                                         <label class="col-md-10 col-form-label" style="left: 33%;"><strong>PAPANICOLAU</strong></label>
                                     </div>
@@ -563,7 +583,7 @@
                         
                                     <div class="article" >
                                        <label>Antes del Programa</label>
-                                         <div class="col-md-4">
+                                         <div class="col-md-2">
                                             <div class="form-group">
                                                 <span class="btn-group" data-toggle="buttons-radio">
                                                 <button class="btn btn-default btn-sm">SI</button>
@@ -578,7 +598,7 @@
                                     <div class="article">
                                        <label>Cantidad</label>
 
-                                        <div class="col-md-4">
+                                        <div class="col-md-">
                                             <div class="form-group">
                                                <input type="text" class="" style="border: none;border-bottom: 2px dotted black;">
                                             </div>
@@ -602,7 +622,6 @@
 
           
                 <div class="tab-pane fade" id="address">
-                     <button id="add-tab" class="btn btn-success btn-sm" onclick="location.href = '#';"><span class="btn-label" href="#"><i class="now-ui-icons ui-1_simple-add"></i></span></button>
                                  <div class="row">
                                     <label class="col-sm-2 col-form-label">Historia Clinica</label>
 
@@ -872,15 +891,15 @@
                                      <table class="table-bordered">
                                        <thead>
                                         <tr>
-                                          <th scope="col" style="font-size: 2;">Enfermedad</th>
-                                          <th scope="col">Fecha</th>
+                                          <th >Enfermedad</th>
+                                          <th >Fecha</th>
                                           <th colspan="2">Atendido</th>
-                                          <th scope="col">Hospital Huaycan</th>
-                                          <th scope="col">Otro</th>
+                                          <th >HH</th>
+                                          <th >Otro</th>
 
                                        </tr>
                                          <tr>
-                                          <th scope="col" style="font-size: 2;"></th>
+                                          <th scope="col"></th>
                                           <th scope="col"></th>
                                           <th scope="col">SI</th>
                                           <th scope="col">NO</th>
@@ -891,7 +910,7 @@
                                       </thead>
                                    <tbody>
                                       <tr>
-                                         <th><input type="" name="" class="form-control"></th>
+                                         <th><input type="text" name="" class="form-control"></th>
                                          <td><input type="date" name="" class="form-control "></td>
                                          <td><input type="radio" name="" class="form-control"></td>
                                          <td><input type="radio" name="" class="form-control"></td>
@@ -934,14 +953,28 @@
                 $('.card.card-wizard').addClass('active');
             }, 600);  
         });
+
+        var tbody = $('#cpntable').children('tbody');
+        var table = tbody.length ? tbody : $('#cpntable');
+        $('#addcpn').click(function(){
+            table.append('<tr><td><input type="number" class="form-control"></td><td><input type="date" class="form-control"></td><td><input type="text" class="form-control resp"></td></tr>');
+        })
     </script>
 
      <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
      <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
      <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script>
-  $('.datepicker').each(function(){
+   $('.datepicker').each(function(){
     $(this).datepicker();
-});
+   });
+   function show1(){
+     document.getElementById('divcap').style.display = 'none';
+   }
+
+   function show2(){
+     document.getElementById('divcap').style.display = 'block';
+   }
   </script>
+  
     @endsection
