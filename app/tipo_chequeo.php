@@ -4,10 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Tipo_Examen extends Model
+class Control_Nutricional extends Model
 {
-   protected $table='tipo_examen';
-   protected $primaryKey='idTipo_Examen';
+   protected $table='tipo_chequeo';
+   protected $primaryKey='iTipo_Chequeo';
 
 
    /* public $timestamps=false; es para indicar que no utilizaremos 'updated_at' o 'created_at' */
@@ -18,7 +18,8 @@ class Tipo_Examen extends Model
 /*paso 4 - indicar las tablas de la base de datos al modelo*/
 
    protected $fillable = [
-      'Tipo_Exa',
+      
+      'Tipo_Chequeo',
       
    ];
 

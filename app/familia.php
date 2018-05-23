@@ -12,13 +12,10 @@ class familia extends Model
     public $timestamps=false;
 
     protected $fillable = [
-      'Codigo_fam',
-      'Nom_fam',
-      'Respons_fam',
-      'Tipo_Familia_idTipo_Familia',
-      'Modo_Captacion_idModo_Captacion',
-      'Programa_idPrograma',
-      'Madre_idMadre',
+      'Fam_numero',
+      'Fam_nom',
+      'Fam_direccion',
+      'Fam_telf',
      
    ];
 

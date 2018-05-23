@@ -4,10 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Historial_Programa extends Model
+class Control_Nutricional extends Model
 {
-   protected $table='historial_programa';
-   protected $primaryKey='idHistorial_Programa';
+   protected $table='hc_nino';
+   protected $primaryKey='idHC_Nino';
 
 
    /* public $timestamps=false; es para indicar que no utilizaremos 'updated_at' o 'created_at' */
@@ -18,8 +18,10 @@ class Historial_Programa extends Model
 /*paso 4 - indicar las tablas de la base de datos al modelo*/
 
    protected $fillable = [
-      'Programa_idPrograma',
-      'Usuario_idUsuario',
+      
+      'Nino_hcfecha',
+      'Chequeo_idChequeo',
+      'Nino_idNino',
       
    ];
 

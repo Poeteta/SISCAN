@@ -18,8 +18,9 @@ class Cpn extends Model
 /*paso 4 - indicar las tablas de la base de datos al modelo*/
 
    protected $fillable = [
-      'Fecha_CPN',
-      'Responsable_CPN',
+      'Cpn_numero',
+      'Cpn_fecha',
+      'Cpn_responsable',
       'Madre_idMadre',
       
    ];

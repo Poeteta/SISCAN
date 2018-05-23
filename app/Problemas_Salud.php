@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Problemas_Salud extends Model
 {
    protected $table='problemas_salud';
-   protected $primaryKey='idProblemas_salud';
+   protected $primaryKey='idProblemas_Salud';
 
 
    /* public $timestamps=false; es para indicar que no utilizaremos 'updated_at' o 'created_at' */
@@ -18,11 +18,11 @@ class Problemas_Salud extends Model
 /*paso 4 - indicar las tablas de la base de datos al modelo*/
 
    protected $fillable = [
-      'Enfermedad_idEnfermedad',
-      'Fecha_Atencion',
-      'Atendido',
-      'Hospital_idHospital',
-      'Paciente_idPaciente',
+      'Problema_fecha',
+      'Problema_atendido',
+      'Problema_enfermedad',
+      'Problema_hospital',
+      'Nino_idNino',
       
    ];
 

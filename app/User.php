@@ -12,14 +12,19 @@ class User extends Authenticatable
 
 
     protected $fillable = [
+        'Usuario_nombre',
+        'Usuario_apelpa',
+        'Usuario_Apelma',
+        'Usuario_dni',
+        'Usuario_fechan',
+        'Usuario_telf',
         'Nom_user',
-        'Estado_user',
         'password',
-        'Rol_idRol',
-        'Persona_idPersona',
+        'Estado_user',
+        'remember_token',      
         'created_at',
         'updated_at',
-        'Estado_user',
+        'Rol_idRol',
     ];
 
    
@@ -27,3 +32,4 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 }
+

@@ -11,15 +11,14 @@ class madre extends Model
     public $timestamps=false;
 
     protected $fillable = [
-       'Madre_apel_pa',
-       'Madre_apel_ma',
-       'Madre_nombre',
+       'Madre_Apelpa',
+       'Madre_Apelma',
+       'Madre_Nom',
        'Madre_DNI',
-       'Madre_fecha',
-       'Madre_direccion',
-       'Madre_telf',
-       'distrito_idDistrito',
-    ];
+       'Madre_HC',       
+       'Madre_fechan',
+       'Familia_idFamilia',
+           ];
 
     protected $guarded = [
 

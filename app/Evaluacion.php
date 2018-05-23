@@ -19,12 +19,13 @@ class Evaluacion extends Model
 
    protected $fillable = [
       'Eval_Asis',
-      'Eval_Niño_Vac',
-      'Eval_Niño_SinAne',
+      'Eval_Nino_Vac',
+      'Eval_Nino_SinAne',
       'Eval_CPN',
       'Eval_Signos_Alarma',
-      'Eval_Plan_fam',
-      'Eval_Usa_Plan_fam',
+      'Eval_Plan_Fam',
+      'Eval_Usa_Plan_Fam',
+      'Planificacion_idPlanificacion',
       'Eval_Fam_Plan',
       'Eval_Activ_Comun',
       'Eval_Norm_Conv',
@@ -34,6 +35,9 @@ class Evaluacion extends Model
       'Eval_Viv_Ordena',
       'Eval_Arbol',
       'Eval_Depo_Agua',
+      'Abandono',
+      'Estado_Eval',
+      'Familia_idFamilia',
    ];
 
    protected $guarded =[

@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class HC_Madre extends Model
+class Control_Nutricional extends Model
 {
    protected $table='hc_madre';
    protected $primaryKey='idHC_Madre';
@@ -18,14 +18,10 @@ class HC_Madre extends Model
 /*paso 4 - indicar las tablas de la base de datos al modelo*/
 
    protected $fillable = [
-      'Gestante_Inicio',
-      'CPN_Antes',
-      'Cantidad_CPN_Antes',
-      'Papanicolau_Antes',
-      'Examen_Mamas_Antes',
-      'Vacuna_Antitetanica_Antes',
-      'Cantidad_Vacunas_Antitetanicas',
-      'Paciente_idPaciente',
+      
+      'Madre_hcfecha',
+      'Chequeo_idChequeo',
+      'Madre_idMadre',
       
    ];
 

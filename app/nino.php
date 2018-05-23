@@ -11,14 +11,13 @@ class nino extends Model
      public $timestamps=false;
 
       protected $fillable = [
-      'Nino_HC',
-      'Nino_DNI',
-      'Nino_nombre',
-      'Nino_fecha',
+      
+      'Nino_nom',
+      'Nino_hc',
+      'Nino_dni'
+      'Nino_fechan',
       'Nino_sexo',
-      'Nino_apelma',
-      'Nino_apelpa',
-      'Madre_idMadre',
+      'Familia_idFamilia',
       
     ];
 
