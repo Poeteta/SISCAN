@@ -34,14 +34,11 @@ Route::PATCH('seguridad/usuario/editUsuario/{idUsuario}','UsuarioController@upda
 Route::resource('seguridad/usuario','UsuarioController');
 Route::resource('seguridad/HistorialClinico','HistorialClinicoController');
 
-/*MODULO DE REPORTE --HANS--*/
-Route::resource('reporte','ReporteController');
-Route::resource('reportefam','ReporteFamiliaController');
-Route::resource('reportenino','ReporteNinosController');
-Route::resource('reportemadre','ReporteMadreController');
-
-
-////////////////////////////////////////////
+/*MODULO DE REPORTE --HANS--  NO TOCAR*/  
+Route::resource('reporte/general','ReporteController');
+Route::resource('reporte/familiar','ReporteFamiliaController');
+Route::resource('reporte/nino','ReporteNinosController');
+Route::resource('reporte/madre','ReporteMadreController');
 
   });
 

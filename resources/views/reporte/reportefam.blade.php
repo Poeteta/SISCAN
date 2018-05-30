@@ -81,8 +81,7 @@
                 </ul>
                 <div class="tab-content tab-space tab-subcategories">
                     <div class="tab-pane active" id="link7">
-                        Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed
-                        base benefits.
+                        YOLO
                         <br>
                         <br> Dramatically visualize customer directed convergence without revolutionary ROI.
                     </div>

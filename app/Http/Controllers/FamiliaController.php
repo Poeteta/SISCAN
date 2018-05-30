@@ -68,6 +68,7 @@ class FamiliaController extends Controller
           $madre->save();
 
 
+
           $familia = new familia;
           $familia->Codigo_fam=$request->get('Codigo_fam');
           $familia->Nom_fam=$request->get('Nom_fam');

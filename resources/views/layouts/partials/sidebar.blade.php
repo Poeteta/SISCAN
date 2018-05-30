@@ -97,28 +97,28 @@
                       <ul class="nav">
                       
                         <li >
-                            <a href="{{url('reporte/')}}">
+                            <a href="{{url('reporte/general')}}">
                                 <span class="sidebar-mini-icon">RG</span>
                                 <span class="sidebar-normal"> Reporte General </span>
                             </a>
                         </li>
                       
                         <li >
-                            <a href="{{url('reportefam/')}}">
+                            <a href="{{url('reporte/familiar')}}">
                                 <span class="sidebar-mini-icon">EF</span>
                                 <span class="sidebar-normal"> Reporte Familiar </span>
                             </a>
                         </li>
                       
                         <li >
-                            <a href="{{url('reportemadre/')}}">
+                            <a href="{{url('reporte/madre')}}">
                                 <span class="sidebar-mini-icon">V</span>
                                 <span class="sidebar-normal"> Reporte Madres </span>
                             </a>
                         </li>
                       
                         <li >
-                            <a href="{{url('reportenino/')}}">
+                            <a href="{{url('reporte/nino')}}">
                                 <span class="sidebar-mini-icon">W</span>
                                 <span class="sidebar-normal"> Reporte Niños </span>
                             </a>
