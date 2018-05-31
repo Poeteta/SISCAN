@@ -101,9 +101,9 @@
             <!--      Wizard container        -->
             <div class="wizard-container">
                 <div class="card card-wizard" data-color="primary" id="wizardProfile">
-                    <form action="" method="">
-                        <!--        You can switch " data-color="primary" "  with one of the next bright colors: "green", "orange", "red", "blue"       -->
-
+                {!!Form::open(array('url'=>'Familia/store','method'=>'POST','autocomplete'=>'off'))!!} 
+                {{Form::token()}} {{ csrf_field() }}
+          
                         <div class="card-header text-center" data-background-color="orange">
                             <div class="wizard-navigation" id="tabs">
                                 <ul>
@@ -140,7 +140,8 @@
 
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <input type="number" class="" style="border: none;border-bottom: 2px dotted black;">
+                                                <input type="number" style="border: none;border-bottom: 2px dotted black;" 
+                                                name="Fam_numero">
                                             </div>
                                         </div>
                                     </div>
@@ -149,7 +150,8 @@
 
                                         <div class="col-md-9">
                                             <div class="form-group">
-                                                <input type="text" class="" style="border: none;border-bottom: 2px dotted black;">
+                                                <input type="text" style="border: none;border-bottom: 2px dotted black;"
+                                                name="Fam_nom">
                                             </div>
                                         </div>
                                     </div>
@@ -159,7 +161,7 @@
 
                                         <div class="col-md-9">
                                             <div class="form-group">
-                                                <input type="text" class="" style="border: none;border-bottom: 2px dotted black;">
+                                                <input type="text" name="Madre_Apelpa" style="border: none;border-bottom: 2px dotted black;">
                                             </div>
                                         </div>
                                     </div>
@@ -167,7 +169,7 @@
                                         <label class="col-md-3 col-form-label">A.M</label>
                                         <div class="col-md-9">
                                             <div class="form-group">
-                                                <input type="text" class="" style="border: none;border-bottom: 2px dotted black;">
+                                                <input type="text" name="Madre_Apelma" style="border: none;border-bottom: 2px dotted black;">
                                             </div>
                                         </div>
                                     </div>
@@ -177,7 +179,7 @@
 
                                         <div class="col-md-9">
                                             <div class="form-group">
-                                                <input type="text" class="" style="border: none;border-bottom: 2px dotted black;">
+                                                <input type="text" name="Madre_Nom" style="border: none;border-bottom: 2px dotted black;">
                                             </div>
                                         </div>
                                     </div>
@@ -186,7 +188,7 @@
 
                                         <div class="col-md-9">
                                             <div class="form-group">
-                                                <input type="text" class="" style="border: none;border-bottom: 2px dotted black;">
+                                                <input type="text" style="border: none;border-bottom: 2px dotted black;" name="Fam_direccion">
                                             </div>
                                         </div>
                                     </div>
@@ -199,7 +201,7 @@
 
                                         <div class="col-md-9">
                                             <div class="form-group">
-                                                <input type="number" class="" style="border: none;border-bottom: 2px dotted black;">
+                                                <input type="number" name="Madre_HC" style="border: none;border-bottom: 2px dotted black;">
                                             </div>
                                         </div>
                                     </div>
@@ -208,7 +210,7 @@
 
                                         <div class="col-md-9">
                                             <div class="form-group">
-                                                <input type="number" class="" style="border: none;border-bottom: 2px dotted black;">
+                                                <input type="number" name="Madre_DNI" style="border: none;border-bottom: 2px dotted black;">
                                             </div>
                                         </div>
                                     </div>
@@ -221,7 +223,7 @@
                                         <div class="col-sm-10 checkbox-radios">
                                         <div class="form-check form-check-radio">
                                             <label class="form-check-label">
-                                                <input class="form-check-input" type="radio" name="exampleRadio" id="exampleRadios3" value="option1" onclick="show2();">
+                                                <input class="form-check-input" type="radio" name="Tipo_Familia" id="exampleRadios3" value="Nueva" onclick="show2();">
                                                 <span class="form-check-sign"></span>
                                                 Nueva
                                             </label>
@@ -229,14 +231,14 @@
 
                                         <div class="form-check form-check-radio">
                                             <label class="form-check-label">
-                                                <input class="form-check-input" type="radio" name="exampleRadio" id="exampleRadios4" value="option2" onclick="show1();">
+                                                <input class="form-check-input" type="radio" name="Tipo_Familia" id="exampleRadios4" value="Continuadora" onclick="show1();">
                                                 <span class="form-check-sign"></span>
                                                 Continuadora
                                             </label>
                                         </div>
                                         <div class="form-check form-check-radio">
                                             <label class="form-check-label">
-                                                <input class="form-check-input" type="radio" name="exampleRadio" id="exampleRadios4" value="option2" onclick="show2();">
+                                                <input class="form-check-input" type="radio" name="Tipo_Familia" id="exampleRadios4" value="Reingresante" onclick="show2();">
                                                 <span class="form-check-sign"></span>
                                                 Reingresante
                                             </label>
@@ -249,7 +251,7 @@
                                         <div class="col-sm-12 checkbox-radios">
                                         <div class="form-check form-check-radio">
                                             <label class="form-check-label">
-                                                <input class="form-check-input" type="radio" name="exampleRadio2" id="" value="option1">
+                                                <input class="form-check-input" type="radio" name="Modo_Capta" id="" value="Visita ">
                                                 <span class="form-check-sign"></span>
                                                 Visita Hospitalaria
                                             </label>
@@ -257,21 +259,21 @@
 
                                         <div class="form-check form-check-radio">
                                             <label class="form-check-label">
-                                                <input class="form-check-input" type="radio" name="exampleRadio2" id="" value="option2">
+                                                <input class="form-check-input" type="radio" name="Modo_Capta" id="" value="Hospital">
                                                 <span class="form-check-sign"></span>
                                                 Hospital
                                             </label>
                                         </div>
                                         <div class="form-check form-check-radio">
                                             <label class="form-check-label">
-                                                <input class="form-check-input" type="radio" name="exampleRadio2" id="" value="option2">
+                                                <input class="form-check-input" type="radio" name="Modo_Capta" id="" value="Campana">
                                                 <span class="form-check-sign"></span>
                                                 Campaña de Salud
                                             </label>
                                         </div>
                                         <div class="form-check form-check-radio">
                                             <label class="form-check-label">
-                                                <input class="form-check-input" type="radio" name="exampleRadio2" id="" value="option2">
+                                                <input class="form-check-input" type="radio" name="Modo_Capta" id="" value="Otro">
                                                 <span class="form-check-sign"></span>
                                                 Otros
                                             </label>
@@ -294,48 +296,17 @@
                                      <td>Fecha</td>
                                      <td>Fecha</td>
                                     </tr>
+                                    @foreach($sesion as $n)
                                     <tr>
-                                     <td class="text-center">Alimentacion y Nutrición</td>
-                                     <td><input  name="" class="form-control datepicker" id="datepicker"></td>
-                                     <td><input  name="" class="form-control datepicker" id="datepicker2"></td>
-                                     <td><input  name="" class="form-control datepicker" id="datepicker3"></td>
-                                     <td><input  name="" class="form-control datepicker" id="datepicker"></td>
-                                     <td><input  name="" class="form-control datepicker" id="datepicker"></td>
+                                     <td class="text-center">{{ $n->Sesiones_Nom }}<input type="hidden" name="idsesion[]" value="{{ $n->idSesiones }}" ></td>
+                                     <td><input  name="f1[]" class="form-control datepicker" ></td>
+                                     <td><input  name="f2[]" class="form-control datepicker" ></td>
+                                     <td><input  name="f3[]" class="form-control datepicker" ></td>
+                                     <td><input  name="f4[]" class="form-control datepicker" ></td>
+                                     <td><input  name="f5[]" class="form-control datepicker" ></td>
                                     </tr>
-                                  <tr>
-                                  <td>SSyR</td>
-                                  <td><input  name="" class="form-control datepicker" id="datepicker"></td>
-                                     <td><input  name="" class="form-control datepicker" id="datepicker"></td>
-                                     <td><input  name="" class="form-control datepicker" id="datepicker"></td>
-                                     <td><input  name="" class="form-control datepicker" id="datepicker"></td>
-                                     <td><input  name="" class="form-control datepicker" id="datepicker"></td>
-     
-                                   </tr>
-                                  <tr>
-                                  <td>HyA</td>
-                                     <td><input  name="" class="form-control datepicker" id="datepicker"></td>
-                                     <td><input  name="" class="form-control datepicker" id="datepicker"></td>
-                                     <td><input  name="" class="form-control datepicker" id="datepicker"></td>
-                                     <td><input  name="" class="form-control datepicker" id="datepicker"></td>
-                                     <td><input  name="" class="form-control datepicker" id="datepicker"></td>
-                                  </tr>
-                                 <tr>
-                                 <td>HpV</td>
-                                     <td><input  name="" class="form-control datepicker" id="datepicker"></td>
-                                     <td><input  name="" class="form-control datepicker" id="datepicker"></td>
-                                     <td><input  name="" class="form-control datepicker" id="datepicker"></td>
-                                     <td><input  name="" class="form-control datepicker" id="datepicker"></td>
-                                     <td><input  name="" class="form-control datepicker" id="datepicker"></td>
-                                  </tr>
-                                 <tr>
-                                 <td>SV</td>
-                                     <td><input  name="" class="form-control datepicker" id="datepicker"></td>
-                                     <td><input  name="" class="form-control datepicker" id="datepicker"></td>
-                                     <td><input  name="" class="form-control datepicker" id="datepicker"></td>
-                                     <td><input  name="" class="form-control datepicker" id="datepicker"></td>
-                                     <td><input  name="" class="form-control datepicker" id="datepicker"></td>
-                                 </tr>
-                                </tbody>
+                                    @endforeach
+                                  </tbody>
                                 </table>
 
                                 </div>
@@ -353,10 +324,16 @@
                                          <div class="col-md-4">
                                             <div class="form-group">
                                                 <span class="btn-group" data-toggle="buttons-radio">
-                                                <button class="btn btn-default btn-sm">SI</button>
+                                                 <span class="button-checkbox">
+                                                 <button type="button" class="btn btn-default btn-sm" data-color="primary">SI</button>
+                                                 <input type="checkbox" hidden="" value="1" name="Gestante_Inicio" />
+                                                 </span>
                                                 <br>
                                                 <br>
-                                                <button class="btn btn-default btn-sm">NO</button>
+                                                <span class="button-checkbox">
+                                                 <button type="button" class="btn btn-default btn-sm" data-color="primary">NO</button>
+                                                 <input type="checkbox" hidden="" value="0" name="Gestante_Final" />
+                                                 </span>
                                             </span>
                                             </div>
                                         </div>
@@ -364,13 +341,19 @@
                                     <div class="article">
                                        <label>Final</label>
 
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <span class="btn-group" data-toggle="buttons-radio">
-                                                <button class="btn btn-default btn-sm">SI</button>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <span class="btn-group" data-toggle="buttons-radio">
+                                                 <span class="button-checkbox">
+                                                 <button type="button" class="btn btn-default btn-sm" data-color="primary">SI</button>
+                                                 <input type="checkbox" hidden="" value="1" name="Gestante_Final" />
+                                                 </span>
                                                 <br>
                                                 <br>
-                                                <button class="btn btn-default btn-sm">NO</button>
+                                                 <span class="button-checkbox">
+                                                 <button type="button" class="btn btn-default btn-sm" data-color="primary">NO</button>
+                                                 <input type="checkbox" hidden="" value="0" name="Gestante_Final" />
+                                                 </span>
                                             </span>
                                             </div>
                                         </div>
@@ -384,7 +367,7 @@
                                         <div class="col-sm-10 checkbox-radios">
                                         <div class="form-check form-check-radio">
                                             <label class="form-check-label">
-                                                <input class="form-check-input" type="radio" name="exampleRadio" id="exampleRadios3" value="option1">
+                                                <input class="form-check-input" type="radio" name="exampleRadio" id="exampleRadios3" value="Natural">
                                                 <span class="form-check-sign"></span>
                                                 Natural
                                             </label>
@@ -392,21 +375,21 @@
 
                                         <div class="form-check form-check-radio">
                                             <label class="form-check-label">
-                                                <input class="form-check-input" type="radio" name="exampleRadio" id="exampleRadios4" value="option2" checked>
+                                                <input class="form-check-input" type="radio" name="Planificacion_nom" id="exampleRadios4" value="Condon">
                                                 <span class="form-check-sign"></span>
                                                 Condon
                                             </label>
                                         </div>
                                         <div class="form-check form-check-radio">
                                             <label class="form-check-label">
-                                                <input class="form-check-input" type="radio" name="exampleRadio" id="exampleRadios4" value="option2" checked>
+                                                <input class="form-check-input" type="radio" name="Planificacion_nom" id="exampleRadios4" value="Pildoras">
                                                 <span class="form-check-sign"></span>
                                                 Pildoras
                                             </label>
                                         </div>
                                            <div class="form-check form-check-radio">
                                             <label class="form-check-label">
-                                                <input class="form-check-input" type="radio" name="exampleRadio" id="exampleRadios4" value="option2" checked>
+                                                <input class="form-check-input" type="radio" name="Planificacion_nom" id="exampleRadios4" value="Inyectables">
                                                 <span class="form-check-sign"></span>
                                                 Inyectables
                                             </label>
@@ -418,7 +401,7 @@
                                         <div class="col-sm-12 checkbox-radios">
                                         <div class="form-check form-check-radio">
                                             <label class="form-check-label">
-                                                <input class="form-check-input" type="radio" name="pfam" id="" value="option1">
+                                                <input class="form-check-input" type="radio" name="Planificacion_nom" id="" value="T de Cobre">
                                                 <span class="form-check-sign"></span>
                                                 T de Cobre
                                             </label>
@@ -426,21 +409,21 @@
 
                                         <div class="form-check form-check-radio">
                                             <label class="form-check-label">
-                                                <input class="form-check-input" type="radio" name="pfam" id="" value="option2" checked>
+                                                <input class="form-check-input" type="radio" name="Planificacion_nom" id="" value="Ligadura de Trompa">
                                                 <span class="form-check-sign"></span>
                                                 Ligadura de Trompa
                                             </label>
                                         </div>
                                         <div class="form-check form-check-radio">
                                             <label class="form-check-label">
-                                                <input class="form-check-input" type="radio" name="pfam" id="" value="option2" checked>
+                                                <input class="form-check-input" type="radio" name="Planificacion_nom" id="" value="Vasectomia">
                                                 <span class="form-check-sign"></span>
                                                 Vasectomia
                                             </label>
                                         </div>
                                         <div class="form-check form-check-radio">
                                             <label class="form-check-label">
-                                                <input class="form-check-input" type="radio" name="pfam" id="" value="option2" checked>
+                                                <input class="form-check-input" type="radio" name="Planificacion_nom" id="" value="Otros">
                                                 <span class="form-check-sign"></span>
                                                 Otros
                                             </label>
@@ -458,12 +441,18 @@
                                         <div class="col-md-9">
                                             <div class="form-group">
                                                 <span class="btn-group" data-toggle="buttons-radio">
-                                                <button class="btn btn-default btn-sm active">SI</button>
+                                                <span class="button-checkbox">
+                                                 <button type="button" class="btn btn-default btn-sm" data-color="primary">SI</button>
+                                                 <input type="checkbox" hidden="" value="1" name="CPN_Antes_pg" />
+                                                 </span>
                                                 <br>
                                                 <br>
-                                                <button class="btn btn-default btn-sm">NO</button>
+                                                <span class="button-checkbox">
+                                                 <button type="button" class="btn btn-default btn-sm" data-color="primary">NO</button>
+                                                 <input type="checkbox" hidden="" value="0" name="CPN_Antes_pg" />
+                                                 </span>
                                             </span>
-                                                <input type="text" class="" style="border: none;border-bottom: 2px dotted black;" placeholder="Cantidad">
+                                                <input type="text" class="" name="CPN_cantidad" style="border: none;border-bottom: 2px dotted black;" placeholder="Cantidad">
                                             </div>
                                         </div>
                                     </div>
@@ -480,9 +469,9 @@
                                            </thead>
                                         <tbody>
                                          <tr>             
-                                          <td><input type="number"  class="form-control"></td>
-                                          <td><input type="date"  class="form-control"></td>
-                                          <td><input type="text"  class="form-control resp"></td>
+                                          <td><input type="number"  name="Cpn_numero" class="form-control"></td>
+                                          <td><input type="date" name="Cpn_fecha" class="form-control"></td>
+                                          <td><input type="text"  name="Cpn_Responsable" class="form-control resp"></td>
                                          </tr>
                                        </tbody>
                                        </table>
@@ -496,12 +485,18 @@
                                     <div class="article" >
                                        <label>Antes del Programa</label>
                                          <div class="col-md-4">
-                                            <div class="form-group">
-                                                <span class="btn-group" data-toggle="buttons-radio">
-                                                <button class="btn btn-default btn-sm">SI</button>
+                                         <div class="form-group">
+                                            <span class="btn-group" data-toggle="buttons-radio">
+                                                <span class="button-checkbox">
+                                                 <button type="button" class="btn btn-default btn-sm" data-color="primary">SI</button>
+                                                 <input type="checkbox" hidden="" value="" />
+                                                 </span>
                                                 <br>
                                                 <br>
-                                                <button class="btn btn-default btn-sm">NO</button>
+                                                <span class="button-checkbox">
+                                                 <button type="button" class="btn btn-default btn-sm" data-color="primary">NO</button>
+                                                 <input type="checkbox" hidden="" value="" />
+                                                 </span>
                                             </span>
                                             </div>
                                         </div>
@@ -541,11 +536,17 @@
                                        <label>Antes del Programa</label>
                                          <div class="col-md-4">
                                             <div class="form-group">
-                                                <span class="btn-group" data-toggle="buttons-radio">
-                                                <button class="btn btn-default btn-sm">SI</button>
+                                             <span class="btn-group" data-toggle="buttons-radio">
+                                                <span class="button-checkbox">
+                                                 <button type="button" class="btn btn-default btn-sm" data-color="primary">SI</button>
+                                                 <input type="checkbox" hidden="" value="" />
+                                                 </span>
                                                 <br>
                                                 <br>
-                                                <button class="btn btn-default btn-sm">NO</button>
+                                                <span class="button-checkbox">
+                                                 <button type="button" class="btn btn-default btn-sm" data-color="primary">NO</button>
+                                                 <input type="checkbox" hidden="" value="" />
+                                                 </span>
                                             </span>
                                             </div>
                                         </div>
@@ -556,11 +557,17 @@
 
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <span class="btn-group" data-toggle="buttons-radio">
-                                                <button class="btn btn-default btn-sm">SI</button>
+                                             <span class="btn-group" data-toggle="buttons-radio">
+                                                <span class="button-checkbox">
+                                                 <button type="button" class="btn btn-default btn-sm" data-color="primary">SI</button>
+                                                 <input type="checkbox" hidden="" value="" />
+                                                 </span>
                                                 <br>
                                                 <br>
-                                                <button class="btn btn-default btn-sm">NO</button>
+                                                <span class="button-checkbox">
+                                                 <button type="button" class="btn btn-default btn-sm" data-color="primary">NO</button>
+                                                 <input type="checkbox" hidden="" value="" />
+                                                 </span>
                                             </span>
                                             </div>
                                         </div>
@@ -586,10 +593,16 @@
                                          <div class="col-md-2">
                                             <div class="form-group">
                                                 <span class="btn-group" data-toggle="buttons-radio">
-                                                <button class="btn btn-default btn-sm">SI</button>
+                                                 <span class="button-checkbox">
+                                                 <button type="button" class="btn btn-default btn-sm" data-color="primary">SI</button>
+                                                 <input type="checkbox" hidden="" value="" />
+                                                 </span>
                                                 <br>
                                                 <br>
-                                                <button class="btn btn-default btn-sm">NO</button>
+                                                <span class="button-checkbox">
+                                                 <button type="button" class="btn btn-default btn-sm" data-color="primary">NO</button>
+                                                 <input type="checkbox" hidden="" value="" />
+                                                 </span>
                                             </span>
                                             </div>
                                         </div>
@@ -687,11 +700,17 @@
 
                                         <div class="col-md-9">
                                             <div class="form-group">
-                                                <span class="btn-group" data-toggle="buttons-radio">
-                                                <button class="btn btn-default btn-sm">SI</button>
+                                              <span class="btn-group" data-toggle="buttons-radio">
+                                                <span class="button-checkbox">
+                                                 <button type="button" class="btn btn-default btn-sm" data-color="primary">SI</button>
+                                                 <input type="checkbox" hidden="" value="" />
+                                                 </span>
                                                 <br>
                                                 <br>
-                                                <button class="btn btn-default btn-sm">NO</button>
+                                                <span class="button-checkbox">
+                                                 <button type="button" class="btn btn-default btn-sm" data-color="primary">NO</button>
+                                                 <input type="checkbox" hidden="" value="" />
+                                                 </span>
                                             </span>
                                                 <input type="date" class="" style="border: none;border-bottom: 2px dotted black;">
                                             </div>
@@ -703,11 +722,17 @@
 
                                         <div class="col-md-9">
                                             <div class="form-group">
-                                                <span class="btn-group" data-toggle="buttons-radio">
-                                                <button class="btn btn-default btn-sm">SI</button>
+                                             <span class="btn-group" data-toggle="buttons-radio">
+                                                <span class="button-checkbox">
+                                                 <button type="button" class="btn btn-default btn-sm" data-color="primary">SI</button>
+                                                 <input type="checkbox" hidden="" value="" />
+                                                 </span>
                                                 <br>
                                                 <br>
-                                                <button class="btn btn-default btn-sm">NO</button>
+                                                <span class="button-checkbox">
+                                                 <button type="button" class="btn btn-default btn-sm" data-color="primary">NO</button>
+                                                 <input type="checkbox" hidden="" value="" />
+                                                 </span>
                                             </span>
                                                 <input type="date" class="" style="border: none;border-bottom: 2px dotted black;">
                                             </div>
@@ -720,10 +745,16 @@
                                         <div class="col-md-9">
                                             <div class="form-group">
                                                 <span class="btn-group" data-toggle="buttons-radio">
-                                                <button class="btn btn-default btn-sm">SI</button>
+                                                  <span class="button-checkbox">
+                                                 <button type="button" class="btn btn-default btn-sm" data-color="primary">SI</button>
+                                                 <input type="checkbox" hidden="" value="" />
+                                                 </span>
                                                 <br>
                                                 <br>
-                                                <button class="btn btn-default btn-sm">NO</button>
+                                                <span class="button-checkbox">
+                                                 <button type="button" class="btn btn-default btn-sm" data-color="primary">NO</button>
+                                                 <input type="checkbox" hidden="" value="" />
+                                                 </span>
                                             </span>
                                                 <input type="date" class="" style="border: none;border-bottom: 2px dotted black;">
                                             </div>
@@ -930,7 +961,7 @@
                         <div class="card-footer">
                             <div class="pull-right">
                                 <input type='button' class='btn btn-next btn-fill btn-rose btn-wd' name='next' value='Siguiente' />
-                                <input type='button' class='btn btn-finish btn-fill btn-rose btn-wd' name='finish' value='Guardar' />
+                                <input type='submit' class='btn btn-finish btn-fill btn-rose btn-wd' name='finish' value='Guardar' />
                             </div>
 
                             <div class="pull-left">
@@ -938,8 +969,7 @@
                             </div>
                             <div class="clearfix"></div>
                         </div>
-
-                    </form>
+                    {!!Form::close()!!}
                 </div>
             </div>
             <!-- wizard container -->
@@ -975,6 +1005,73 @@
    function show2(){
      document.getElementById('divcap').style.display = 'block';
    }
+  </script>
+  <script type="text/javascript">
+      $(function () {
+    $('.button-checkbox').each(function () {
+
+        // Settings
+        var $widget = $(this),
+            $button = $widget.find('button'),
+            $checkbox = $widget.find('input:checkbox'),
+            color = $button.data('color'),
+            settings = {
+                on: {
+                    icon: 'glyphicon glyphicon-check'
+                },
+                off: {
+                    icon: 'glyphicon glyphicon-unchecked'
+                }
+            };
+
+        // Event Handlers
+        $button.on('click', function () {
+            $checkbox.prop('checked', !$checkbox.is(':checked'));
+            $checkbox.triggerHandler('change');
+            updateDisplay();
+        });
+        $checkbox.on('change', function () {
+            updateDisplay();
+        });
+
+        // Actions
+        function updateDisplay() {
+            var isChecked = $checkbox.is(':checked');
+
+            // Set the button's state
+            $button.data('state', (isChecked) ? "on" : "off");
+
+            // Set the button's icon
+            $button.find('.state-icon')
+                .removeClass()
+                .addClass('state-icon ' + settings[$button.data('state')].icon);
+
+            // Update the button's color
+            if (isChecked) {
+                $button
+                    .removeClass('btn-default')
+                    .addClass('btn-' + color + ' active');
+            }
+            else {
+                $button
+                    .removeClass('btn-' + color + ' active')
+                    .addClass('btn-default');
+            }
+        }
+
+        // Initialization
+        function init() {
+
+            updateDisplay();
+
+            // Inject the icon if applicable
+            if ($button.find('.state-icon').length == 0) {
+                $button.prepend('<i class="state-icon ' + settings[$button.data('state')].icon + '"></i> ');
+            }
+        }
+        init();
+    });
+});
   </script>
   
     @endsection

@@ -8,6 +8,7 @@ class madre extends Model
 {
     protected $table='madre';
     protected $primaryKey='idMadre';
+
     public $timestamps=false;
 
     protected $fillable = [
@@ -18,9 +19,15 @@ class madre extends Model
        'Madre_HC',       
        'Madre_fechan',
        'Familia_idFamilia',
-           ];
+       ];
 
     protected $guarded = [
 
     ];
+
+     public function madre (){
+    return $this->belongsTo('App\familias');
+   }
+
+
 }

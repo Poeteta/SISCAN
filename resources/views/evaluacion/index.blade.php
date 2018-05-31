@@ -378,17 +378,31 @@
       <div class="card-header">
             <h5 class="title">Lista de Familias</h5>
       </div>
-      <div class="card-body">
-            <form class="">
-                    <div class="input-group">
-                        <input type="text" value="" class="form-control" placeholder="Buscar...">
-                        <span class="input-group-addon">
-                          <i class="now-ui-icons ui-1_zoom-bold"></i>
-                        </span>
-                    </div>
-                </form>
-      </div>
-      <hr>
+      @include('evaluacion.search')
+
+                                            <table class="table">
+                                                <thead class="text-primary">
+                                                    <th>Persona</th>
+                            
+                                                </thead>
+                                                <tbody>
+                                                    @foreach($familia as $fam)
+                                                    <tr>
+                                                        <td>{{ $fam->Fam_nom}}</td>
+                                                        
+                                                        <td>
+                                                            <!-- aqui ejecuta una accion pidiendo permiso al controlador enviando la id -->
+                                                            <a href="{{URL::action('UsuarioController@show',$fam->idFamilia)}}">
+                                                                <button class="btn btn-info"><i class="glyphicon glyphicon-th-list"></i>Evaluar
+                                                                </button>
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                    @endforeach
+                                                </tbody>
+                                            </table>
+                                        
+     
   </div>
 </div>
 </div>
@@ -397,6 +411,5 @@
     </div>
     
   </div>
-  
-    
+
             @endsection

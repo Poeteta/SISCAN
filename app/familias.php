@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class familia extends Model
+class familias extends Model
 {
     protected $table='familia';
     protected $primarykey='idFamilia';
@@ -20,7 +20,10 @@ class familia extends Model
    ];
 
    protected $guarded =[
-
-
    ];
+
+   public function madre (){
+    return $this->belongsTo('App\familias');
+   }
+
 }
