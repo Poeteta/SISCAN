@@ -18,7 +18,7 @@ class Control_Nutricional extends Model
 /*paso 4 - indicar las tablas de la base de datos al modelo*/
 
    protected $fillable = [
-      'Cn_numero',
+      
       'Cn_fecha',
       'Cn_edad',
       'Cn_peso',

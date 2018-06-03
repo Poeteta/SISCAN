@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Control_Nutricional extends Model
+class periodo_programa extends Model
 {
    protected $table='periodo_programa';
    protected $primaryKey='idPeriodo_Programa';
