@@ -541,11 +541,11 @@ Desnutrición Crónica Infantil, son todas las niñas y niños menores de 3 año
     </section>
     <!-- END section -->
 
-    <a href="#" class="cta-link element-animate" data-animate-effect="fadeIn" data-toggle="modal" data-target="#modalAppointment">
+    <!--<a href="#" class="cta-link element-animate" data-animate-effect="fadeIn" data-toggle="modal" data-target="#modalAppointment">
       <span class="heading">Programa Nacional</span>
       <br>
       <span class="sub-heading">Plan Nacional para la reducción y control de la anemia materna infantil y la desnutrición crónica infantil en el Perú: 2017 - 2021</span>
-    </a>
+    </a>-->
     <!-- END cta-link -->
 
     <footer class="site-footer" role="contentinfo">
@@ -575,7 +575,7 @@ Desnutrición Crónica Infantil, son todas las niñas y niños menores de 3 año
             <hr class="border-t">
           </div>
           <div class="col-md-6 col-sm-12 copyright">
-            <p>&copy; 2018 ALPHA NETWORDS - UPEU</p>
+            <p>&copy; 2018 ALPHA TEAM - UPEU</p>
           </div>
           <div class="col-md-6 col-sm-12 text-md-right text-sm-left">
             <a href="https://www.facebook.com/AlphaTeamUPeU/" class="p-2"><span class="fa fa-facebook"></span></a>
