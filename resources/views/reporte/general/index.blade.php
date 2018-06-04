@@ -68,27 +68,28 @@
                     <li class="nav-item">
                         <a class="nav-link active" data-toggle="tab" href="#link7" role="tablist">
                             <i class="now-ui-icons objects_umbrella-13"></i>
-                            Tipo de Familia
+                            Familia
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" data-toggle="tab" href="#link8" role="tablist">
                             <i class="now-ui-icons shopping_shop"></i>
-                            Modo Captación
+                            Evaluación
                         </a>
                     </li>
                 </ul>
                 <div class="tab-content tab-space tab-subcategories">
                     <div class="tab-pane active" id="link7">
 
-<div class="row">
 
+<div class="content">
+<div class="row">
 
 <div class="content table-responsive col-md-4">
 
     <table class="table table-striped">
                             <thead>
-                            <th>Tipo</th>
+                            <th>Tipo de Familia</th>
                             <th>Cantidad</th>
                           
                             </thead>
@@ -127,7 +128,7 @@
         ]);
 
         var options = {
-          title: 'Grafito Tipo',
+          title: 'Tipo de Familia',
           pieHole: 0.4,
         };
 
@@ -136,28 +137,27 @@
       }
     </script>
     @endpush
-    <div id="donutchart" style="width: 600px; height: 400px;"></div>
 
+    <div class="col-lg-8 col-md-8">
+    <div id="donutchart" style="width: 600px; height: 400px;"></div>
+    </div>
     
 
+</div>
+                  </div>
 
-                    </div>
-              
-                </div>
- <!--  cierre de div - link 7 -->
-
-
-                    <div class="tab-pane" id="link8">
-
-                    
 <div class="row">
+<div class="col-lg-12 col-md-12" style="background: rgba(0,0,0,0.5); width: 10px;height: 10px;">
+</div>  
+</div>
 
-
-  <div class="content table-responsive col-md-4">
+<div class="content">
+       <div class="row">
+         <div class="content table-responsive col-md-4 col-lg-4">
 
     <table class="table table-striped">
                             <thead>
-                            <th>Modo</th>
+                            <th>Modo Captación</th>
                             <th>Cantidad</th>
                             </thead>
 
@@ -201,7 +201,7 @@
         ]);
 
         var options = {
-          title: 'Reporte General'
+          title: 'Modo Captación'
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('piechart'));
@@ -210,12 +210,59 @@
       }
     </script>
      @endpush
-    <div id="piechart" style="width: 600px; height: 400px;"></div>
+
+   
+    <div id="piechart" class="col-lg-8 col-md-8" style="width: 60%; height: 400px;"></div>
+
+       </div>       </div>      
+               
+                </div>
+ <!--  cierre de div - link 7 -->
+
+
+                    <div class="tab-pane" id="link8">
+
+ <div class="content">                  
+<div class="row">
+
+
+  <div class="content table-responsive col-md-4">
+
+    <table class="table table-striped">
+                            <thead>
+                            <th>Modo</th>
+                            <th>Cantidad</th>
+                            </thead>
+
+                            <tr>
+                             <td>Hospital</td>
+                             <td>{{$modo_hospital->idfamhos}}</td>
+                            </tr>
+
+                            <tr>
+                             <td>Campaña de salud</td>
+                             <td>{{$modo_campana->idfamcam}}</td>
+                            </tr>
+
+                            <tr>
+                            <td>Visita Domiciliaria</td>
+                             <td>{{$modo_visita->idfamvisita}}</td>
+                            </tr>
+
+                            <tr>
+                             <td>Otros</td>
+                             <td>{{$modo_otros->idfamotros}}</td>
+                            </tr>
+                        </table>
+                        
+
+                    </div>
  
 
 
-
 </div>
+</div> 
+
                     </div>
                      <!--  cierre de div - link 8 -->
 
