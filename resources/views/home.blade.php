@@ -49,7 +49,7 @@
                         <span class="navbar-toggler-bar bar3"></span>
                     </button>
                 </div>
-                <a class="navbar-brand" href="#pablo">FAMILIA Registrar</a>
+                <a class="navbar-brand" href="">FAMILIA Registrar</a>
             </div>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index"
                 aria-expanded="false" aria-label="Toggle navigation">
@@ -487,6 +487,51 @@
                                        </tbody>
                                        </table>
                                     </div>
+                                    <!--SULFATO FERROSO-->
+                                   <div style="border:none; border-top: 2px solid black;" class="row">
+                                        <label class="col-md-10 col-form-label"><strong>SULFATO FERROSO</strong></label>
+                                    </div>
+                                    <div>
+                                    <label class="col-md-10 col-form-label"><strong>Durante el programa</strong></label>
+                                        <table class="table-bordered" id="cpntable">
+                                           <thead>
+                                            <tr>
+                                            <th>Dosis</th>
+                                            <th>Fecha</th>
+                                            
+                                            <th><a class="" type="btn-success" id="addcpn"><i class="now-ui-icons ui-1_simple-add"></i></a></th>
+                                            </tr>
+                                           </thead>
+                                        <tbody>
+                                         <tr>             
+                                          <td>
+                                              <div class="btn-group dropup">
+                                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                    <a class="dropdown-item" href="#">Dosis 12</a>
+                                                    <a class="dropdown-item" href="#">Dosis 11</a>
+                                                    <a class="dropdown-item" href="#">Dosis 10</a>
+                                                    <a class="dropdown-item" href="#">Dosis 9</a>
+                                                    <a class="dropdown-item" href="#">Dosis 8</a>
+                                                    <a class="dropdown-item" href="#">Dosis 7</a>
+                                                    <a class="dropdown-item" href="#">Dosis 6</a>
+                                                    <a class="dropdown-item" href="#">Dosis 5</a>
+                                                    <a class="dropdown-item" href="#">Dosis 4</a>
+                                                    <a class="dropdown-item" href="#">Dosis 3</a>
+                                                    <a class="dropdown-item" href="#">Dosis 2</a>
+                                                    <a class="dropdown-item" href="#">Dosis 1</a>
+                                                    
+                                                </div>
+                                            </div>
+                                          </td>
+                                          <td><input type="date"  class="form-control"></td>
+                                          
+                                         </tr>
+                                       </tbody>
+                                       </table>
+                                    </div>
+
+
 
                                     <div style="border:none; border-top: 2px solid black; border-bottom: 2px solid black;" class="row">
                                         <label class="col-md-10 col-form-label" style="left: 33%;"><strong>PAPANICOLAU</strong></label>
@@ -851,6 +896,7 @@
    
                                    </tbody>
                                    </table>
+                                   <!--Mitronutrientes
                                    <div style="border:none;  border-top: 2px solid black;" class="row">
                                         <label class="col-md-10 col-form-label"><strong>MICRONUTRIENTES (Niños menores 3 años)</strong></label>
                                     </div>
@@ -884,6 +930,88 @@
                                                 <input type="text" class="" style="border: none;border-bottom: 2px dotted black;" placeholder="Motivo">
                                             </div>
                                         </div>
+                                    </div>-->
+                                    <div style="border:none; border-top: 2px solid black;" class="row">
+                                        <label class="col-md-10 col-form-label"><strong>MICRONUTRIENTES</strong></label>
+                                    </div>
+                                    
+                                    <div>
+                                    <label class="col-md-10 col-form-label"><strong>Durante el Programa</strong></label>
+                                        <table class="table-bordered" id="cpntable">
+                                           <thead>
+                                            <tr>
+                                            <th>Dosis</th>
+                                            <th>Fecha</th>
+                                            <th><a class="" type="btn-success" id="addcpn"><i class="now-ui-icons ui-1_simple-add"></i></a></th>
+                                            </tr>
+                                           </thead>
+                                        <tbody>
+                                         <tr>             
+                                          <td>
+                                            <div class="btn-group dropup">
+                                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                    <a class="dropdown-item" href="#">Dosis 12</a>
+                                                    <a class="dropdown-item" href="#">Dosis 11</a>
+                                                    <a class="dropdown-item" href="#">Dosis 10</a>
+                                                    <a class="dropdown-item" href="#">Dosis 9</a>
+                                                    <a class="dropdown-item" href="#">Dosis 8</a>
+                                                    <a class="dropdown-item" href="#">Dosis 7</a>
+                                                    <a class="dropdown-item" href="#">Dosis 6</a>
+                                                    <a class="dropdown-item" href="#">Dosis 5</a>
+                                                    <a class="dropdown-item" href="#">Dosis 4</a>
+                                                    <a class="dropdown-item" href="#">Dosis 3</a>
+                                                    <a class="dropdown-item" href="#">Dosis 2</a>
+                                                    <a class="dropdown-item" href="#">Dosis 1</a>
+                                                    
+                                                </div>
+                                            </div>
+                                        </td>
+                                          <td><input type="date"  class="form-control"></td>
+                                         </tr>
+                                       </tbody>
+                                       </table>
+                                    </div>
+                                    <div style="border:none; border-top: 2px solid black;" class="row">
+                                        <label class="col-md-10 col-form-label"><strong>SULFATO FERROSOs</strong></label>
+                                    </div>
+                                    
+                                    <div>
+                                    <label class="col-md-10 col-form-label"><strong>Durante el Programa</strong></label>
+                                        <table class="table-bordered" id="cpntable">
+                                           <thead>
+                                            <tr>
+                                            <th>Dosis</th>
+                                            <th>Fecha</th>
+                                            <th><a class="" type="btn-success" id="addcpn"><i class="now-ui-icons ui-1_simple-add"></i></a></th>
+                                            </tr>
+                                           </thead>
+                                        <tbody>
+                                         <tr>             
+                                          <td>
+                                              <div class="btn-group dropup">
+                                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                    <a class="dropdown-item" href="#">Dosis 12</a>
+                                                    <a class="dropdown-item" href="#">Dosis 11</a>
+                                                    <a class="dropdown-item" href="#">Dosis 10</a>
+                                                    <a class="dropdown-item" href="#">Dosis 9</a>
+                                                    <a class="dropdown-item" href="#">Dosis 8</a>
+                                                    <a class="dropdown-item" href="#">Dosis 7</a>
+                                                    <a class="dropdown-item" href="#">Dosis 6</a>
+                                                    <a class="dropdown-item" href="#">Dosis 5</a>
+                                                    <a class="dropdown-item" href="#">Dosis 4</a>
+                                                    <a class="dropdown-item" href="#">Dosis 3</a>
+                                                    <a class="dropdown-item" href="#">Dosis 2</a>
+                                                    <a class="dropdown-item" href="#">Dosis 1</a>
+                                                    
+                                                </div>
+                                            </div>
+                                          </td>
+                                          <td><input type="date"  class="form-control"></td>
+                                         </tr>
+                                       </tbody>
+                                       </table>
                                     </div>
                                      <div style="border:none;  border-bottom: 2px solid black; border-top: 2px solid black;" class="row">
                                         <label class="col-md-10 col-form-label" style="left: 30%;"><strong>PROBLEMAS DE SALUD</strong></label>
@@ -928,12 +1056,12 @@
                       
 
                         <div class="card-footer">
-                            <div class="pull-right">
+                            <div class="pull-right" style="float: right;">
                                 <input type='button' class='btn btn-next btn-fill btn-rose btn-wd' name='next' value='Siguiente' />
                                 <input type='button' class='btn btn-finish btn-fill btn-rose btn-wd' name='finish' value='Guardar' />
                             </div>
 
-                            <div class="pull-left">
+                            <div class="pull-left" style="float: left;">
                                 <input type='button' class='btn btn-previous btn-fill btn-default btn-wd' name='previous' value='Anterior' />
                             </div>
                             <div class="clearfix"></div>
