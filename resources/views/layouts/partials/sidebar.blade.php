@@ -57,7 +57,7 @@
                         </a>
             </li>
             <li>
-                <a href="{{url('eva')}}}">
+                <a href="{{url('EvaluarF/EvaluarF')}}">
                             <i class="now-ui-icons design_bullet-list-67"></i>
                             <p>Evaluación</p>
                         </a>
@@ -65,7 +65,7 @@
                         
             </li>
         </ul>
-        @elseif(auth()->User()->Rol_idRol == '1' )
+        @elseif(auth()->User()->Rol_idRol == 1 )
         <ul>
              <li class="active">
                 <a href="{{url('home')}}">
@@ -74,7 +74,7 @@
                         </a>
             </li>
             <li>
-                <a href="{{url('eva')}}}">
+                <a href="{{url('EvaluarF/EvaluarF')}}}">
                             <i class="now-ui-icons design_bullet-list-67"></i>
                             <p>Evaluación</p>
                         </a>

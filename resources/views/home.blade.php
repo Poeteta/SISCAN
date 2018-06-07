@@ -49,7 +49,7 @@
                         <span class="navbar-toggler-bar bar3"></span>
                     </button>
                 </div>
-                <a class="navbar-brand" href="">FAMILIA Registrar</a>
+                <a class="navbar-brand" href="#pablo">FAMILIA Registrar</a>
             </div>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index"
                 aria-expanded="false" aria-label="Toggle navigation">
@@ -96,14 +96,18 @@
     <!-- End Navbar -->
     <div class="panel-header panel-header-sm">
     </div>
+    
     <div class="content">
+        <div class="cold-md-6 mr-automl-auto">
+        <div class="card"> HEE</div>
+    </div>
         <div class="col-md-6 mr-auto ml-auto">
             <!--      Wizard container        -->
             <div class="wizard-container">
                 <div class="card card-wizard" data-color="primary" id="wizardProfile">
-                    <form action="" method="">
-                        <!--        You can switch " data-color="primary" "  with one of the next bright colors: "green", "orange", "red", "blue"       -->
-
+                {!!Form::open(array('url'=>'Familia/store','method'=>'POST','autocomplete'=>'off'))!!} 
+                {{Form::token()}} {{ csrf_field() }}
+          
                         <div class="card-header text-center" data-background-color="orange">
                             <div class="wizard-navigation" id="tabs">
                                 <ul>
@@ -140,7 +144,8 @@
 
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <input type="number" class="" style="border: none;border-bottom: 2px dotted black;">
+                                                <input type="number" style="border: none;border-bottom: 2px dotted black;" 
+                                                name="Fam_numero">
                                             </div>
                                         </div>
                                     </div>
@@ -149,7 +154,8 @@
 
                                         <div class="col-md-9">
                                             <div class="form-group">
-                                                <input type="text" class="" style="border: none;border-bottom: 2px dotted black;">
+                                                <input type="text" style="border: none;border-bottom: 2px dotted black;"
+                                                name="Fam_nom">
                                             </div>
                                         </div>
                                     </div>
@@ -159,7 +165,7 @@
 
                                         <div class="col-md-9">
                                             <div class="form-group">
-                                                <input type="text" class="" style="border: none;border-bottom: 2px dotted black;">
+                                                <input type="text" name="Madre_Apelpa" style="border: none;border-bottom: 2px dotted black;">
                                             </div>
                                         </div>
                                     </div>
@@ -167,7 +173,7 @@
                                         <label class="col-md-3 col-form-label">A.M</label>
                                         <div class="col-md-9">
                                             <div class="form-group">
-                                                <input type="text" class="" style="border: none;border-bottom: 2px dotted black;">
+                                                <input type="text" name="Madre_Apelma" style="border: none;border-bottom: 2px dotted black;">
                                             </div>
                                         </div>
                                     </div>
@@ -177,7 +183,7 @@
 
                                         <div class="col-md-9">
                                             <div class="form-group">
-                                                <input type="text" class="" style="border: none;border-bottom: 2px dotted black;">
+                                                <input type="text" name="Madre_Nom" style="border: none;border-bottom: 2px dotted black;">
                                             </div>
                                         </div>
                                     </div>
@@ -186,7 +192,7 @@
 
                                         <div class="col-md-9">
                                             <div class="form-group">
-                                                <input type="text" class="" style="border: none;border-bottom: 2px dotted black;">
+                                                <input type="text" style="border: none;border-bottom: 2px dotted black;" name="Fam_direccion">
                                             </div>
                                         </div>
                                     </div>
@@ -199,7 +205,7 @@
 
                                         <div class="col-md-9">
                                             <div class="form-group">
-                                                <input type="number" class="" style="border: none;border-bottom: 2px dotted black;">
+                                                <input type="number" name="Madre_HC" style="border: none;border-bottom: 2px dotted black;">
                                             </div>
                                         </div>
                                     </div>
@@ -208,7 +214,7 @@
 
                                         <div class="col-md-9">
                                             <div class="form-group">
-                                                <input type="number" class="" style="border: none;border-bottom: 2px dotted black;">
+                                                <input type="number" name="Madre_DNI" style="border: none;border-bottom: 2px dotted black;">
                                             </div>
                                         </div>
                                     </div>
@@ -221,7 +227,7 @@
                                         <div class="col-sm-10 checkbox-radios">
                                         <div class="form-check form-check-radio">
                                             <label class="form-check-label">
-                                                <input class="form-check-input" type="radio" name="exampleRadio" id="exampleRadios3" value="option1" onclick="show2();">
+                                                <input class="form-check-input" type="radio" name="Tipo_Familia" id="exampleRadios3" value="Nueva" onclick="show2();">
                                                 <span class="form-check-sign"></span>
                                                 Nueva
                                             </label>
@@ -229,14 +235,14 @@
 
                                         <div class="form-check form-check-radio">
                                             <label class="form-check-label">
-                                                <input class="form-check-input" type="radio" name="exampleRadio" id="exampleRadios4" value="option2" onclick="show1();">
+                                                <input class="form-check-input" type="radio" name="Tipo_Familia" id="exampleRadios4" value="Continuadora" onclick="show1();">
                                                 <span class="form-check-sign"></span>
                                                 Continuadora
                                             </label>
                                         </div>
                                         <div class="form-check form-check-radio">
                                             <label class="form-check-label">
-                                                <input class="form-check-input" type="radio" name="exampleRadio" id="exampleRadios4" value="option2" onclick="show2();">
+                                                <input class="form-check-input" type="radio" name="Tipo_Familia" id="exampleRadios4" value="Reingresante" onclick="show2();">
                                                 <span class="form-check-sign"></span>
                                                 Reingresante
                                             </label>
@@ -249,7 +255,7 @@
                                         <div class="col-sm-12 checkbox-radios">
                                         <div class="form-check form-check-radio">
                                             <label class="form-check-label">
-                                                <input class="form-check-input" type="radio" name="exampleRadio2" id="" value="option1">
+                                                <input class="form-check-input" type="radio" name="Modo_Capta" id="" value="Visita ">
                                                 <span class="form-check-sign"></span>
                                                 Visita Hospitalaria
                                             </label>
@@ -257,21 +263,21 @@
 
                                         <div class="form-check form-check-radio">
                                             <label class="form-check-label">
-                                                <input class="form-check-input" type="radio" name="exampleRadio2" id="" value="option2">
+                                                <input class="form-check-input" type="radio" name="Modo_Capta" id="" value="Hospital">
                                                 <span class="form-check-sign"></span>
                                                 Hospital
                                             </label>
                                         </div>
                                         <div class="form-check form-check-radio">
                                             <label class="form-check-label">
-                                                <input class="form-check-input" type="radio" name="exampleRadio2" id="" value="option2">
+                                                <input class="form-check-input" type="radio" name="Modo_Capta" id="" value="Campana">
                                                 <span class="form-check-sign"></span>
                                                 Campaña de Salud
                                             </label>
                                         </div>
                                         <div class="form-check form-check-radio">
                                             <label class="form-check-label">
-                                                <input class="form-check-input" type="radio" name="exampleRadio2" id="" value="option2">
+                                                <input class="form-check-input" type="radio" name="Modo_Capta" id="" value="Otro">
                                                 <span class="form-check-sign"></span>
                                                 Otros
                                             </label>
@@ -294,48 +300,17 @@
                                      <td>Fecha</td>
                                      <td>Fecha</td>
                                     </tr>
+                                    @foreach($sesion as $n)
                                     <tr>
-                                     <td class="text-center">Alimentacion y Nutrición</td>
-                                     <td><input  name="" class="form-control datepicker" id="datepicker"></td>
-                                     <td><input  name="" class="form-control datepicker" id="datepicker2"></td>
-                                     <td><input  name="" class="form-control datepicker" id="datepicker3"></td>
-                                     <td><input  name="" class="form-control datepicker" id="datepicker"></td>
-                                     <td><input  name="" class="form-control datepicker" id="datepicker"></td>
+                                     <td class="text-center">{{ $n->Sesiones_Nom }}<input type="hidden" name="idsesion[]" value="{{ $n->idSesiones }}" ></td>
+                                     <td><input  name="f1[]" class="form-control datepicker" ></td>
+                                     <td><input  name="f2[]" class="form-control datepicker" ></td>
+                                     <td><input  name="f3[]" class="form-control datepicker" ></td>
+                                     <td><input  name="f4[]" class="form-control datepicker" ></td>
+                                     <td><input  name="f5[]" class="form-control datepicker" ></td>
                                     </tr>
-                                  <tr>
-                                  <td>SSyR</td>
-                                  <td><input  name="" class="form-control datepicker" id="datepicker"></td>
-                                     <td><input  name="" class="form-control datepicker" id="datepicker"></td>
-                                     <td><input  name="" class="form-control datepicker" id="datepicker"></td>
-                                     <td><input  name="" class="form-control datepicker" id="datepicker"></td>
-                                     <td><input  name="" class="form-control datepicker" id="datepicker"></td>
-     
-                                   </tr>
-                                  <tr>
-                                  <td>HyA</td>
-                                     <td><input  name="" class="form-control datepicker" id="datepicker"></td>
-                                     <td><input  name="" class="form-control datepicker" id="datepicker"></td>
-                                     <td><input  name="" class="form-control datepicker" id="datepicker"></td>
-                                     <td><input  name="" class="form-control datepicker" id="datepicker"></td>
-                                     <td><input  name="" class="form-control datepicker" id="datepicker"></td>
-                                  </tr>
-                                 <tr>
-                                 <td>HpV</td>
-                                     <td><input  name="" class="form-control datepicker" id="datepicker"></td>
-                                     <td><input  name="" class="form-control datepicker" id="datepicker"></td>
-                                     <td><input  name="" class="form-control datepicker" id="datepicker"></td>
-                                     <td><input  name="" class="form-control datepicker" id="datepicker"></td>
-                                     <td><input  name="" class="form-control datepicker" id="datepicker"></td>
-                                  </tr>
-                                 <tr>
-                                 <td>SV</td>
-                                     <td><input  name="" class="form-control datepicker" id="datepicker"></td>
-                                     <td><input  name="" class="form-control datepicker" id="datepicker"></td>
-                                     <td><input  name="" class="form-control datepicker" id="datepicker"></td>
-                                     <td><input  name="" class="form-control datepicker" id="datepicker"></td>
-                                     <td><input  name="" class="form-control datepicker" id="datepicker"></td>
-                                 </tr>
-                                </tbody>
+                                    @endforeach
+                                  </tbody>
                                 </table>
 
                                 </div>
@@ -353,10 +328,16 @@
                                          <div class="col-md-4">
                                             <div class="form-group">
                                                 <span class="btn-group" data-toggle="buttons-radio">
-                                                <button class="btn btn-default btn-sm">SI</button>
+                                                 <span class="button-checkbox">
+                                                 <button type="button" class="btn btn-default btn-sm" data-color="primary">SI</button>
+                                                 <input type="checkbox" hidden="" value="1" name="Gestante_Inicio" />
+                                                 </span>
                                                 <br>
                                                 <br>
-                                                <button class="btn btn-default btn-sm">NO</button>
+                                                <span class="button-checkbox">
+                                                 <button type="button" class="btn btn-default btn-sm" data-color="primary">NO</button>
+                                                 <input type="checkbox" hidden="" value="0" name="Gestante_Final" />
+                                                 </span>
                                             </span>
                                             </div>
                                         </div>
@@ -364,13 +345,19 @@
                                     <div class="article">
                                        <label>Final</label>
 
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <span class="btn-group" data-toggle="buttons-radio">
-                                                <button class="btn btn-default btn-sm">SI</button>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <span class="btn-group" data-toggle="buttons-radio">
+                                                 <span class="button-checkbox">
+                                                 <button type="button" class="btn btn-default btn-sm" data-color="primary">SI</button>
+                                                 <input type="checkbox" hidden="" value="1" name="Gestante_Final" />
+                                                 </span>
                                                 <br>
                                                 <br>
-                                                <button class="btn btn-default btn-sm">NO</button>
+                                                 <span class="button-checkbox">
+                                                 <button type="button" class="btn btn-default btn-sm" data-color="primary">NO</button>
+                                                 <input type="checkbox" hidden="" value="0" name="Gestante_Final" />
+                                                 </span>
                                             </span>
                                             </div>
                                         </div>
@@ -384,7 +371,7 @@
                                         <div class="col-sm-10 checkbox-radios">
                                         <div class="form-check form-check-radio">
                                             <label class="form-check-label">
-                                                <input class="form-check-input" type="radio" name="exampleRadio" id="exampleRadios3" value="option1">
+                                                <input class="form-check-input" type="radio" name="Planificacion_nom" id="exampleRadios3" value="Natural">
                                                 <span class="form-check-sign"></span>
                                                 Natural
                                             </label>
@@ -392,21 +379,21 @@
 
                                         <div class="form-check form-check-radio">
                                             <label class="form-check-label">
-                                                <input class="form-check-input" type="radio" name="exampleRadio" id="exampleRadios4" value="option2" checked>
+                                                <input class="form-check-input" type="radio" name="Planificacion_nom" id="exampleRadios4" value="Condon">
                                                 <span class="form-check-sign"></span>
                                                 Condon
                                             </label>
                                         </div>
                                         <div class="form-check form-check-radio">
                                             <label class="form-check-label">
-                                                <input class="form-check-input" type="radio" name="exampleRadio" id="exampleRadios4" value="option2" checked>
+                                                <input class="form-check-input" type="radio" name="Planificacion_nom" id="exampleRadios4" value="Pildoras">
                                                 <span class="form-check-sign"></span>
                                                 Pildoras
                                             </label>
                                         </div>
                                            <div class="form-check form-check-radio">
                                             <label class="form-check-label">
-                                                <input class="form-check-input" type="radio" name="exampleRadio" id="exampleRadios4" value="option2" checked>
+                                                <input class="form-check-input" type="radio" name="Planificacion_nom" id="exampleRadios4" value="Inyectables">
                                                 <span class="form-check-sign"></span>
                                                 Inyectables
                                             </label>
@@ -418,7 +405,7 @@
                                         <div class="col-sm-12 checkbox-radios">
                                         <div class="form-check form-check-radio">
                                             <label class="form-check-label">
-                                                <input class="form-check-input" type="radio" name="pfam" id="" value="option1">
+                                                <input class="form-check-input" type="radio" name="Planificacion_nom" id="" value="T de Cobre">
                                                 <span class="form-check-sign"></span>
                                                 T de Cobre
                                             </label>
@@ -426,21 +413,21 @@
 
                                         <div class="form-check form-check-radio">
                                             <label class="form-check-label">
-                                                <input class="form-check-input" type="radio" name="pfam" id="" value="option2" checked>
+                                                <input class="form-check-input" type="radio" name="Planificacion_nom" id="" value="Ligadura de Trompa">
                                                 <span class="form-check-sign"></span>
                                                 Ligadura de Trompa
                                             </label>
                                         </div>
                                         <div class="form-check form-check-radio">
                                             <label class="form-check-label">
-                                                <input class="form-check-input" type="radio" name="pfam" id="" value="option2" checked>
+                                                <input class="form-check-input" type="radio" name="Planificacion_nom" id="" value="Vasectomia">
                                                 <span class="form-check-sign"></span>
                                                 Vasectomia
                                             </label>
                                         </div>
                                         <div class="form-check form-check-radio">
                                             <label class="form-check-label">
-                                                <input class="form-check-input" type="radio" name="pfam" id="" value="option2" checked>
+                                                <input class="form-check-input" type="radio" name="Planificacion_nom" id="" value="Otros">
                                                 <span class="form-check-sign"></span>
                                                 Otros
                                             </label>
@@ -458,12 +445,18 @@
                                         <div class="col-md-9">
                                             <div class="form-group">
                                                 <span class="btn-group" data-toggle="buttons-radio">
-                                                <button class="btn btn-default btn-sm active">SI</button>
+                                                <span class="button-checkbox">
+                                                 <button type="button" class="btn btn-default btn-sm" data-color="primary">SI</button>
+                                                 <input type="checkbox" hidden="" value="1" name="CPN_Antes_pg" />
+                                                 </span>
                                                 <br>
                                                 <br>
-                                                <button class="btn btn-default btn-sm">NO</button>
+                                                <span class="button-checkbox">
+                                                 <button type="button" class="btn btn-default btn-sm" data-color="primary">NO</button>
+                                                 <input type="checkbox" hidden="" value="0" name="CPN_Antes_pg" />
+                                                 </span>
                                             </span>
-                                                <input type="text" class="" style="border: none;border-bottom: 2px dotted black;" placeholder="Cantidad">
+                                                <input type="text" class="" name="CPN_cantidad" style="border: none;border-bottom: 2px dotted black;" placeholder="Cantidad">
                                             </div>
                                         </div>
                                     </div>
@@ -480,58 +473,13 @@
                                            </thead>
                                         <tbody>
                                          <tr>             
-                                          <td><input type="number"  class="form-control"></td>
-                                          <td><input type="date"  class="form-control"></td>
-                                          <td><input type="text"  class="form-control resp"></td>
+                                          <td><input type="number"  name="Cpn_numero[]" class="form-control"></td>
+                                          <td><input type="date" name="Cpn_fecha[]" class="form-control"></td>
+                                          <td><input type="text"  name="Cpn_responsable[]" class="form-control"></td>
                                          </tr>
                                        </tbody>
                                        </table>
                                     </div>
-                                    <!--SULFATO FERROSO-->
-                                   <div style="border:none; border-top: 2px solid black;" class="row">
-                                        <label class="col-md-10 col-form-label"><strong>SULFATO FERROSO</strong></label>
-                                    </div>
-                                    <div>
-                                    <label class="col-md-10 col-form-label"><strong>Durante el programa</strong></label>
-                                        <table class="table-bordered" id="cpntable">
-                                           <thead>
-                                            <tr>
-                                            <th>Dosis</th>
-                                            <th>Fecha</th>
-                                            
-                                            <th><a class="" type="btn-success" id="addcpn"><i class="now-ui-icons ui-1_simple-add"></i></a></th>
-                                            </tr>
-                                           </thead>
-                                        <tbody>
-                                         <tr>             
-                                          <td>
-                                              <div class="btn-group dropup">
-                                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
-                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                    <a class="dropdown-item" href="#">Dosis 12</a>
-                                                    <a class="dropdown-item" href="#">Dosis 11</a>
-                                                    <a class="dropdown-item" href="#">Dosis 10</a>
-                                                    <a class="dropdown-item" href="#">Dosis 9</a>
-                                                    <a class="dropdown-item" href="#">Dosis 8</a>
-                                                    <a class="dropdown-item" href="#">Dosis 7</a>
-                                                    <a class="dropdown-item" href="#">Dosis 6</a>
-                                                    <a class="dropdown-item" href="#">Dosis 5</a>
-                                                    <a class="dropdown-item" href="#">Dosis 4</a>
-                                                    <a class="dropdown-item" href="#">Dosis 3</a>
-                                                    <a class="dropdown-item" href="#">Dosis 2</a>
-                                                    <a class="dropdown-item" href="#">Dosis 1</a>
-                                                    
-                                                </div>
-                                            </div>
-                                          </td>
-                                          <td><input type="date"  class="form-control"></td>
-                                          
-                                         </tr>
-                                       </tbody>
-                                       </table>
-                                    </div>
-
-
 
                                     <div style="border:none; border-top: 2px solid black; border-bottom: 2px solid black;" class="row">
                                         <label class="col-md-10 col-form-label" style="left: 33%;"><strong>PAPANICOLAU</strong></label>
@@ -541,12 +489,18 @@
                                     <div class="article" >
                                        <label>Antes del Programa</label>
                                          <div class="col-md-4">
-                                            <div class="form-group">
-                                                <span class="btn-group" data-toggle="buttons-radio">
-                                                <button class="btn btn-default btn-sm">SI</button>
+                                         <div class="form-group">
+                                            <span class="btn-group" data-toggle="buttons-radio">
+                                                <span class="button-checkbox">
+                                                 <button type="button" class="btn btn-default btn-sm" data-color="primary">SI</button>
+                                                 <input type="checkbox" hidden="" value="1" name="Papanicolau_Antes_pg" />
+                                                 </span>
                                                 <br>
                                                 <br>
-                                                <button class="btn btn-default btn-sm">NO</button>
+                                                <span class="button-checkbox">
+                                                 <button type="button" class="btn btn-default btn-sm" data-color="primary">NO</button>
+                                                 <input type="checkbox" hidden="" value="0" name="Papanicolau_Antes_pg" />
+                                                 </span>
                                             </span>
                                             </div>
                                         </div>
@@ -559,9 +513,11 @@
                                             <div class="form-group">
                                                 <span class="btn-group" data-toggle="buttons-radio">
                                                 <button class="btn btn-default btn-sm">SI</button>
+                                                <input type="checkbox" hidden="" value="1" name="Papanicolau_resul" />
                                                 <br>
                                                 <br>
                                                 <button class="btn btn-default btn-sm">NO</button>
+                                                <input type="checkbox" hidden="" value="0" name="Papanicolau_resul" />
                                             </span>
                                             </div>
                                         </div>
@@ -573,7 +529,7 @@
 
                                         <div class="col-md-8">
                                             <div class="form-group">
-                                                <input type="date" class="" >
+                                                <input type="date" class="" name="Papanicolau_Durante_Fecha">
                                             </div>
                                         </div>
                                     </div>
@@ -586,11 +542,17 @@
                                        <label>Antes del Programa</label>
                                          <div class="col-md-4">
                                             <div class="form-group">
-                                                <span class="btn-group" data-toggle="buttons-radio">
-                                                <button class="btn btn-default btn-sm">SI</button>
+                                             <span class="btn-group" data-toggle="buttons-radio">
+                                                <span class="button-checkbox">
+                                                 <button type="button" class="btn btn-default btn-sm" data-color="primary">SI</button>
+                                                 <input type="checkbox" hidden="" value="1" name="Ex_automama" />
+                                                 </span>
                                                 <br>
                                                 <br>
-                                                <button class="btn btn-default btn-sm">NO</button>
+                                                <span class="button-checkbox">
+                                                 <button type="button" class="btn btn-default btn-sm" data-color="primary">NO</button>
+                                                 <input type="checkbox" hidden="" value="0" name="Ex_automama" />
+                                                 </span>
                                             </span>
                                             </div>
                                         </div>
@@ -601,11 +563,17 @@
 
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <span class="btn-group" data-toggle="buttons-radio">
-                                                <button class="btn btn-default btn-sm">SI</button>
+                                             <span class="btn-group" data-toggle="buttons-radio">
+                                                <span class="button-checkbox">
+                                                 <button type="button" class="btn btn-default btn-sm" data-color="primary">SI</button>
+                                                 <input type="checkbox" hidden="" value="1" name="Ex_automama_sospechoso" />
+                                                 </span>
                                                 <br>
                                                 <br>
-                                                <button class="btn btn-default btn-sm">NO</button>
+                                                <span class="button-checkbox">
+                                                 <button type="button" class="btn btn-default btn-sm" data-color="primary">NO</button>
+                                                 <input type="checkbox" hidden="" value="0" name="Ex_automama_sospechoso" />
+                                                 </span>
                                             </span>
                                             </div>
                                         </div>
@@ -617,7 +585,7 @@
 
                                         <div class="col-md-8">
                                             <div class="form-group">
-                                                <input type="date" class="" >
+                                                <input type="date" class="" name="Ex_automama_Durante_fecha">
                                             </div>
                                         </div>
                                     </div>
@@ -631,10 +599,16 @@
                                          <div class="col-md-2">
                                             <div class="form-group">
                                                 <span class="btn-group" data-toggle="buttons-radio">
-                                                <button class="btn btn-default btn-sm">SI</button>
+                                                 <span class="button-checkbox">
+                                                 <button type="button" class="btn btn-default btn-sm" data-color="primary">SI</button>
+                                                 <input type="checkbox" hidden="" value="1" name="Vacuna_antite_pg" />
+                                                 </span>
                                                 <br>
                                                 <br>
-                                                <button class="btn btn-default btn-sm">NO</button>
+                                                <span class="button-checkbox">
+                                                 <button type="button" class="btn btn-default btn-sm" data-color="primary">NO</button>
+                                                 <input type="checkbox" hidden="" value="0" name="Vacuna_antite_pg" />
+                                                 </span>
                                             </span>
                                             </div>
                                         </div>
@@ -645,7 +619,7 @@
 
                                         <div class="col-md-">
                                             <div class="form-group">
-                                               <input type="text" class="" style="border: none;border-bottom: 2px dotted black;">
+                                               <input type="text" class="" style="border: none;border-bottom: 2px dotted black;" name="Vacuna_cantidad">
                                             </div>
                                         </div>
                                      </div>
@@ -674,13 +648,14 @@
                                         <div class="row">
                                             <div class="col-md-4">
                                                 <div class="form-group">
-                                                    <input type="text" class="form-control" style="border: none;border-bottom: 2px dotted black;">
+                                                    <input type="text" class="form-control" style="border: none;border-bottom: 2px dotted black;" name="Nino_hc[]">
                                                 </div>
                                             </div>
                                             <label class="col-md-2 col-form-label">DNI</label>
                                             <div class="col-md-1">
                                                 <div class="form-group">
-                                                    <input type="text" class="" style="border: none;border-bottom: 2px dotted black;">
+                                                    <input type="text" class="" style="border: none;border-bottom: 2px dotted black;"
+                                                    name="Nino_dni[]">
                                                 </div>
                                             </div>
 
@@ -692,7 +667,8 @@
                                         <label class="col-md-4 col-form-label">Nombres</label>
                                         <div class="col-md-8">
                                             <div class="form-group">
-                                                <input type="text" class="" style="border: none;border-bottom: 2px dotted black;">
+                                                <input type="text" class="" style="border: none;border-bottom: 2px dotted black;"
+                                                name="Nino_nom[]">
                                             </div>
                                         </div>
                                 </div>
@@ -703,15 +679,15 @@
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <input type="date" class="" style="border: none;border-bottom: 2px dotted black;">
+                                                    <input type="date" class="" style="border: none;border-bottom: 2px dotted black;" name="Nino_fechan[]">
                                                 </div>
                                             </div>
                                             <label class="col-md-2 col-form-label">Sexo</label>
                                             <div class="col-md-1">
                                                 <div class="form-group">
-                                                    <select>
-                                                        <option>M</option>
-                                                        <option>F</option>
+                                                    <select name="Nino_sexo[]">
+                                                        <option value="M">M</option>
+                                                        <option value="F">F</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -726,150 +702,34 @@
                                         <label class="col-md-10 col-form-label" style="left: 30%;"><strong>VACUNAS (Según Edad)</strong></label>
                                     </div>
                                     <br>
+                                    @foreach($chequeo as $che)
+                                    @if ($che->Tipo_Chequeo_idTipo_Chequeo == 1)
                                     <div class="row">
 
-                                        <label class="col-md-3 col-form-label">Tuberculosis</label>
+                                        <label class="col-md-3 col-form-label">{{$che->Chequeo_nom}}</label>
 
                                         <div class="col-md-9">
                                             <div class="form-group">
-                                                <span class="btn-group" data-toggle="buttons-radio">
-                                                <button class="btn btn-default btn-sm">SI</button>
+                                              <span class="btn-group" data-toggle="buttons-radio">
+                                                <span class="button-checkbox">
+                                                 <button type="button" class="btn btn-default btn-sm" data-color="primary">SI</button>
+                                                 <input type="checkbox" hidden="" value="1" name="" />
+                                                 </span>
                                                 <br>
                                                 <br>
-                                                <button class="btn btn-default btn-sm">NO</button>
+                                                <span class="button-checkbox">
+                                                 <button type="button" class="btn btn-default btn-sm" data-color="primary">NO</button>
+                                                 <input type="checkbox" hidden="" value="0" />
+                                                 </span>
                                             </span>
-                                                <input type="date" class="" style="border: none;border-bottom: 2px dotted black;">
+                                                <input type="hidden" name="Chequeo_idChequeo[]" value="{{$che->idChequeo}}">
+                                                <input type="date" class="" name="Nino_hcfecha[]" style="border: none;border-bottom: 2px dotted black;">
                                             </div>
                                         </div>
                                     </div>
-                                       <div class="row">
-
-                                        <label class="col-md-3 col-form-label">Hepatitis B</label>
-
-                                        <div class="col-md-9">
-                                            <div class="form-group">
-                                                <span class="btn-group" data-toggle="buttons-radio">
-                                                <button class="btn btn-default btn-sm">SI</button>
-                                                <br>
-                                                <br>
-                                                <button class="btn btn-default btn-sm">NO</button>
-                                            </span>
-                                                <input type="date" class="" style="border: none;border-bottom: 2px dotted black;">
-                                            </div>
-                                        </div>
-                                    </div>
-                                       <div class="row">
-
-                                        <label class="col-md-3 col-form-label">Pentavalente</label>
-
-                                        <div class="col-md-9">
-                                            <div class="form-group">
-                                                <span class="btn-group" data-toggle="buttons-radio">
-                                                <button class="btn btn-default btn-sm">SI</button>
-                                                <br>
-                                                <br>
-                                                <button class="btn btn-default btn-sm">NO</button>
-                                            </span>
-                                                <input type="date" class="" style="border: none;border-bottom: 2px dotted black;">
-                                            </div>
-                                        </div>
-                                    </div>
-                                       <div class="row">
-
-                                        <label class="col-md-3 col-form-label">Polio</label>
-
-                                        <div class="col-md-9">
-                                            <div class="form-group">
-                                                <span class="btn-group" data-toggle="buttons-radio">
-                                                <button class="btn btn-default btn-sm active">SI</button>
-                                                <br>
-                                                <br>
-                                                <button class="btn btn-default btn-sm">NO</button>
-                                            </span>
-                                                <input type="date" class="" style="border: none;border-bottom: 2px dotted black;">
-                                            </div>
-                                        </div>
-                                    </div>
-                                       <div class="row">
-
-                                        <label class="col-md-3 col-form-label">Rotavirus</label>
-
-                                        <div class="col-md-9">
-                                            <div class="form-group">
-                                                <span class="btn-group" data-toggle="buttons-radio">
-                                                <button class="btn btn-default btn-sm">SI</button>
-                                                <br>
-                                                <br>
-                                                <button class="btn btn-default btn-sm">NO</button>
-                                            </span>
-                                                <input type="date" class="" style="border: none;border-bottom: 2px dotted black;">
-                                            </div>
-                                        </div>
-                                    </div>
-                                       <div class="row">
-
-                                        <label class="col-md-3 col-form-label">Neumococo</label>
-
-                                        <div class="col-md-9">
-                                            <div class="form-group">
-                                                <span class="btn-group" data-toggle="buttons-radio">
-                                                <button class="btn btn-default btn-sm">SI</button>
-                                                <br>
-                                                <br>
-                                                <button class="btn btn-default btn-sm">NO</button>
-                                            </span>
-                                                <input type="date" class="" style="border: none;border-bottom: 2px dotted black;">
-                                            </div>
-                                        </div>
-                                    </div>
-                                      <div class="row">
-
-                                        <label class="col-md-3 col-form-label">SPR</label>
-
-                                        <div class="col-md-9">
-                                            <div class="form-group">
-                                                <span class="btn-group" data-toggle="buttons-radio">
-                                                <button class="btn btn-default btn-sm">SI</button>
-                                                <br>
-                                                <br>
-                                                <button class="btn btn-default btn-sm">NO</button>
-                                            </span>
-                                                <input type="date" class="" style="border: none;border-bottom: 2px dotted black;">
-                                            </div>
-                                        </div>
-                                    </div>
-                                     <div class="row">
-
-                                        <label class="col-md-3 col-form-label">DPT</label>
-
-                                        <div class="col-md-9">
-                                            <div class="form-group">
-                                                <span class="btn-group" data-toggle="buttons-radio">
-                                                <button class="btn btn-default btn-sm">SI</button>
-                                                <br>
-                                                <br>
-                                                <button class="btn btn-default btn-sm">NO</button>
-                                            </span>
-                                                <input type="date" class="" style="border: none;border-bottom: 2px dotted black;">
-                                            </div>
-                                        </div>
-                                    </div>
-                                     <div class="row">
-
-                                        <label class="col-md-3 col-form-label">Amarilica</label>
-
-                                        <div class="col-md-9">
-                                            <div class="form-group">
-                                                <span class="btn-group" data-toggle="buttons-radio">
-                                                <button class="btn btn-default btn-sm">SI</button>
-                                                <br>
-                                                <br>
-                                                <button class="btn btn-default btn-sm">NO</button>
-                                            </span>
-                                                <input type="date" class="" style="border: none;border-bottom: 2px dotted black;">
-                                            </div>
-                                        </div>
-                                    </div>
+                                    @endif
+                                    @endforeach
+                        
                                     <div style="border:none; border-bottom:2px solid black; border-top: 2px solid black;" class="row">
                                         <label class="col-md-10 col-form-label" style="left: 30%;"><strong>CONTROL NUTRICIONAL</strong></label>
                                     </div>
@@ -886,133 +746,45 @@
                                       </thead>
                                    <tbody>
                                       <tr>
-                                         <th><input type="number" name="" class="form-control"></th>
-                                         <td><input type="number" name="" class="form-control"></td>
-                                         <td><input type="number" name="" class="form-control"></td>
-                                         <td><input type="number" name="" class="form-control"></td>
-                                         <td><input type="number" name="" class="form-control"></td>
-                                         <td><input type="text" name="" class="form-control"></td>
+                                         <th><input type="text" name="Cn_fecha[]" class="form-control"></th>
+                                         <td><input type="number" name="Cn_edad[]" class="form-control"></td>
+                                         <td><input type="number" name="Cn_peso[]" class="form-control"></td>
+                                         <td><input type="number" name="Cn_talla[]" class="form-control"></td>
+                                         <td><input type="number" name="Cn_hb_hto[]" class="form-control"></td>
+                                         <td><input type="text" name="Cn_Observacion[]" class="form-control"></td>
                                       </tr>
    
                                    </tbody>
                                    </table>
-                                   <!--Mitronutrientes
                                    <div style="border:none;  border-top: 2px solid black;" class="row">
                                         <label class="col-md-10 col-form-label"><strong>MICRONUTRIENTES (Niños menores 3 años)</strong></label>
                                     </div>
+                               
                                     <div class="row">
 
-                                        <label class="col-md-3 col-form-label">¿Recibe Micronutrientes?</label>
-
                                         <div class="col-md-9">
-                                            <div class="form-group">
-                                                <span class="btn-group" data-toggle="buttons-radio">
-                                                <button class="btn btn-default btn-sm">SI</button>
-                                                <br>
-                                                <br>
-                                                <button class="btn btn-default btn-sm">NO</button>
-                                            </span>
+                                              <div class="form-group">
+                                                <button type="button" class="btn btn-default btn-sm" data-color="primary"
+                                                data-toggle="modal" data-target="#noticeModal">Abrir Micronutrientes</button>
                                             </div>
                                         </div>
+                                        @include('Familia.RegistroFamilia')
+
+
                                     </div>
-                                    <div class="row">
-
-                                        <label class="col-md-3 col-form-label">Abandono</label>
-
+                                    <div style="border:none;  border-top: 2px solid black;" class="row">
+                                        <label class="col-md-10 col-form-label"><strong>SULFATO FERROSO</strong></label>
+                                    </div>
+                                     <div class="row">
                                         <div class="col-md-9">
-                                            <div class="form-group">
-                                                <span class="btn-group" data-toggle="buttons-radio">
-                                                <button class="btn btn-default btn-sm active">SI</button>
-                                                <br>
-                                                <br>
-                                                <button class="btn btn-default btn-sm">NO</button>
-                                            </span>
-                                                <input type="text" class="" style="border: none;border-bottom: 2px dotted black;" placeholder="Motivo">
+                                              <div class="form-group">
+                                                <button type="button" class="btn btn-default btn-sm" data-color="primary"
+                                                data-toggle="modal" data-target="#sulfatoModal">Abrir Sulfato</button>
                                             </div>
                                         </div>
-                                    </div>-->
-                                    <div style="border:none; border-top: 2px solid black;" class="row">
-                                        <label class="col-md-10 col-form-label"><strong>MICRONUTRIENTES</strong></label>
-                                    </div>
-                                    
-                                    <div>
-                                    <label class="col-md-10 col-form-label"><strong>Durante el Programa</strong></label>
-                                        <table class="table-bordered" id="cpntable">
-                                           <thead>
-                                            <tr>
-                                            <th>Dosis</th>
-                                            <th>Fecha</th>
-                                            <th><a class="" type="btn-success" id="addcpn"><i class="now-ui-icons ui-1_simple-add"></i></a></th>
-                                            </tr>
-                                           </thead>
-                                        <tbody>
-                                         <tr>             
-                                          <td>
-                                            <div class="btn-group dropup">
-                                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
-                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                    <a class="dropdown-item" href="#">Dosis 12</a>
-                                                    <a class="dropdown-item" href="#">Dosis 11</a>
-                                                    <a class="dropdown-item" href="#">Dosis 10</a>
-                                                    <a class="dropdown-item" href="#">Dosis 9</a>
-                                                    <a class="dropdown-item" href="#">Dosis 8</a>
-                                                    <a class="dropdown-item" href="#">Dosis 7</a>
-                                                    <a class="dropdown-item" href="#">Dosis 6</a>
-                                                    <a class="dropdown-item" href="#">Dosis 5</a>
-                                                    <a class="dropdown-item" href="#">Dosis 4</a>
-                                                    <a class="dropdown-item" href="#">Dosis 3</a>
-                                                    <a class="dropdown-item" href="#">Dosis 2</a>
-                                                    <a class="dropdown-item" href="#">Dosis 1</a>
-                                                    
-                                                </div>
-                                            </div>
-                                        </td>
-                                          <td><input type="date"  class="form-control"></td>
-                                         </tr>
-                                       </tbody>
-                                       </table>
-                                    </div>
-                                    <div style="border:none; border-top: 2px solid black;" class="row">
-                                        <label class="col-md-10 col-form-label"><strong>SULFATO FERROSOs</strong></label>
-                                    </div>
-                                    
-                                    <div>
-                                    <label class="col-md-10 col-form-label"><strong>Durante el Programa</strong></label>
-                                        <table class="table-bordered" id="cpntable">
-                                           <thead>
-                                            <tr>
-                                            <th>Dosis</th>
-                                            <th>Fecha</th>
-                                            <th><a class="" type="btn-success" id="addcpn"><i class="now-ui-icons ui-1_simple-add"></i></a></th>
-                                            </tr>
-                                           </thead>
-                                        <tbody>
-                                         <tr>             
-                                          <td>
-                                              <div class="btn-group dropup">
-                                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
-                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                    <a class="dropdown-item" href="#">Dosis 12</a>
-                                                    <a class="dropdown-item" href="#">Dosis 11</a>
-                                                    <a class="dropdown-item" href="#">Dosis 10</a>
-                                                    <a class="dropdown-item" href="#">Dosis 9</a>
-                                                    <a class="dropdown-item" href="#">Dosis 8</a>
-                                                    <a class="dropdown-item" href="#">Dosis 7</a>
-                                                    <a class="dropdown-item" href="#">Dosis 6</a>
-                                                    <a class="dropdown-item" href="#">Dosis 5</a>
-                                                    <a class="dropdown-item" href="#">Dosis 4</a>
-                                                    <a class="dropdown-item" href="#">Dosis 3</a>
-                                                    <a class="dropdown-item" href="#">Dosis 2</a>
-                                                    <a class="dropdown-item" href="#">Dosis 1</a>
-                                                    
-                                                </div>
-                                            </div>
-                                          </td>
-                                          <td><input type="date"  class="form-control"></td>
-                                         </tr>
-                                       </tbody>
-                                       </table>
-                                    </div>
+                                     </div>
+                                  
+
                                      <div style="border:none;  border-bottom: 2px solid black; border-top: 2px solid black;" class="row">
                                         <label class="col-md-10 col-form-label" style="left: 30%;"><strong>PROBLEMAS DE SALUD</strong></label>
                                     </div>
@@ -1038,12 +810,12 @@
                                       </thead>
                                    <tbody>
                                       <tr>
-                                         <th><input type="text" name="" class="form-control"></th>
-                                         <td><input type="date" name="" class="form-control "></td>
-                                         <td><input type="radio" name="" class="form-control"></td>
-                                         <td><input type="radio" name="" class="form-control"></td>
-                                         <td><input type="radio" name="" class="form-control"></td>
-                                         <td><input type="radio" name="" class="form-control"></td>
+                                         <th><input type="text" name="Problema_enfermedad[]" class="form-control"></th>
+                                         <td><input type="date" name="Problema_fecha[]" class="form-control "></td>
+                                         <td><input type="radio" name="Problema_atendido[]" value="1" id="atendido" class="form-control"></td>
+                                         <td><input type="radio" name="Problema_atendido[]" value="0" id="atendido" class="form-control"></td>
+                                         <td><input type="radio" name="Problema_hospital[]" value="Huaycan" id="Problema" class="form-control"></td>
+                                         <td><input type="radio" name="Problema_hospital[]" value="Otro" id="Problema" class="form-control"></td>
                                       </tr>
    
                                    </tbody>
@@ -1053,21 +825,22 @@
 
                             </div>
                         </div>
+                        @include('Familia.RegistroSulfato')
                       
 
                         <div class="card-footer">
-                            <div class="pull-right" style="float: right;">
-                                <input type='button' class='btn btn-next btn-fill btn-rose btn-wd' name='next' value='Siguiente' />
-                                <input type='button' class='btn btn-finish btn-fill btn-rose btn-wd' name='finish' value='Guardar' />
+                            <div class="pull-right">
+                                <input type='button' style="float: right;" 
+                            class='btn btn-next btn-fill btn-rose btn-wd' name='next' value='Siguiente' />
+                                <input type='submit' style="float: right;"  class='btn btn-finish btn-fill btn-rose btn-wd' name='finish' value='Guardar' />
                             </div>
 
-                            <div class="pull-left" style="float: left;">
-                                <input type='button' class='btn btn-previous btn-fill btn-default btn-wd' name='previous' value='Anterior' />
+                            <div class="pull-left">
+                                <input type='button' style="float: left;" class='btn btn-previous btn-fill btn-default btn-wd' name='previous' value='Anterior' />
                             </div>
                             <div class="clearfix"></div>
                         </div>
-
-                    </form>
+                    {!!Form::close()!!}
                 </div>
             </div>
             <!-- wizard container -->
@@ -1103,6 +876,73 @@
    function show2(){
      document.getElementById('divcap').style.display = 'block';
    }
+  </script>
+  <script type="text/javascript">
+      $(function () {
+    $('.button-checkbox').each(function () {
+
+        // Settings
+        var $widget = $(this),
+            $button = $widget.find('button'),
+            $checkbox = $widget.find('input:checkbox'),
+            color = $button.data('color'),
+            settings = {
+                on: {
+                    icon: 'glyphicon glyphicon-check'
+                },
+                off: {
+                    icon: 'glyphicon glyphicon-unchecked'
+                }
+            };
+
+        // Event Handlers
+        $button.on('click', function () {
+            $checkbox.prop('checked', !$checkbox.is(':checked'));
+            $checkbox.triggerHandler('change');
+            updateDisplay();
+        });
+        $checkbox.on('change', function () {
+            updateDisplay();
+        });
+
+        // Actions
+        function updateDisplay() {
+            var isChecked = $checkbox.is(':checked');
+
+            // Set the button's state
+            $button.data('state', (isChecked) ? "on" : "off");
+
+            // Set the button's icon
+            $button.find('.state-icon')
+                .removeClass()
+                .addClass('state-icon ' + settings[$button.data('state')].icon);
+
+            // Update the button's color
+            if (isChecked) {
+                $button
+                    .removeClass('btn-default')
+                    .addClass('btn-' + color + ' active');
+            }
+            else {
+                $button
+                    .removeClass('btn-' + color + ' active')
+                    .addClass('btn-default');
+            }
+        }
+
+        // Initialization
+        function init() {
+
+            updateDisplay();
+
+            // Inject the icon if applicable
+            if ($button.find('.state-icon').length == 0) {
+                $button.prepend('<i class="state-icon ' + settings[$button.data('state')].icon + '"></i> ');
+            }
+        }
+        init();
+    });
+});
   </script>
   
     @endsection
