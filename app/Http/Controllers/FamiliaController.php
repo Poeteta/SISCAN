@@ -9,8 +9,18 @@ use Response;
 use Illuminate\Support\Collection;
 use App\familia;
 use App\HC_Madre;
+use App\historial_familia;
 use App\nino;
 use App\madre;
+use App\Sesiones;
+use App\Fecha_Sesion;
+use App\hca_Madre;
+use App\PlanFamiliar;
+use App\Cpn;
+use App\Control_Nutricional;
+use App\hc_nino;
+use App\Problemas_Salud;  
+
 class FamiliaController extends Controller
 {
     /**
@@ -49,96 +59,173 @@ class FamiliaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-  {
-
-      try{
+    public function store(Request $request){
+      try {
 
 
           DB::beginTransaction();
-          $madre = new madre;
-          $madre->Madre_apel_pa=$request->get('Madre_apel_pa');
-          $madre->Madre_apel_ma=$request->get('Madre_apel_ma');
-          $madre->Madre_nombre=$request->get('Madre_nombre');
-          $madre->Madre_DNI=$request->get('Madre_DNI');
-          $madre->Madre_fecha=$request->get('Madre_fecha'); 
-          $madre->Madre_direccion=$request->get('Madre_direccion');
-          $madre->Madre_telf=$request->get('Madre_telf');
-          $madre->distrito_idDistrito=$request->get('distrito_idDistrito');
-          $madre->save();
 
-
-
-          $familia = new familia;
-          $familia->Codigo_fam=$request->get('Codigo_fam');
-          $familia->Nom_fam=$request->get('Nom_fam');
-          $familia->Respons_fam=$request->get('Respons_fam');
-          $familia->Tipo_Familia_idTipo_Familia=$request->get('Tipo_Familia_idTipo_Familia');
-          $familia->Modo_Captacion_idModo_Captacion=$request->get('Modo_Captacion_idModo_Captacion');
-          $familia->Programa_idPrograma=2;
-          $familia->Madre_idMadre=$madre->idMadre;
+          $familia = new familia();
+          $familia->Fam_numero=$request->get('Fam_numero');
+          $familia->Fam_nom=$request->get('Fam_nom');
+          $familia->Fam_direccion=$request->get('Fam_direccion');
           $familia->save();
 
+          /* Get last id inserted */
+          $id = $familia->id;
+          /* */
 
-          $HC_Madre = NEW HC_Madre;
-          $HC_Madre->Gestante_Inicio=$request->get('Gestante_Inicio');
-          $HC_Madre->CPN_Antes=$request->get('CPN_Antes');
-          $HC_Madre->Cantidad_CPN_Antes=$request->get('Cantidad_CPN_Antes');
-          $HC_Madre->Papanicolau_Antes=$request->get('Papanicolau_Antes');
-          $HC_Madre->Examen_Mamas_Antes=$request->get('Examen_Mamas_Antes');
-          $HC_Madre->Vacuna_Antitetanica_Antes=$request->get('Vacuna_Antitetanica_Antes');
-          $HC_Madre->Cantidad_Vacunas_Antitetanicas=$request->get('Cantidad_Vacunas_Antitetanicas');
-          $HC_Madre->Planificacion_Familiar_idPlanificacion_Familiar=$request->get('Planificacion_Familiar_idPlanificacion_Familiar');
-          $HC_Madre->Madre_idMadre=$madre->idMadre;
-          $HC_Madre->save();
+          $historial = new historial_familia();
+          $historial->Tipo_Familia=$request->get('Tipo_Familia');
+          $historial->Modo_Capta=$request->get('Modo_Capta');
+          $historial->Periodo_Programa_idPeriodo_Programa=1;
+          $historial->Familia_idFamilia = $id;
+          $historial->save();
 
+          $madre = new madre();
+          $madre->Madre_Apelpa=$request->get('Madre_Apelpa');
+          $madre->Madre_Apelma=$request->get('Madre_Apelma');
+          $madre->Madre_Nom=$request->get('Madre_Nom');
+          $madre->Madre_DNI=$request->get('Madre_DNI');
+          $madre->Madre_HC=$request->get('Madre_HC');
+          $madre->Familia_idFamilia = $id;
+          $madre->save();
 
-          $Nino_HC = $request->get('Nino_HC');
-          $Nino_DNI = $request->get('Nino_DNI');
-          $Nino_sexo = $request->get('Nino_sexo');
-          $Nino_apelpa = $request->get('Nino_apelpa');
-          $Nino_apelma = $request->get('Nino_apelma');
-          $Nino_nombre = $request->get('Nino_nombre');
-          $Nino_fecha = $request->get('Nino_fecha');
+          $idsesion = $request->get('idsesion');
+          $Sesion_f1= $request->get('f1');
+          $Sesion_f2= $request->get('f2');
+          $Sesion_f3= $request->get('f3');
+          $Sesion_f4= $request->get('f4');
+          $Sesion_f5= $request->get('f5');
 
           $cont = 0;
-          while ($cont < count($Nino_HC)) {
-            $nino = new nino();
-            $nino->Madre_idMadre = $madre->idMadre;
-            $nino->Nino_HC = $Nino_HC[$cont];
-            $nino->Nino_DNI = $Nino_DNI[$cont];
-            $nino->Nino_sexo = $Nino_sexo[$cont];
-            $nino->Nino_apelpa = $Nino_apelpa[$cont];
-            $nino->Nino_apelma = $Nino_apelma[$cont];
-            $nino->Nino_nombre = $Nino_nombre[$cont];
-            $nino->Nino_fecha = $Nino_fecha[$cont];
-            $nino->save();
+          while ($cont < count($idsesion)) {
+            $sesion = new Fecha_Sesion();
+            $sesion->Familia_idFamilia = $id;
+            $sesion->Sesiones_idSesiones = $idsesion[$cont];
+            $sesion->Fechaun = $Sesion_f1[$cont];
+            $sesion->Fechase = $Sesion_f2[$cont];
+            $sesion->Fechatre = $Sesion_f3[$cont];
+            $sesion->Fechacu = $Sesion_f4[$cont];
+            $sesion->Fechaqui = $Sesion_f5[$cont];
+            $sesion->save();
             $cont = $cont+1;
           }
-       
-        
-          DB::commit();
 
-      }catch(\Exception $e)
-     
-      {
-        DB::rollback();
-        echo($e);
+
+          /* Get last id inserted from madre*/
+          $idma = $madre->idMadre;
+          /* */
+
+          $historialmadre = new hca_Madre();
+          $historialmadre->Gestante_Inicio=$request->get('Gestante_Inicio');
+          $historialmadre->Gestante_Final=$request->get('Gestante_Final');
+          $historialmadre->Planificacion_idPlanificacion=1;
+          $historialmadre->CPN_Antes_Pg=$request->get('CPN_Antes_pg');
+          $historialmadre->CPN_cantidad=$request->get('CPN_cantidad');
+          $historialmadre->Papanicolau_Antes_pg=$request->get('Papanicolau_Antes_pg');
+          $historialmadre->Papanicolau_Durante_Fecha=$request->get('Papanicolau_Durante_Fecha');
+          $historialmadre->Papanicolau_resul=$request->get('Papanicolau_resul');
+          $historialmadre->Ex_automama=$request->get('Ex_automama');
+          $historialmadre->Ex_automama_Durante_fecha=$request->get('Ex_automama_Durante_fecha');
+          $historialmadre->Ex_automama_sospechoso=$request->get('Ex_automama_sospechoso');
+          $historialmadre->Vacuna_antite_pg=$request->get('Vacuna_antite_pg');
+          $historialmadre->Vacuna_cantidad=$request->get('Vacuna_cantidad');
+          $historialmadre->Madre_idMadre=$idma;
+          $historialmadre->save();
+
+          $cpn_numero = $request->get('Cpn_numero');
+          $cpn_fecha = $request->get('Cpn_fecha');
+          $cpn_responsable = $request->get('Cpn_responsable');
+          $conta = 0;
+          while ($conta < count($cpn_numero)){
+            $cpn = new cpn();
+            $cpn->Madre_idMadre=$idma;
+            $cpn->cpn_numero=$cpn_numero[$conta];
+            $cpn->cpn_fecha=$cpn_fecha[$conta];
+            $cpn->cpn_responsable=$cpn_responsable[$conta];
+            $cpn->save();
+            $conta = $conta+1;
+          }
+
+          /* Insert side of Kids */
+          $Nino_nom = $request->get('Nino_nom');
+          $Nino_hc = $request->get('Nino_hc');
+          $Nino_dni= $request->get('Nino_dni');
+          $Nino_fechan = $request->get('Nino_fechan');
+          $Nino_sexo = $request->get('Nino_sexo');
+          $contan=0;
+          while ($contan < count($Nino_hc)) {
+             $nino = new nino();
+             $nino->Familia_idFamilia = $id;
+             $nino->Nino_nom = $Nino_nom[$contan];
+             $nino->Nino_hc = $Nino_hc[$contan];
+             $nino->Nino_dni = $Nino_dni[$contan];
+             $nino->Nino_fechan = $Nino_fechan[$contan];
+             $nino->Nino_sexo = $Nino_sexo[$contan];
+             $nino->save();
+             $contan = $contan+1;
+
+             /* Get last id from nino */
+             $idni = $nino->idNino;
+             
+             /* Insert Vacunas on View, Chequeo on Database */
+             $inp = Input::all();
+             for ($idh = 0; $idh < count(Input::get('Chequeo_idChequeo')); $idh++)
+             {
+                $hcnino = new hc_nino;
+                $hcnino->Nino_idNino = $idni;
+                $hcnino->Nino_hcfecha = $inp['Nino_hcfecha'][$idh];
+                $hcnino->Chequeo_idChequeo = $inp['Chequeo_idChequeo'][$idh];
+                $hcnino->save();
+             }
+
+             $input = Input::all();
+             for ($idx = 0; $idx < count(Input::get('Cn_fecha')); $idx++)
+             {
+                $cn = new Control_Nutricional;
+                $cn->Nino_idNino = $idni;
+                $cn->Cn_fecha = $input['Cn_fecha'][$idx];
+                $cn->Cn_edad = $input['Cn_edad'][$idx];
+                $cn->Cn_peso = $input['Cn_peso'][$idx];
+                $cn->Cn_talla = $input['Cn_talla'][$idx];
+                $cn->Cn_hb_hto = $input['Cn_hb_hto'][$idx];
+                $cn->Cn_Observacion = $input['Cn_Observacion'][$idx];
+                $cn->save();
+             }
+             
+             $inpp = Input::all();
+             for ($i=0; $i < count(Input::get('Problema_fecha')); $i++) { 
+                $prosa = new Problemas_Salud();
+                $prosa->Nino_idNino = $idni;
+                $prosa->Problema_fecha = $inpp['Problema_fecha'][$i];
+                $prosa->Problema_atendido = $inpp['Problema_atendido'][$i];
+                $prosa->Problema_enfermedad = $inpp['Problema_enfermedad'][$i];
+                $prosa->Problema_hospital = $inpp['Problema_hospital'][$i];
+                $prosa->save();
+             }
+
+
+          }
+          
+    
+         DB::commit();
+        
+      } catch (Exception $e) {
+         DB::rollback();
+         echo($e);
       }
-      return view ('home');
-     }
-    public function show($id)
-    {
-        $family=DB::table('familia as f')
-        ->join('madre as m','m.idMadre','=','f.Madre_idMadre')
-        ->select('f.Codigo_fam','f.Nom_fam','f.Respons_fam','f.Tipo_Familia_idTipo_Familia','m.idMadre','f.Modo_Captacion_idModo_Captacion',
-        'm.Madre_nombre','m.Madre_apel_pa','m.Madre_fecha','m.distrito_idDistrito')
-        ->where('f.idFamilia','=',$id)
-        ->first();
 
-        $ninos=DB::table('nino')->get();  
+     }
+
+    public function show()
+    {
+        $sesion=DB::table('sesiones')->get();  
+        $fam=DB::table('familia')->get();
+        $chequeo=DB::table('chequeo')->get();
+  
         
-        return view ("evaluacion.resultado",["family"=>$family,"ninos"=>$ninos]);
+        return view ("home",["sesion"=>$sesion,"chequeo"=>$chequeo]);
     }
   
     public function edit($id)

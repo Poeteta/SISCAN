@@ -14,7 +14,7 @@ class nino extends Model
       
       'Nino_nom',
       'Nino_hc',
-      'Nino_dni'
+      'Nino_dni',
       'Nino_fechan',
       'Nino_sexo',
       'Familia_idFamilia',

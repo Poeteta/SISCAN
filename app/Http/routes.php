@@ -50,13 +50,14 @@ Route::resource('reporte/madre','ReporteMadreController');
     Route::PATCH('evaluacion/resultado/{idFamilia}','FamiliaController@show');
     Route::PATCH('evaluacion/generalinfon/{idMadre}','ninoController@show');
     Route::resource('/home', 'HomeController');
+    Route::get('home', 'FamiliaController@show');
 
     Route::resource('evaluacion/resultado','FamiliaController');
     Route::resource('evaluacion/generalinfon','ninoController');
     Route::resource('Familia','NuevaFamiliaController');
     Route::resource('/Carnet-Familiar','CarnetFammiliarController');
     Route::resource('/Carnet-General','CarnetFammiliarController');
-    Route::resource('/eva','evalController');
+    
 
 });
 
@@ -72,7 +73,7 @@ Route::resource('reporte/madre','ReporteMadreController');
  Route::resource('seguridad/UserSafety','ProfileController');
  Route::resource('Herramientas','toolsController');
  Route::resource('dhome','DHomeController');
-
+Route::resource('/EvaluarF/EvaluarF','EvaluarFController');
 
  Route::resource('resumen','ResumenController');
 
