@@ -81,7 +81,7 @@
                                                    
                                                 @foreach($evalu as $ev)
                                                 
-                                              @if($eval->idFamilia == $ev->Familia_idFamilia && $ev->Estado_Eval == 1) <!-- aqui igualo la id -->
+                                              @if($ev->Estado_Eval == 1) <!-- aqui igualo la id -->
                                               <?php $bandera++ ?>
                                               @endif
                                               @if($eval->idFamilia == $ev->Familia_idFamilia && $ev->Estado_Eval == 0) <!-- aqui igualo la id -->
