@@ -58,7 +58,9 @@
     <!-- End Navbar -->
     <div class="panel-header panel-header-sm">
     </div>
-    <div class="content">
+
+      @include('reporte.general.search')
+
         <div class="card card-plain card-subcategories">
             <div class="card-body ">
                 <!--
@@ -68,27 +70,37 @@
                     <li class="nav-item">
                         <a class="nav-link active" data-toggle="tab" href="#link7" role="tablist">
                             <i class="now-ui-icons objects_umbrella-13"></i>
-                            Tipo de Familia
+                            Familia
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" data-toggle="tab" href="#link8" role="tablist">
                             <i class="now-ui-icons shopping_shop"></i>
-                            Modo Captación
+                            Evaluación
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#link9" role="tablist">
+                            <i class="now-ui-icons shopping_shop"></i>
+                            Asistencias
                         </a>
                     </li>
                 </ul>
                 <div class="tab-content tab-space tab-subcategories">
                     <div class="tab-pane active" id="link7">
 
+
+<div class="content">
+
+  
+
 <div class="row">
-
-
+  
 <div class="content table-responsive col-md-4">
 
     <table class="table table-striped">
                             <thead>
-                            <th>Tipo</th>
+                            <th>Tipo de Familia</th>
                             <th>Cantidad</th>
                           
                             </thead>
@@ -127,7 +139,7 @@
         ]);
 
         var options = {
-          title: 'Grafito Tipo',
+          title: 'Tipo de Familia',
           pieHole: 0.4,
         };
 
@@ -136,28 +148,26 @@
       }
     </script>
     @endpush
+ 
     <div id="donutchart" style="width: 600px; height: 400px;"></div>
-
+  
     
 
+</div>
+                  </div>
 
-                    </div>
-              
-                </div>
- <!--  cierre de div - link 7 -->
-
-
-                    <div class="tab-pane" id="link8">
-
-                    
 <div class="row">
+<div class="col-lg-12 col-md-12" style="background: rgba(0,0,0,0.5); width: 10px;height: 10px;">
+</div>  
+</div>
 
-
-  <div class="content table-responsive col-md-4">
+<div class="content">
+       <div class="row">
+         <div class="content table-responsive col-md-4 col-lg-4">
 
     <table class="table table-striped">
                             <thead>
-                            <th>Modo</th>
+                            <th>Modo Captación</th>
                             <th>Cantidad</th>
                             </thead>
 
@@ -201,28 +211,227 @@
         ]);
 
         var options = {
-          title: 'Reporte General'
+          title: 'Modo Captación'
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('piechart'));
 
         chart.draw(data, options);
+
       }
+        
+    </script>
     </script>
      @endpush
-    <div id="piechart" style="width: 600px; height: 400px;"></div>
+
+   
+    <div id="piechart"  style="width: 600px; height: 400px;"></div>
+
+       </div>       </div>      
+               
+                </div>
+ <!--  cierre de div - link 7 -->
+
+ <!--  INICIO de div - link 8 -->
+                    <div class="tab-pane active" id="link8">
+
+ <div class="content">                  
+<div class="row">
+
+
+  <div class="content table-responsive col-md-4">
+
+    <table class="table table-striped">
+                            <thead>
+                            <th>Familias</th>
+                            <th>Cantidad</th>
+                            </thead>
+
+                            <tr>
+                             <td>Aprobadas</td>
+                             <td>{{$evaluacionapro->idcontevalapro}}</td>
+                            </tr>
+
+                            <tr>
+                             <td>Desaprobadas</td>
+                             <td>{{$evaluaciondesapro->idcontevaldesapro}}</td>
+                            </tr>
+
+                     
+                        </table>
+                        
+
+                    </div>
  
 
+@push('scripts')
+<script type="text/javascript">
+  
+   google.charts.load("current", {packages:['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ["Element", "Cantidad", { role: "style" } ],
+        ["Familias Aprobadas", {{$evaluacionapro->idcontevalapro}} , "#b87333"],
+        ["Familias Desaprobadas", {{$evaluaciondesapro->idcontevaldesapro}} , "silver"],
+      ]);
 
+      var view = new google.visualization.DataView(data);
+      view.setColumns([0, 1,
+                       { calc: "stringify",
+                         sourceColumn: 1,
+                         type: "string",
+                         role: "annotation" },
+                       2]);
 
+      var options = {
+        title: "Gráfico de barras",
+        width: 600,
+        height: 400,
+        bar: {groupWidth: "65%"},
+        legend: { position: "none" },
+      };
+      var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
+      chart.draw(view, options);
+$('#link8').removeClass('active');
+
+  }
+
+</script>
+@endpush
+<div id="columnchart_values" style="width: 600px; height: 400px;"></div>
 </div>
+
+
+
+
+</div> 
+
                     </div>
                      <!--  cierre de div - link 8 -->
+<!--  INICIO de div - link 9 -->
+                    <div class="tab-pane active" id="link9">
 
+ <div class="content">                  
+<div class="row">
+
+
+  <div class="content table-responsive col-md-4">
+
+    <table class="table table-striped">
+                            <thead>
+                            <th>Familias</th>
+                            <th>Cantidad</th>
+                            </thead>
+
+                            <tr>
+                             <td>Alimentación y nutrición</td>
+                             <td>{{$asisalimentacion->idcontSeAli}}</td>
+                            </tr>
+
+                            <tr>
+                             <td>Salud sexual y reproductiva</td>
+                             <td>{{$asissexrepro->idcontSesexpro}}</td>
+                            </tr>
+
+                            <tr>
+                             <td>Higiene y ambiente</td>
+                             <td>{{$asishigiambi->idcontSehigiambi}}</td>
+                            </tr>
+
+                            <tr>
+                             <td>Habilidades para la vida</td>
+                             <td>{{$asishabivida->idcontSehabivida}}</td>
+                            </tr>
+
+                            <tr>
+                             <td>Seguridad Vial</td>
+                             <td>{{$asissegvial->idcontSesegvial}}</td>
+                            </tr>
+
+                            <tr>
+                             <td>Salud mental</td>
+                             <td>{{$asissalmen->idcontSesalmen}}</td>
+                            </tr>
+
+                            <tr>
+                             <td>TBC</td>
+                             <td>{{$asisTBC->idcontSesTBC}}</td>
+                            </tr>
+
+                            <tr>
+                             <td>Dengue/ Chikungunya</td>
+                             <td>{{$asisdengue->idcontSesdengue}}</td>
+                            </tr>
+
+                            <tr>
+                             <td>Actividad física</td>
+                             <td>{{$asisactifisi->idcontSesactifisi}}</td>
+                            </tr>
+
+                     
+                        </table>
+                        
+
+                    </div>
+ 
+
+@push('scripts')
+<script type="text/javascript">
+   google.charts.load("current", {packages:['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+      var data3 = google.visualization.arrayToDataTable([
+        ["Element", "Cantidad", { role: "style" } ],
+        ["Alimentación y nutrición", {{$asisalimentacion->idcontSeAli}}, "#b87333"],
+        ["Salud sexual y reproductiva", {{$asissexrepro->idcontSesexpro}}, "silver"],
+        ["Higiene y ambiente", {{$asishigiambi->idcontSehigiambi}}, "gold"],
+        ["Habilidades para la vida", {{$asishabivida->idcontSehabivida}}, "color: #e5e4e2"],
+        ["Seguridad Vial", {{$asissegvial->idcontSesegvial}}, "#b87333"],
+        ["Salud mental", {{$asissalmen->idcontSesalmen}}, "stroke-color: #703593; stroke-width: 4; fill-color: #C5A5CF"],
+        ["TBC", {{$asisTBC->idcontSesTBC}}, "color: gray"],
+        ["Dengue/ Chikungunya", {{$asisdengue->idcontSesdengue}}, "#76A7FA"],
+        ["Actividad física", {{$asisactifisi->idcontSesactifisi}}, "gold"]
+      ]);
+      var view3 = new google.visualization.DataView(data3);
+      view3.setColumns([0, 1,
+                       { calc: "stringify",
+                         sourceColumn: 1,
+                         type: "string",
+                         role: "annotation" },
+                       2]);
+
+      var options3 = {
+        title: "Reporte de Asistencias",
+        width: 600,
+        height: 400,
+        bar: {groupWidth: "75%"},
+        legend: { position: "none" },
+      };
+      var chart3 = new google.visualization.ColumnChart(document.getElementById("columnchart_values3"));
+      chart3.draw(view3, options3);
+      $('#link9').removeClass('active');
+  }
+</script>
+@endpush
+
+  <div id="columnchart_values3" style="width: 600px; height: 400px;"></div>
+</div>
+
+   
+</div>
+
+
+
+</div> 
+
+                    </div>
+
+                    <!-- Cierre de link9 -->
                 </div>
             </div>
         </div>
-    </div>
+    
 </div>
 
 <script>

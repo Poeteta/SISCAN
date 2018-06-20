@@ -125,13 +125,7 @@
                                 <span class="sidebar-normal"> Reporte General </span>
                             </a>
                         </li>
-                      
-                        <li >
-                            <a href="{{url('reporte/familiar')}}">
-                                <span class="sidebar-mini-icon">EF</span>
-                                <span class="sidebar-normal"> Reporte Familiar </span>
-                            </a>
-                        </li>
+
                       
                         <li >
                             <a href="{{url('reporte/madre')}}">
