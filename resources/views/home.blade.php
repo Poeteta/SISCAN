@@ -97,10 +97,7 @@
     <div class="panel-header panel-header-sm">
     </div>
     
-    <div class="content">
-        <div class="cold-md-6 mr-automl-auto">
-        <div class="card"> HEE</div>
-    </div>
+    
         <div class="col-md-6 mr-auto ml-auto">
             <!--      Wizard container        -->
             <div class="wizard-container">
