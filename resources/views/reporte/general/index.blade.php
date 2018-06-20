@@ -58,7 +58,9 @@
     <!-- End Navbar -->
     <div class="panel-header panel-header-sm">
     </div>
-    <div class="content">
+
+      @include('reporte.general.search')
+
         <div class="card card-plain card-subcategories">
             <div class="card-body ">
                 <!--
@@ -77,29 +79,18 @@
                             Evaluación
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#link9" role="tablist">
+                            <i class="now-ui-icons shopping_shop"></i>
+                            Asistencias
+                        </a>
+                    </li>
                 </ul>
                 <div class="tab-content tab-space tab-subcategories">
                     <div class="tab-pane active" id="link7">
 
 
 <div class="content">
-<div class="row" >
-    
-        <!-- INICIO SELECT   -->
-        
-<div class="form-group">
-  <div class="col-lg-12">
-    <label for="selectperiodotipo" >Seleccionar periodo de programa</label>
-    <select class="form-control"  id="selectperiodotipo">
-      <option>Seleccionar periodo</option>
-      @foreach($periodo_programa as $pepro)
-      <option id="{{$pepro->idPeriodo_Programa}}">{{$pepro->Fecha_Inicio}}</option>
-      @endforeach
-    </select>
-  </div> </div>
-
-                        <!-- FIN SELECT  -->
-  </div>
 
   
 
@@ -157,10 +148,9 @@
       }
     </script>
     @endpush
-
-    <div class="col-lg-8 col-md-8">
+ 
     <div id="donutchart" style="width: 600px; height: 400px;"></div>
-    </div>
+  
     
 
 </div>
@@ -227,12 +217,15 @@
         var chart = new google.visualization.PieChart(document.getElementById('piechart'));
 
         chart.draw(data, options);
+
       }
+        
+    </script>
     </script>
      @endpush
 
    
-    <div id="piechart" class="col-lg-8 col-md-8" style="width: 600px; height: 400px;"></div>
+    <div id="piechart"  style="width: 600px; height: 400px;"></div>
 
        </div>       </div>      
                
@@ -240,7 +233,7 @@
  <!--  cierre de div - link 7 -->
 
  <!--  INICIO de div - link 8 -->
-                    <div class="tab-pane" id="link8">
+                    <div class="tab-pane active" id="link8">
 
  <div class="content">                  
 <div class="row">
@@ -256,23 +249,15 @@
 
                             <tr>
                              <td>Aprobadas</td>
-                             <td>{{$modo_hospital->idfamhos}}</td>
+                             <td>{{$evaluacionapro->idcontevalapro}}</td>
                             </tr>
 
                             <tr>
                              <td>Desaprobadas</td>
-                             <td>{{$modo_campana->idfamcam}}</td>
+                             <td>{{$evaluaciondesapro->idcontevaldesapro}}</td>
                             </tr>
 
-                            <tr>
-                            <td>Faltantes</td>
-                             <td>{{$modo_visita->idfamvisita}}</td>
-                            </tr>
-
-                            <tr>
-                             <td>Otros</td>
-                             <td>{{$modo_otros->idfamotros}}</td>
-                            </tr>
+                     
                         </table>
                         
 
@@ -287,10 +272,8 @@
     function drawChart() {
       var data = google.visualization.arrayToDataTable([
         ["Element", "Cantidad", { role: "style" } ],
-        ["Copper", 8.94, "#b87333"],
-        ["Silver", 10.49, "silver"],
-        ["Gold", 19.30, "gold"],
-        ["Platinum", 21.45, "color: #e5e4e2"]
+        ["Familias Aprobadas", {{$evaluacionapro->idcontevalapro}} , "#b87333"],
+        ["Familias Desaprobadas", {{$evaluaciondesapro->idcontevaldesapro}} , "silver"],
       ]);
 
       var view = new google.visualization.DataView(data);
@@ -305,11 +288,13 @@
         title: "Gráfico de barras",
         width: 600,
         height: 400,
-        bar: {groupWidth: "95%"},
+        bar: {groupWidth: "65%"},
         legend: { position: "none" },
       };
       var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
       chart.draw(view, options);
+$('#link8').removeClass('active');
+
   }
 
 </script>
@@ -324,11 +309,129 @@
 
                     </div>
                      <!--  cierre de div - link 8 -->
+<!--  INICIO de div - link 9 -->
+                    <div class="tab-pane active" id="link9">
 
+ <div class="content">                  
+<div class="row">
+
+
+  <div class="content table-responsive col-md-4">
+
+    <table class="table table-striped">
+                            <thead>
+                            <th>Familias</th>
+                            <th>Cantidad</th>
+                            </thead>
+
+                            <tr>
+                             <td>Alimentación y nutrición</td>
+                             <td>{{$asisalimentacion->idcontSeAli}}</td>
+                            </tr>
+
+                            <tr>
+                             <td>Salud sexual y reproductiva</td>
+                             <td>{{$asissexrepro->idcontSesexpro}}</td>
+                            </tr>
+
+                            <tr>
+                             <td>Higiene y ambiente</td>
+                             <td>{{$asishigiambi->idcontSehigiambi}}</td>
+                            </tr>
+
+                            <tr>
+                             <td>Habilidades para la vida</td>
+                             <td>{{$asishabivida->idcontSehabivida}}</td>
+                            </tr>
+
+                            <tr>
+                             <td>Seguridad Vial</td>
+                             <td>{{$asissegvial->idcontSesegvial}}</td>
+                            </tr>
+
+                            <tr>
+                             <td>Salud mental</td>
+                             <td>{{$asissalmen->idcontSesalmen}}</td>
+                            </tr>
+
+                            <tr>
+                             <td>TBC</td>
+                             <td>{{$asisTBC->idcontSesTBC}}</td>
+                            </tr>
+
+                            <tr>
+                             <td>Dengue/ Chikungunya</td>
+                             <td>{{$asisdengue->idcontSesdengue}}</td>
+                            </tr>
+
+                            <tr>
+                             <td>Actividad física</td>
+                             <td>{{$asisactifisi->idcontSesactifisi}}</td>
+                            </tr>
+
+                     
+                        </table>
+                        
+
+                    </div>
+ 
+
+@push('scripts')
+<script type="text/javascript">
+   google.charts.load("current", {packages:['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+      var data3 = google.visualization.arrayToDataTable([
+        ["Element", "Cantidad", { role: "style" } ],
+        ["Alimentación y nutrición", {{$asisalimentacion->idcontSeAli}}, "#b87333"],
+        ["Salud sexual y reproductiva", {{$asissexrepro->idcontSesexpro}}, "silver"],
+        ["Higiene y ambiente", {{$asishigiambi->idcontSehigiambi}}, "gold"],
+        ["Habilidades para la vida", {{$asishabivida->idcontSehabivida}}, "color: #e5e4e2"],
+        ["Seguridad Vial", {{$asissegvial->idcontSesegvial}}, "#b87333"],
+        ["Salud mental", {{$asissalmen->idcontSesalmen}}, "stroke-color: #703593; stroke-width: 4; fill-color: #C5A5CF"],
+        ["TBC", {{$asisTBC->idcontSesTBC}}, "color: gray"],
+        ["Dengue/ Chikungunya", {{$asisdengue->idcontSesdengue}}, "#76A7FA"],
+        ["Actividad física", {{$asisactifisi->idcontSesactifisi}}, "gold"]
+      ]);
+      var view3 = new google.visualization.DataView(data3);
+      view3.setColumns([0, 1,
+                       { calc: "stringify",
+                         sourceColumn: 1,
+                         type: "string",
+                         role: "annotation" },
+                       2]);
+
+      var options3 = {
+        title: "Reporte de Asistencias",
+        width: 600,
+        height: 400,
+        bar: {groupWidth: "75%"},
+        legend: { position: "none" },
+      };
+      var chart3 = new google.visualization.ColumnChart(document.getElementById("columnchart_values3"));
+      chart3.draw(view3, options3);
+      $('#link9').removeClass('active');
+  }
+</script>
+@endpush
+
+  <div id="columnchart_values3" style="width: 600px; height: 400px;"></div>
+</div>
+
+   
+</div>
+
+
+
+</div> 
+
+                    </div>
+
+                    <!-- Cierre de link9 -->
                 </div>
             </div>
         </div>
-    </div>
+    
 </div>
 
 <script>
