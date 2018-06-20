@@ -83,8 +83,28 @@
 
 
 <div class="content">
-<div class="row">
+<div class="row" >
+    
+        <!-- INICIO SELECT   -->
+        
+<div class="form-group">
+  <div class="col-lg-12">
+    <label for="selectperiodotipo" >Seleccionar periodo de programa</label>
+    <select class="form-control"  id="selectperiodotipo">
+      <option>Seleccionar periodo</option>
+      @foreach($periodo_programa as $pepro)
+      <option id="{{$pepro->idPeriodo_Programa}}">{{$pepro->Fecha_Inicio}}</option>
+      @endforeach
+    </select>
+  </div> </div>
 
+                        <!-- FIN SELECT  -->
+  </div>
+
+  
+
+<div class="row">
+  
 <div class="content table-responsive col-md-4">
 
     <table class="table table-striped">
@@ -212,14 +232,14 @@
      @endpush
 
    
-    <div id="piechart" class="col-lg-8 col-md-8" style="width: 60%; height: 400px;"></div>
+    <div id="piechart" class="col-lg-8 col-md-8" style="width: 600px; height: 400px;"></div>
 
        </div>       </div>      
                
                 </div>
  <!--  cierre de div - link 7 -->
 
-
+ <!--  INICIO de div - link 8 -->
                     <div class="tab-pane" id="link8">
 
  <div class="content">                  
@@ -230,22 +250,22 @@
 
     <table class="table table-striped">
                             <thead>
-                            <th>Modo</th>
+                            <th>Familias</th>
                             <th>Cantidad</th>
                             </thead>
 
                             <tr>
-                             <td>Hospital</td>
+                             <td>Aprobadas</td>
                              <td>{{$modo_hospital->idfamhos}}</td>
                             </tr>
 
                             <tr>
-                             <td>Campaña de salud</td>
+                             <td>Desaprobadas</td>
                              <td>{{$modo_campana->idfamcam}}</td>
                             </tr>
 
                             <tr>
-                            <td>Visita Domiciliaria</td>
+                            <td>Faltantes</td>
                              <td>{{$modo_visita->idfamvisita}}</td>
                             </tr>
 
@@ -259,8 +279,47 @@
                     </div>
  
 
+@push('scripts')
+<script type="text/javascript">
+  
+   google.charts.load("current", {packages:['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ["Element", "Cantidad", { role: "style" } ],
+        ["Copper", 8.94, "#b87333"],
+        ["Silver", 10.49, "silver"],
+        ["Gold", 19.30, "gold"],
+        ["Platinum", 21.45, "color: #e5e4e2"]
+      ]);
 
+      var view = new google.visualization.DataView(data);
+      view.setColumns([0, 1,
+                       { calc: "stringify",
+                         sourceColumn: 1,
+                         type: "string",
+                         role: "annotation" },
+                       2]);
+
+      var options = {
+        title: "Gráfico de barras",
+        width: 600,
+        height: 400,
+        bar: {groupWidth: "95%"},
+        legend: { position: "none" },
+      };
+      var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
+      chart.draw(view, options);
+  }
+
+</script>
+@endpush
+<div id="columnchart_values" style="width: 600px; height: 400px;"></div>
 </div>
+
+
+
+
 </div> 
 
                     </div>
