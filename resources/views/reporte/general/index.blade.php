@@ -221,7 +221,6 @@
       }
         
     </script>
-    </script>
      @endpush
 
    
@@ -272,8 +271,8 @@
     function drawChart() {
       var data = google.visualization.arrayToDataTable([
         ["Element", "Cantidad", { role: "style" } ],
-        ["Familias Aprobadas", {{$evaluacionapro->idcontevalapro}} , "#b87333"],
-        ["Familias Desaprobadas", {{$evaluaciondesapro->idcontevaldesapro}} , "silver"],
+        ["Familias Aprobadas", {{$evaluacionapro->idcontevalapro}} , "#4285f4"],
+        ["Familias Desaprobadas", {{$evaluaciondesapro->idcontevaldesapro}} , "#db4437"],
       ]);
 
       var view = new google.visualization.DataView(data);
