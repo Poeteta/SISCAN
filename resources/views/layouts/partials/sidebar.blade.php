@@ -12,35 +12,35 @@
     </div>
     <div class="sidebar-wrapper">
         <div class="user">
-            <div class="photo">
-        
-            </div>
+                        
             <div class="info">
                 <a data-toggle="collapse" href="#collapseExample" class="collapsed">
-                    <span>
+                    <i class="now-ui-icons business_badge"></i>
+                    <span style="text-align: center;">
                         {{ Auth::user()->Nom_user}}
                         <b class="caret"></b>
                     </span>
                 </a>
-                <div class="clearfix"></div>
+                
                 <div class="collapse" id="collapseExample">
+
                     <ul class="nav">
                         <li>
                             <a href="#">
-                                <span class="sidebar-mini-icon">MP</span>
-                                <span class="sidebar-normal">Mi Perfil</span>
+                                
+                                <span class="sidebar-normal" style="text-align: center;">Mi Perfil</span>
                             </a>
                         </li>
                         <li>
                             <a href="#">
-                                <span class="sidebar-mini-icon">EP</span>
-                                <span class="sidebar-normal">Editar Perfil</span>
+                                
+                                <span class="sidebar-normal" style="text-align: center;">Editar Perfil</span>
                             </a>
                         </li>
                         <li>
                             <a href="{{url('/logout')}}">
-                                <span class="sidebar-mini-icon">C</span>
-                                <span class="sidebar-normal">Cerrar Sesión</span>
+                                
+                                <span class="sidebar-normal" style="text-align: center;">Cerrar Sesión</span>
                             </a>
                         </li>
                     </ul>
@@ -52,20 +52,43 @@
           
             <li class="active">
                 <a href="{{url('home')}}">
-                            <i class="now-ui-icons design_app"></i>
-                            <p>Menu Principal</p>
+                            <i class="now-ui-icons design-2_ruler-pencil"></i>
+                            <p>Registrar Carnet</p>
                         </a>
             </li>
             <li>
-                <a href="{{url('eva')}}}">
-                            <i class="now-ui-icons education_atom"></i>
+                <a href="{{url('EvaluarF/EvaluarF')}}">
+                            <i class="now-ui-icons design_bullet-list-67"></i>
+                            <p>Evaluación</p>
+                        </a>
+            
+                        
+            </li>
+        </ul>
+        @elseif(auth()->User()->Rol_idRol == 1 )
+        <ul>
+             <li class="active">
+                <a href="{{url('home')}}">
+                            <i class="now-ui-icons design-2_ruler-pencil"></i>
+                            <p>Registrar Carnet</p>
+                        </a>
+            </li>
+            <li>
+                <a href="{{url('EvaluarF/EvaluarF')}}}">
+                            <i class="now-ui-icons design_bullet-list-67"></i>
                             <p>Evaluación</p>
                         </a>
             </li>
             <li>
-                <a href="{{url('Herramientas/')}}">
-                            <i class="now-ui-icons ui-1_settings-gear-63"></i>
-                            <p>Herramientas</p>
+                <a href="{{url('/')}}">
+                            <i class="now-ui-icons business_chart-bar-32"></i>
+                            <p>Reportes</p>
+                        </a>
+            </li>
+            <li>
+                <a href="{{url('/')}}">
+                            <i class="now-ui-icons files_single-copy-04"></i>
+                            <p>Registro General</p>
                         </a>
             </li>
         </ul>
@@ -102,13 +125,7 @@
                                 <span class="sidebar-normal"> Reporte General </span>
                             </a>
                         </li>
-                      
-                        <li >
-                            <a href="{{url('reporte/familiar')}}">
-                                <span class="sidebar-mini-icon">EF</span>
-                                <span class="sidebar-normal"> Reporte Familiar </span>
-                            </a>
-                        </li>
+
                       
                         <li >
                             <a href="{{url('reporte/madre')}}">

@@ -57,6 +57,10 @@ Route::resource('reporte/madre','ReporteMadreController');
     Route::resource('Familia','NuevaFamiliaController');
     Route::resource('/Carnet-Familiar','CarnetFammiliarController');
     Route::resource('/Carnet-General','CarnetFammiliarController');
+/* HEAD
+=======
+    
+>>>>>>> 415a58e82799f00d43b6aad160a3bd9221e6829b*/
 
 });
 
@@ -75,7 +79,7 @@ Route::resource('reporte/madre','ReporteMadreController');
  Route::resource('seguridad/UserSafety','ProfileController');
  Route::resource('Herramientas','toolsController');
  Route::resource('dhome','DHomeController');
-
+Route::resource('/EvaluarF/EvaluarF','EvaluarFController');
 
  Route::resource('resumen','ResumenController');
 

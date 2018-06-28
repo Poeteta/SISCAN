@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class HC_Madre extends Model
+class hca_Madre extends Model
 {
    protected $table='hca_madre';
    protected $primaryKey='idHCA_Madre';

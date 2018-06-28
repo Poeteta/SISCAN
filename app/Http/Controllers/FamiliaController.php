@@ -15,8 +15,9 @@ use App\madre;
 use App\Sesiones;
 use App\Fecha_Sesion;
 use App\PlanFamiliar;
-use App\Cpn;
 use App\ControlNutricional;
+use App\hca_Madre;
+use App\Cpn;
 use App\hc_nino;
 use App\Problemas_Salud;  
 
@@ -64,7 +65,11 @@ class FamiliaController extends Controller
 
           DB::beginTransaction();
 
+
           $familia = new familias();
+
+          $familia = new familia();
+
           $familia->Fam_numero=$request->get('Fam_numero');
           $familia->Fam_nom=$request->get('Fam_nom');
           $familia->Fam_direccion=$request->get('Fam_direccion');
@@ -102,7 +107,10 @@ class FamiliaController extends Controller
             $sesion = new Fecha_Sesion();
             $sesion->Familia_idFamilia = $id;
             $sesion->Sesiones_idSesiones = $idsesion[$cont];
+
             $sesion->Sesion_Fecha = $Sesion_f1[$cont];
+            $sesion->Fechaun = $Sesion_f1[$cont];
+
             $sesion->Fechase = $Sesion_f2[$cont];
             $sesion->Fechatre = $Sesion_f3[$cont];
             $sesion->Fechacu = $Sesion_f4[$cont];
@@ -116,7 +124,11 @@ class FamiliaController extends Controller
           $idma = $madre->idMadre;
           /* */
 
+
           $historialmadre = new HC_Madre();
+
+          $historialmadre = new hca_Madre();
+
           $historialmadre->Gestante_Inicio=$request->get('Gestante_Inicio');
           $historialmadre->Gestante_Final=$request->get('Gestante_Final');
           $historialmadre->Planificacion_idPlanificacion=1;
@@ -182,7 +194,11 @@ class FamiliaController extends Controller
              $input = Input::all();
              for ($idx = 0; $idx < count(Input::get('Cn_fecha')); $idx++)
              {
+
                 $cn = new ControlNutricional;
+
+                $cn = new Control_Nutricional;
+
                 $cn->Nino_idNino = $idni;
                 $cn->Cn_fecha = $input['Cn_fecha'][$idx];
                 $cn->Cn_edad = $input['Cn_edad'][$idx];
