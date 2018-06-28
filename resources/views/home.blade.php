@@ -96,7 +96,11 @@
     <!-- End Navbar -->
     <div class="panel-header panel-header-sm">
     </div>
+    
     <div class="content">
+        <div class="cold-md-6 mr-automl-auto">
+        <div class="card"> HEE</div>
+    </div>
         <div class="col-md-6 mr-auto ml-auto">
             <!--      Wizard container        -->
             <div class="wizard-container">
@@ -367,7 +371,7 @@
                                         <div class="col-sm-10 checkbox-radios">
                                         <div class="form-check form-check-radio">
                                             <label class="form-check-label">
-                                                <input class="form-check-input" type="radio" name="exampleRadio" id="exampleRadios3" value="Natural">
+                                                <input class="form-check-input" type="radio" name="Planificacion_nom" id="exampleRadios3" value="Natural">
                                                 <span class="form-check-sign"></span>
                                                 Natural
                                             </label>
@@ -469,9 +473,9 @@
                                            </thead>
                                         <tbody>
                                          <tr>             
-                                          <td><input type="number"  name="Cpn_numero" class="form-control"></td>
-                                          <td><input type="date" name="Cpn_fecha" class="form-control"></td>
-                                          <td><input type="text"  name="Cpn_Responsable" class="form-control resp"></td>
+                                          <td><input type="number"  name="Cpn_numero[]" class="form-control"></td>
+                                          <td><input type="date" name="Cpn_fecha[]" class="form-control"></td>
+                                          <td><input type="text"  name="Cpn_responsable[]" class="form-control"></td>
                                          </tr>
                                        </tbody>
                                        </table>
@@ -489,13 +493,13 @@
                                             <span class="btn-group" data-toggle="buttons-radio">
                                                 <span class="button-checkbox">
                                                  <button type="button" class="btn btn-default btn-sm" data-color="primary">SI</button>
-                                                 <input type="checkbox" hidden="" value="" />
+                                                 <input type="checkbox" hidden="" value="1" name="Papanicolau_Antes_pg" />
                                                  </span>
                                                 <br>
                                                 <br>
                                                 <span class="button-checkbox">
                                                  <button type="button" class="btn btn-default btn-sm" data-color="primary">NO</button>
-                                                 <input type="checkbox" hidden="" value="" />
+                                                 <input type="checkbox" hidden="" value="0" name="Papanicolau_Antes_pg" />
                                                  </span>
                                             </span>
                                             </div>
@@ -509,9 +513,11 @@
                                             <div class="form-group">
                                                 <span class="btn-group" data-toggle="buttons-radio">
                                                 <button class="btn btn-default btn-sm">SI</button>
+                                                <input type="checkbox" hidden="" value="1" name="Papanicolau_resul" />
                                                 <br>
                                                 <br>
                                                 <button class="btn btn-default btn-sm">NO</button>
+                                                <input type="checkbox" hidden="" value="0" name="Papanicolau_resul" />
                                             </span>
                                             </div>
                                         </div>
@@ -523,7 +529,7 @@
 
                                         <div class="col-md-8">
                                             <div class="form-group">
-                                                <input type="date" class="" >
+                                                <input type="date" class="" name="Papanicolau_Durante_Fecha">
                                             </div>
                                         </div>
                                     </div>
@@ -539,13 +545,13 @@
                                              <span class="btn-group" data-toggle="buttons-radio">
                                                 <span class="button-checkbox">
                                                  <button type="button" class="btn btn-default btn-sm" data-color="primary">SI</button>
-                                                 <input type="checkbox" hidden="" value="" />
+                                                 <input type="checkbox" hidden="" value="1" name="Ex_automama" />
                                                  </span>
                                                 <br>
                                                 <br>
                                                 <span class="button-checkbox">
                                                  <button type="button" class="btn btn-default btn-sm" data-color="primary">NO</button>
-                                                 <input type="checkbox" hidden="" value="" />
+                                                 <input type="checkbox" hidden="" value="0" name="Ex_automama" />
                                                  </span>
                                             </span>
                                             </div>
@@ -560,13 +566,13 @@
                                              <span class="btn-group" data-toggle="buttons-radio">
                                                 <span class="button-checkbox">
                                                  <button type="button" class="btn btn-default btn-sm" data-color="primary">SI</button>
-                                                 <input type="checkbox" hidden="" value="" />
+                                                 <input type="checkbox" hidden="" value="1" name="Ex_automama_sospechoso" />
                                                  </span>
                                                 <br>
                                                 <br>
                                                 <span class="button-checkbox">
                                                  <button type="button" class="btn btn-default btn-sm" data-color="primary">NO</button>
-                                                 <input type="checkbox" hidden="" value="" />
+                                                 <input type="checkbox" hidden="" value="0" name="Ex_automama_sospechoso" />
                                                  </span>
                                             </span>
                                             </div>
@@ -579,7 +585,7 @@
 
                                         <div class="col-md-8">
                                             <div class="form-group">
-                                                <input type="date" class="" >
+                                                <input type="date" class="" name="Ex_automama_Durante_fecha">
                                             </div>
                                         </div>
                                     </div>
@@ -595,13 +601,13 @@
                                                 <span class="btn-group" data-toggle="buttons-radio">
                                                  <span class="button-checkbox">
                                                  <button type="button" class="btn btn-default btn-sm" data-color="primary">SI</button>
-                                                 <input type="checkbox" hidden="" value="" />
+                                                 <input type="checkbox" hidden="" value="1" name="Vacuna_antite_pg" />
                                                  </span>
                                                 <br>
                                                 <br>
                                                 <span class="button-checkbox">
                                                  <button type="button" class="btn btn-default btn-sm" data-color="primary">NO</button>
-                                                 <input type="checkbox" hidden="" value="" />
+                                                 <input type="checkbox" hidden="" value="0" name="Vacuna_antite_pg" />
                                                  </span>
                                             </span>
                                             </div>
@@ -613,7 +619,7 @@
 
                                         <div class="col-md-">
                                             <div class="form-group">
-                                               <input type="text" class="" style="border: none;border-bottom: 2px dotted black;">
+                                               <input type="text" class="" style="border: none;border-bottom: 2px dotted black;" name="Vacuna_cantidad">
                                             </div>
                                         </div>
                                      </div>
@@ -642,13 +648,14 @@
                                         <div class="row">
                                             <div class="col-md-4">
                                                 <div class="form-group">
-                                                    <input type="text" class="form-control" style="border: none;border-bottom: 2px dotted black;">
+                                                    <input type="text" class="form-control" style="border: none;border-bottom: 2px dotted black;" name="Nino_hc[]">
                                                 </div>
                                             </div>
                                             <label class="col-md-2 col-form-label">DNI</label>
                                             <div class="col-md-1">
                                                 <div class="form-group">
-                                                    <input type="text" class="" style="border: none;border-bottom: 2px dotted black;">
+                                                    <input type="text" class="" style="border: none;border-bottom: 2px dotted black;"
+                                                    name="Nino_dni[]">
                                                 </div>
                                             </div>
 
@@ -660,7 +667,8 @@
                                         <label class="col-md-4 col-form-label">Nombres</label>
                                         <div class="col-md-8">
                                             <div class="form-group">
-                                                <input type="text" class="" style="border: none;border-bottom: 2px dotted black;">
+                                                <input type="text" class="" style="border: none;border-bottom: 2px dotted black;"
+                                                name="Nino_nom[]">
                                             </div>
                                         </div>
                                 </div>
@@ -671,15 +679,15 @@
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <input type="date" class="" style="border: none;border-bottom: 2px dotted black;">
+                                                    <input type="date" class="" style="border: none;border-bottom: 2px dotted black;" name="Nino_fechan[]">
                                                 </div>
                                             </div>
                                             <label class="col-md-2 col-form-label">Sexo</label>
                                             <div class="col-md-1">
                                                 <div class="form-group">
-                                                    <select>
-                                                        <option>M</option>
-                                                        <option>F</option>
+                                                    <select name="Nino_sexo[]">
+                                                        <option value="M">M</option>
+                                                        <option value="F">F</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -694,168 +702,34 @@
                                         <label class="col-md-10 col-form-label" style="left: 30%;"><strong>VACUNAS (Según Edad)</strong></label>
                                     </div>
                                     <br>
+                                    @foreach($chequeo as $che)
+                                    @if ($che->Tipo_Chequeo_idTipo_Chequeo == 1)
                                     <div class="row">
 
-                                        <label class="col-md-3 col-form-label">Tuberculosis</label>
+                                        <label class="col-md-3 col-form-label">{{$che->Chequeo_nom}}</label>
 
                                         <div class="col-md-9">
                                             <div class="form-group">
                                               <span class="btn-group" data-toggle="buttons-radio">
                                                 <span class="button-checkbox">
                                                  <button type="button" class="btn btn-default btn-sm" data-color="primary">SI</button>
-                                                 <input type="checkbox" hidden="" value="" />
+                                                 <input type="checkbox" hidden="" value="1" name="" />
                                                  </span>
                                                 <br>
                                                 <br>
                                                 <span class="button-checkbox">
                                                  <button type="button" class="btn btn-default btn-sm" data-color="primary">NO</button>
-                                                 <input type="checkbox" hidden="" value="" />
+                                                 <input type="checkbox" hidden="" value="0" />
                                                  </span>
                                             </span>
-                                                <input type="date" class="" style="border: none;border-bottom: 2px dotted black;">
+                                                <input type="hidden" name="Chequeo_idChequeo[]" value="{{$che->idChequeo}}">
+                                                <input type="date" class="" name="Nino_hcfecha[]" style="border: none;border-bottom: 2px dotted black;">
                                             </div>
                                         </div>
                                     </div>
-                                       <div class="row">
-
-                                        <label class="col-md-3 col-form-label">Hepatitis B</label>
-
-                                        <div class="col-md-9">
-                                            <div class="form-group">
-                                             <span class="btn-group" data-toggle="buttons-radio">
-                                                <span class="button-checkbox">
-                                                 <button type="button" class="btn btn-default btn-sm" data-color="primary">SI</button>
-                                                 <input type="checkbox" hidden="" value="" />
-                                                 </span>
-                                                <br>
-                                                <br>
-                                                <span class="button-checkbox">
-                                                 <button type="button" class="btn btn-default btn-sm" data-color="primary">NO</button>
-                                                 <input type="checkbox" hidden="" value="" />
-                                                 </span>
-                                            </span>
-                                                <input type="date" class="" style="border: none;border-bottom: 2px dotted black;">
-                                            </div>
-                                        </div>
-                                    </div>
-                                       <div class="row">
-
-                                        <label class="col-md-3 col-form-label">Pentavalente</label>
-
-                                        <div class="col-md-9">
-                                            <div class="form-group">
-                                                <span class="btn-group" data-toggle="buttons-radio">
-                                                  <span class="button-checkbox">
-                                                 <button type="button" class="btn btn-default btn-sm" data-color="primary">SI</button>
-                                                 <input type="checkbox" hidden="" value="" />
-                                                 </span>
-                                                <br>
-                                                <br>
-                                                <span class="button-checkbox">
-                                                 <button type="button" class="btn btn-default btn-sm" data-color="primary">NO</button>
-                                                 <input type="checkbox" hidden="" value="" />
-                                                 </span>
-                                            </span>
-                                                <input type="date" class="" style="border: none;border-bottom: 2px dotted black;">
-                                            </div>
-                                        </div>
-                                    </div>
-                                       <div class="row">
-
-                                        <label class="col-md-3 col-form-label">Polio</label>
-
-                                        <div class="col-md-9">
-                                            <div class="form-group">
-                                                <span class="btn-group" data-toggle="buttons-radio">
-                                                <button class="btn btn-default btn-sm active">SI</button>
-                                                <br>
-                                                <br>
-                                                <button class="btn btn-default btn-sm">NO</button>
-                                            </span>
-                                                <input type="date" class="" style="border: none;border-bottom: 2px dotted black;">
-                                            </div>
-                                        </div>
-                                    </div>
-                                       <div class="row">
-
-                                        <label class="col-md-3 col-form-label">Rotavirus</label>
-
-                                        <div class="col-md-9">
-                                            <div class="form-group">
-                                                <span class="btn-group" data-toggle="buttons-radio">
-                                                <button class="btn btn-default btn-sm">SI</button>
-                                                <br>
-                                                <br>
-                                                <button class="btn btn-default btn-sm">NO</button>
-                                            </span>
-                                                <input type="date" class="" style="border: none;border-bottom: 2px dotted black;">
-                                            </div>
-                                        </div>
-                                    </div>
-                                       <div class="row">
-
-                                        <label class="col-md-3 col-form-label">Neumococo</label>
-
-                                        <div class="col-md-9">
-                                            <div class="form-group">
-                                                <span class="btn-group" data-toggle="buttons-radio">
-                                                <button class="btn btn-default btn-sm">SI</button>
-                                                <br>
-                                                <br>
-                                                <button class="btn btn-default btn-sm">NO</button>
-                                            </span>
-                                                <input type="date" class="" style="border: none;border-bottom: 2px dotted black;">
-                                            </div>
-                                        </div>
-                                    </div>
-                                      <div class="row">
-
-                                        <label class="col-md-3 col-form-label">SPR</label>
-
-                                        <div class="col-md-9">
-                                            <div class="form-group">
-                                                <span class="btn-group" data-toggle="buttons-radio">
-                                                <button class="btn btn-default btn-sm">SI</button>
-                                                <br>
-                                                <br>
-                                                <button class="btn btn-default btn-sm">NO</button>
-                                            </span>
-                                                <input type="date" class="" style="border: none;border-bottom: 2px dotted black;">
-                                            </div>
-                                        </div>
-                                    </div>
-                                     <div class="row">
-
-                                        <label class="col-md-3 col-form-label">DPT</label>
-
-                                        <div class="col-md-9">
-                                            <div class="form-group">
-                                                <span class="btn-group" data-toggle="buttons-radio">
-                                                <button class="btn btn-default btn-sm">SI</button>
-                                                <br>
-                                                <br>
-                                                <button class="btn btn-default btn-sm">NO</button>
-                                            </span>
-                                                <input type="date" class="" style="border: none;border-bottom: 2px dotted black;">
-                                            </div>
-                                        </div>
-                                    </div>
-                                     <div class="row">
-
-                                        <label class="col-md-3 col-form-label">Amarilica</label>
-
-                                        <div class="col-md-9">
-                                            <div class="form-group">
-                                                <span class="btn-group" data-toggle="buttons-radio">
-                                                <button class="btn btn-default btn-sm">SI</button>
-                                                <br>
-                                                <br>
-                                                <button class="btn btn-default btn-sm">NO</button>
-                                            </span>
-                                                <input type="date" class="" style="border: none;border-bottom: 2px dotted black;">
-                                            </div>
-                                        </div>
-                                    </div>
+                                    @endif
+                                    @endforeach
+                        
                                     <div style="border:none; border-bottom:2px solid black; border-top: 2px solid black;" class="row">
                                         <label class="col-md-10 col-form-label" style="left: 30%;"><strong>CONTROL NUTRICIONAL</strong></label>
                                     </div>
@@ -872,12 +746,12 @@
                                       </thead>
                                    <tbody>
                                       <tr>
-                                         <th><input type="number" name="" class="form-control"></th>
-                                         <td><input type="number" name="" class="form-control"></td>
-                                         <td><input type="number" name="" class="form-control"></td>
-                                         <td><input type="number" name="" class="form-control"></td>
-                                         <td><input type="number" name="" class="form-control"></td>
-                                         <td><input type="text" name="" class="form-control"></td>
+                                         <th><input type="text" name="Cn_fecha[]" class="form-control"></th>
+                                         <td><input type="number" name="Cn_edad[]" class="form-control"></td>
+                                         <td><input type="number" name="Cn_peso[]" class="form-control"></td>
+                                         <td><input type="number" name="Cn_talla[]" class="form-control"></td>
+                                         <td><input type="number" name="Cn_hb_hto[]" class="form-control"></td>
+                                         <td><input type="text" name="Cn_Observacion[]" class="form-control"></td>
                                       </tr>
    
                                    </tbody>
@@ -885,37 +759,32 @@
                                    <div style="border:none;  border-top: 2px solid black;" class="row">
                                         <label class="col-md-10 col-form-label"><strong>MICRONUTRIENTES (Niños menores 3 años)</strong></label>
                                     </div>
+                               
                                     <div class="row">
 
-                                        <label class="col-md-3 col-form-label">¿Recibe Micronutrientes?</label>
-
                                         <div class="col-md-9">
-                                            <div class="form-group">
-                                                <span class="btn-group" data-toggle="buttons-radio">
-                                                <button class="btn btn-default btn-sm">SI</button>
-                                                <br>
-                                                <br>
-                                                <button class="btn btn-default btn-sm">NO</button>
-                                            </span>
+                                              <div class="form-group">
+                                                <button type="button" class="btn btn-default btn-sm" data-color="primary"
+                                                data-toggle="modal" data-target="#noticeModal">Abrir Micronutrientes</button>
                                             </div>
                                         </div>
+                                        @include('Familia.RegistroFamilia')
+
+
                                     </div>
-                                    <div class="row">
-
-                                        <label class="col-md-3 col-form-label">Abandono</label>
-
+                                    <div style="border:none;  border-top: 2px solid black;" class="row">
+                                        <label class="col-md-10 col-form-label"><strong>SULFATO FERROSO</strong></label>
+                                    </div>
+                                     <div class="row">
                                         <div class="col-md-9">
-                                            <div class="form-group">
-                                                <span class="btn-group" data-toggle="buttons-radio">
-                                                <button class="btn btn-default btn-sm active">SI</button>
-                                                <br>
-                                                <br>
-                                                <button class="btn btn-default btn-sm">NO</button>
-                                            </span>
-                                                <input type="text" class="" style="border: none;border-bottom: 2px dotted black;" placeholder="Motivo">
+                                              <div class="form-group">
+                                                <button type="button" class="btn btn-default btn-sm" data-color="primary"
+                                                data-toggle="modal" data-target="#sulfatoModal">Abrir Sulfato</button>
                                             </div>
                                         </div>
-                                    </div>
+                                     </div>
+                                  
+
                                      <div style="border:none;  border-bottom: 2px solid black; border-top: 2px solid black;" class="row">
                                         <label class="col-md-10 col-form-label" style="left: 30%;"><strong>PROBLEMAS DE SALUD</strong></label>
                                     </div>
@@ -941,12 +810,12 @@
                                       </thead>
                                    <tbody>
                                       <tr>
-                                         <th><input type="text" name="" class="form-control"></th>
-                                         <td><input type="date" name="" class="form-control "></td>
-                                         <td><input type="radio" name="" class="form-control"></td>
-                                         <td><input type="radio" name="" class="form-control"></td>
-                                         <td><input type="radio" name="" class="form-control"></td>
-                                         <td><input type="radio" name="" class="form-control"></td>
+                                         <th><input type="text" name="Problema_enfermedad[]" class="form-control"></th>
+                                         <td><input type="date" name="Problema_fecha[]" class="form-control "></td>
+                                         <td><input type="radio" name="Problema_atendido[]" value="1" id="atendido" class="form-control"></td>
+                                         <td><input type="radio" name="Problema_atendido[]" value="0" id="atendido" class="form-control"></td>
+                                         <td><input type="radio" name="Problema_hospital[]" value="Huaycan" id="Problema" class="form-control"></td>
+                                         <td><input type="radio" name="Problema_hospital[]" value="Otro" id="Problema" class="form-control"></td>
                                       </tr>
    
                                    </tbody>
@@ -956,6 +825,7 @@
 
                             </div>
                         </div>
+                        @include('Familia.RegistroSulfato')
                       
 
                         <div class="card-footer">

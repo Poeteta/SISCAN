@@ -39,7 +39,7 @@
                             </p>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Accion</a>
                             <a class="dropdown-item" href="#">Another action</a>
                             <a class="dropdown-item" href="#">Something else here</a>
                         </div>
@@ -75,7 +75,7 @@
                     <li class="nav-item">
                         <a class="nav-link" data-toggle="tab" href="#link8" role="tablist">
                             <i class="now-ui-icons shopping_shop"></i>
-                            Modo Captación
+                            Modo Captación v2
                         </a>
                     </li>
                 </ul>
@@ -84,8 +84,13 @@
                         Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed
                         base benefits.
                         <br>
-                        <br> Dramatically visualize customer directed convergence without revolutionary ROI.
+                        <br> Dramatically visualize customer directed convergence without revolutionary ROIsss.
                     </div>
+
+
+                        <!--   AQUI SE DIVIDE -->
+
+
                     <div class="tab-pane" id="link8">
                         Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time
                         schemas.
@@ -103,4 +108,4 @@
     $("#content").children().click(function (e) {
         e.stopPropagation();
     });
-</script> > @endsection
+</script> @endsection

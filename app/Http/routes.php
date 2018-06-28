@@ -34,14 +34,11 @@ Route::PATCH('seguridad/usuario/editUsuario/{idUsuario}','UsuarioController@upda
 Route::resource('seguridad/usuario','UsuarioController');
 Route::resource('seguridad/HistorialClinico','HistorialClinicoController');
 
-/*MODULO DE REPORTE --HANS--*/
-Route::resource('reporte','ReporteController');
-Route::resource('reportefam','ReporteFamiliaController');
-Route::resource('reportenino','ReporteNinosController');
-Route::resource('reportemadre','ReporteMadreController');
-
-
-////////////////////////////////////////////
+/*MODULO DE REPORTE --HANS--  NO TOCAR*/  
+Route::resource('reporte/general','ReporteController');
+Route::resource('reporte/familiar','ReporteFamiliaController');
+Route::resource('reporte/nino','ReporteNinosController');
+Route::resource('reporte/madre','ReporteMadreController');
 
   });
 
@@ -56,12 +53,10 @@ Route::resource('reportemadre','ReporteMadreController');
     Route::get('home', 'FamiliaController@show');
 
     Route::resource('evaluacion/resultado','FamiliaController');
-    Route::resource('evaluacion/generalinfon','ninoController');
+    Route::resource('evaluacion/familia','evalController');
     Route::resource('Familia','NuevaFamiliaController');
     Route::resource('/Carnet-Familiar','CarnetFammiliarController');
     Route::resource('/Carnet-General','CarnetFammiliarController');
-    Route::resource('/eva','evalController');
-    Route::get('eva', 'evalController@showFam');
 
 });
 
@@ -70,6 +65,9 @@ Route::resource('reportemadre','ReporteMadreController');
 
 
 /*MODULO DE EVALUACION --DIEGO - DEYVIS - PACHECO--*/
+ Route::resource('/eva','evalController');
+ Route::get('eva/{idFamilia}', 'evalController@show');
+ Route::POST('eva/store','evalController@store');
  Route::POST('Familia/store','FamiliaController@store');
  Route::resource('seguridad/UserSafety','ProfileController');
  Route::PATCH('seguridad/UserSafety/editPass/','ProfileController@updatePassword');
