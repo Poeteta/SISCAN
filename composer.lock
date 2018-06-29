@@ -698,6 +698,7 @@
         {
             "name": "nesbot/carbon",
 <<<<<<< HEAD
+<<<<<<< HEAD
             "version": "1.31.0",
             "source": {
                 "type": "git",
@@ -710,16 +711,24 @@
                 "reference": "4dbe0e51d24a4c7e000999324d21fc25edbf7b05",
 =======
             "version": "1.30.0",
+=======
+            "version": "1.31.1",
+>>>>>>> 3eac928c67e11a3a5f38a5e0c7e24a9f55aff603
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "863a1a651ea324e1838da3a52753a4239b9d4bea"
+                "reference": "385780c8ca2dbfd25452666e3f55e8dc1df58c41"
             },
             "dist": {
                 "type": "zip",
+<<<<<<< HEAD
                 "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/863a1a651ea324e1838da3a52753a4239b9d4bea",
                 "reference": "863a1a651ea324e1838da3a52753a4239b9d4bea",
 >>>>>>> 415a58e82799f00d43b6aad160a3bd9221e6829b
+=======
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/385780c8ca2dbfd25452666e3f55e8dc1df58c41",
+                "reference": "385780c8ca2dbfd25452666e3f55e8dc1df58c41",
+>>>>>>> 3eac928c67e11a3a5f38a5e0c7e24a9f55aff603
                 "shasum": ""
             },
             "require": {
@@ -762,10 +771,14 @@
                 "time"
             ],
 <<<<<<< HEAD
+<<<<<<< HEAD
             "time": "2018-06-24T14:32:22+00:00"
 =======
             "time": "2018-06-15T11:52:26+00:00"
 >>>>>>> 415a58e82799f00d43b6aad160a3bd9221e6829b
+=======
+            "time": "2018-06-25T13:15:16+00:00"
+>>>>>>> 3eac928c67e11a3a5f38a5e0c7e24a9f55aff603
         },
         {
             "name": "nikic/php-parser",
@@ -1158,7 +1171,7 @@
         },
         {
             "name": "symfony/event-dispatcher",
-            "version": "v3.4.11",
+            "version": "v3.4.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/event-dispatcher.git",

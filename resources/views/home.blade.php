@@ -139,7 +139,7 @@
                             <div class="tab-content" >
                                 <div class="tab-pane fade show active" id="about" >
                                
-                                        <img src="{{ asset('img/Header2.jpg') }}" height="120px" width="450px">
+                                        <img src="{{ asset('img/Header2.png') }}" height="120px" width="450px">
                                   
                                     <div style="border:none; border-bottom:2px solid black; border-top: 2px solid black;" class="row">
                                         <label class="col-md-6 col-form-label"><strong>N° FAMILIA BENEFICIARIA</strong></label>
