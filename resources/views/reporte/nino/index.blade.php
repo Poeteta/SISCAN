@@ -12,7 +12,7 @@
                         <span class="navbar-toggler-bar bar3"></span>
                     </button>
                 </div>
-                <a class="navbar-brand" href="#pablo">Reporte General</a>
+                <a class="navbar-brand" href="#pablo">Reporte Niños</a>
             </div>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index"
                 aria-expanded="false" aria-label="Toggle navigation">
@@ -39,7 +39,7 @@
                             </p>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="#">Accion</a>
+                            <a class="dropdown-item" href="#">Action</a>
                             <a class="dropdown-item" href="#">Another action</a>
                             <a class="dropdown-item" href="#">Something else here</a>
                         </div>
@@ -67,36 +67,56 @@
                                         -->
                 <ul class="nav nav-pills nav-pills-primary nav-pills-icons justify-content-center" role="tablist">
                     <li class="nav-item">
-                        <a class="nav-link active" data-toggle="tab" href="#link7" role="tablist">
+                        <a class="nav-link active" data-toggle="tab" href="#link21" role="tablist">
                             <i class="now-ui-icons objects_umbrella-13"></i>
-                            Tipo de Familia
+                            Vacunas
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-toggle="tab" href="#link8" role="tablist">
+                        <a class="nav-link" data-toggle="tab" href="#link22" role="tablist">
                             <i class="now-ui-icons shopping_shop"></i>
-                            Modo Captación v2
+                            Micronutrientes
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#link23" role="tablist">
+                            <i class="now-ui-icons shopping_shop"></i>
+                            Sulfato Ferroso
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#link24" role="tablist">
+                            <i class="now-ui-icons shopping_shop"></i>
+                            Control Nutricional
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#link25" role="tablist">
+                            <i class="now-ui-icons shopping_shop"></i>
+                            Problemas de Salud
                         </a>
                     </li>
                 </ul>
                 <div class="tab-content tab-space tab-subcategories">
-                    <div class="tab-pane active" id="link7">
-                        Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed
-                        base benefits.
-                        <br>
-                        <br> Dramatically visualize customer directed convergence without revolutionary ROIsss.
+                    <div class="tab-pane active" id="link21">
+                     @include('reporte.nino.vacunas')     
+                    </div>
+                    <div class="tab-pane" id="link22">
+                      
+                     
                     </div>
 
-
-                        <!--   AQUI SE DIVIDE -->
-
-
-                    <div class="tab-pane" id="link8">
-                        Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time
-                        schemas.
-                        <br>
-                        <br>Dramatically maintain clicks-and-mortar solutions without functional solutions.
+                     <div class="tab-pane" id="link23">
+                      
                     </div>
+
+                     <div class="tab-pane" id="link24">
+                      
+                    </div>
+                     <div class="tab-pane" id="link25">
+                      
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -108,4 +128,4 @@
     $("#content").children().click(function (e) {
         e.stopPropagation();
     });
-</script> @endsection
+</script> > @endsection

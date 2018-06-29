@@ -1,5 +1,5 @@
-<div class="modal fade modal-slide-in-right" aria-hidden="true" role="dialog" tabindex="-1" id="modal-editPersona-{{$trabajadores->idPersona}}">
-    {{Form::Open(array('action'=>array('UsuarioController@updatePersona',$trabajadores->idPersona),'method'=>'patch'))}}
+<div class="modal fade modal-slide-in-right" aria-hidden="true" role="dialog" tabindex="-1" id="modal-editPersona-{{$usuarioshow->idUsuario}}">
+    {{Form::Open(array('action'=>array('UsuarioController@updatePersona',$usuarioshow->idUsuario),'method'=>'patch'))}}
      {!! csrf_field() !!}
     <div class="modal-dialog">
         <div class="modal-content">
@@ -7,26 +7,26 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">×</span>
                 </button>
-                <h4 class="modal-title">{{$trabajadores->Nom_per.' '.$trabajadores->Apel_pater.' '.$trabajadores->Apel_mat}}</h4>
+                <h4 class="modal-title">{{$usuarioshow->Usuario_nombre.' '.$usuarioshow->Usuario_apelpa.' '.$usuarioshow->Usuario_Apelma}}</h4>
             </div>
             <div class="modal-body">
                 <div class="row">
                     <div class="col-md-5">
                         <div class="form-group">
                             <label>DNI</label>
-                            <input type="text" class="form-control border-input" name="DNI" value="{{$trabajadores->DNI}}">
+                            <input type="text" class="form-control border-input" name="Usuario_dni" value="{{$usuarioshow->Usuario_dni}}">
                         </div>
                     </div>
                     <div class="col-md-5">
                         <div class="form-group">
                             <label>Nombre</label>
-                            <input type="text" class="form-control border-input" name="Nom_per" value="{{$trabajadores->Nom_per}}">
+                            <input type="text" class="form-control border-input" name="Usuario_nombre" value="{{$usuarioshow->Usuario_nombre}}">
                         </div>
                     </div>
                     <div class="col-md-5">
                         <div class="form-group">
                             <label>Telefono</label>
-                            <input type="text" class="form-control border-input" name="Telefono" value="{{$trabajadores->Telefono}}">
+                            <input type="text" class="form-control border-input" name="Usuario_telf" value="{{$usuarioshow->Usuario_telf}}">
                         </div>
                     </div>
                 </div>
@@ -34,53 +34,21 @@
                     <div class="col-md-5">
                         <div class="form-group">
                             <label>Apellido Paterno</label>
-                            <input type="text" class="form-control border-input" name="Apel_pater" value="{{$trabajadores->Apel_pater}}">
+                            <input type="text" class="form-control border-input" name="Usuario_apelpa" value="{{$usuarioshow->Usuario_apelpa}}">
                         </div>
                     </div>
                     <div class="col-md-5">
                         <div class="form-group">
                             <label>Apellido Materno</label>
-                            <input type="text" class="form-control border-input" name="Apel_mat" value="{{$trabajadores->Apel_mat}}">
+                            <input type="text" class="form-control border-input" name="Usuario_Apelma" value="{{$usuarioshow->Usuario_Apelma}}">
                         </div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-8">
-                        <div class="form-group">
-                            <label>Direccion</label>
-                            <input type="text" name="Direccion" class="form-control border-input" value="{{$trabajadores->Direccion}}">
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <label>Distrito</label>
-                            <select name="Distrito_idDistrito" class="form-control border-input">
-                                @foreach($distritos as $dis)
-                                <option value="{{$dis->idDistrito}}">{{$dis->Nom_Dist}}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <label>Sexo</label>
-                            <select name="Sexo" class="form-control border-input">
-                                <?php if ($trabajadores->Sexo == 'Masculino'): ?>
-                                <option value="Masculino" selected="">Masculino</option>
-                                <option value="Femenino">Femenino</option>
-                                <?php elseif ($trabajadores->Sexo == 'Femenino'): ?>
-                                <option value="Femenino" selected="">Femenino</option>
-                                <option value="Masculino">Masculino</option>
-                                <?php endif?>
-                            </select>
-                        </div>
-                    </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label>Fecha de nacimiento</label>
-                            <input id="Fecha_nac" type="date" class="form-control border-input" name="Fecha_nac" value="{{$trabajadores->Fecha_nac}}">
+                            <input id="Usuario_fechan" type="date" class="form-control border-input" name="Usuario_fechan" value="{{$usuarioshow->Usuario_fechan}}">
                         </div>
                     </div>
                 </div>

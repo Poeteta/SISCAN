@@ -25,7 +25,7 @@ Route::group(['middleware' =>['auth','is_admin']], function (){
 Route::group(['middleware' =>['auth','is_director']], function (){
 
 /*MODULO DE TRABAJADORES --HANS--*/
-Route::PATCH('seguridad/usuario/editPersona/{idPersona}','UsuarioController@updatePersona'); 
+Route::PATCH('seguridad/usuario/editPersona/{idUsuario}','UsuarioController@updatePersona'); 
 Route::PATCH('seguridad/usuario/editUsuario/{idUsuario}','UsuarioController@updateUsuario');
 
 

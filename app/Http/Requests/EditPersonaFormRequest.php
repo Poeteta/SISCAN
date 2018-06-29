@@ -15,7 +15,6 @@ class EditPersonaFormRequest extends Request
     {
         return true;
     }
-
     /**
      * Get the validation rules that apply to the request.
      *
@@ -25,15 +24,12 @@ class EditPersonaFormRequest extends Request
     {
         return [
             
-          'Apel_pater'=>'required|max:45',
-          'Apel_mat'=>'required|max:45',
-          'Nom_per'=>'required|max:45',
-          'DNI'=>'required|max:11',
-          'Fecha_nac'=>'required',
-          'Sexo'=>'required',
-          'Distrito_idDistrito'=>'required',
-          'Direccion'=>'required',
-          'Telefono'=>'required|max:11',
+          'Usuario_apelpa'=>'required|max:45',
+          'Usuario_Apelma'=>'required|max:45',
+          'Usuario_nombre'=>'required|max:45',
+          'Usuario_dni'=>'required|max:11',
+          'Usuario_fechan'=>'required',
+          'Usuario_telf'=>'required|max:11',
         ];
     }
 }

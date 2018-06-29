@@ -83,91 +83,62 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-3">
-                        <div class="form-group{{ $errors->has('Nom_per') ? ' has-error' : '' }}">
+                        <div class="form-group{{ $errors->has('Usuario_nombre') ? ' has-error' : '' }}">
                             <label>Nombre</label>
-                            <input id="Nom_per" type="text" class="form-control" name="Nom_per"> @if ($errors->has('Nom_per'))
+                            <input id="Usuario_nombre" type="text" class="form-control" name="Usuario_nombre"> @if ($errors->has('Usuario_nombre'))
                             <span class="help-block">
-                                        <strong>{{ $errors->first('Nom_per') }}</strong>
+                                        <strong>{{ $errors->first('Usuario_nombre') }}</strong>
                                     </span> @endif
                         </div>
                     </div>
                     <div class="col-md-3">
-                        <div class="form-group{{ $errors->has('Apel_pater') ? ' has-error' : '' }}">
+                        <div class="form-group{{ $errors->has('Usuario_apelpa') ? ' has-error' : '' }}">
                             <label>Apellido Paterno</label>
-                            <input id="Apel_pater" type="text" class="form-control" name="Apel_pater"> @if ($errors->has('Apel_pater'))
+                            <input id="Usuario_apelpa" type="text" class="form-control" name="Usuario_apelpa"> @if ($errors->has('Usuario_apelpa'))
                             <span class="help-block">
-                                        <strong>{{ $errors->first('Apel_pater') }}</strong>
+                                        <strong>{{ $errors->first('Usuario_apelpa') }}</strong>
                                     </span> @endif
                         </div>
                     </div>
                     <div class="col-md-3">
-                        <div class="form-group{{ $errors->has('Apel_mat') ? ' has-error' : '' }}">
+                        <div class="form-group{{ $errors->has('Usuario_Apelma') ? ' has-error' : '' }}">
                             <label>Apellido Materno</label>
-                            <input id="Apel_mat" type="text" class="form-control" name="Apel_mat"> @if ($errors->has('Apel_mat'))
+                            <input id="Usuario_Apelma" type="text" class="form-control" name="Usuario_Apelma"> @if ($errors->has('Usuario_Apelma'))
                             <span class="help-block">
-                                        <strong>{{ $errors->first('Apel_mat') }}</strong>
+                                        <strong>{{ $errors->first('Usuario_Apelma') }}</strong>
                                     </span> @endif
                         </div>
                     </div>
-                    <div class="col-md-2">
-                        <div class="form-group">
-                            <label>Sexo</label>
-                            <select name="Sexo" class="form-control">
-                                <option value="Masculino">Masculino</option>
-                                <option value="Femenino">Femenino</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-3">
-                        <div class="form-group{{ $errors->has('Fecha_nac') ? ' has-error' : '' }}">
-                            <label>Fecha de Nacimiento</label>
-                            <input id="Fecha_nac" type="date" class="form-control" name="Fecha_nac"> @if ($errors->has('Fecha_nac'))
-                            <span class="help-block">
-                                        <strong>{{ $errors->first('Fecha_nac') }}</strong>
-                                    </span> @endif
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="form-group{{ $errors->has('DNI') ? ' has-error' : '' }}">
-                            <label>N° DNI</label>
-                            <input id="DNI" type="text" class="form-control" name="DNI"> @if ($errors->has('DNI'))
-                            <span class="help-block">
-                                        <strong>{{ $errors->first('DNI') }}</strong>
-                                    </span> @endif
-                        </div>
-                    </div>
-                    <div class="col-md-2">
-                        <div class="form-group">
-                            <label>Distrito</label>
-                            <select name="Distrito_idDistrito" class="form-control border-input">
-                                @foreach($distritos as $dis)
-                                <option value="{{$dis->idDistrito}}">{{$dis->Nom_Dist}}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group{{ $errors->has('Direccion') ? ' has-error' : '' }}">
-                            <label>Direccion</label>
-                            <input id="Direccion" type="text" class="form-control border-input" name="Direccion"> @if ($errors->has('Direccion'))
-                            <span class="help-block">
-                                        <strong>{{ $errors->first('Direccion') }}</strong>
-                                    </span> @endif
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="form-group{{ $errors->has('Telefono') ? ' has-error' : '' }}">
+             <div class="col-md-2">
+                        <div class="form-group{{ $errors->has('Usuario_telf') ? ' has-error' : '' }}">
                             <label>N° Telefono</label>
-                            <input id="Telefono" type="text" class="form-control border-input" name="Telefono"> @if ($errors->has('Telefono'))
+                            <input id="Usuario_telf" type="text" class="form-control border-input" name="Usuario_telf"> @if ($errors->has('Usuario_telf'))
                             <span class="help-block">
-                                        <strong>{{ $errors->first('Telefono') }}</strong>
+                                        <strong>{{ $errors->first('Usuario_telf') }}</strong>
                                     </span> @endif
                         </div>
                     </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="form-group{{ $errors->has('Usuario_fechan') ? ' has-error' : '' }}">
+                            <label>Fecha de Nacimiento</label>
+                            <input id="Usuario_fechan" type="date" class="form-control" name="Usuario_fechan"> @if ($errors->has('Usuario_fechan'))
+                            <span class="help-block">
+                                        <strong>{{ $errors->first('Usuario_fechan') }}</strong>
+                                    </span> @endif
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group{{ $errors->has('Usuario_dni') ? ' has-error' : '' }}">
+                            <label>N° DNI</label>
+                            <input id="Usuario_dni" type="text" class="form-control" name="Usuario_dni"> @if ($errors->has('Usuario_dni'))
+                            <span class="help-block">
+                                        <strong>{{ $errors->first('Usuario_dni') }}</strong>
+                                    </span> @endif
+                        </div>
+                    </div>
+
                 </div>
                 <div class="row">
                     <div class="col-md-3">
@@ -184,7 +155,7 @@
                             <label>Rol</label>
                             <select name="Rol_idRol" class="form-control border-input">
                                 @foreach($roles as $r)
-                                <option value="{{$r->idRol}}">{{$r->Nom_rol}}</option>
+                                <option value="{{$r->idRol}}">{{$r->Rol_nom}}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -208,7 +179,7 @@
                             <div class="content">
                                 <div class="form-group">
                                     <button class="btn btn-primary pull-right" type="submit">Guardar</button>
-                                    <button class="btn btn-danger pull-left" type="reset" ><a href="/seguridad/usuario">Cancelar</a></button>
+                                    <button class="btn btn-warning pull-left" type="reset" ><a href="/seguridad/usuario">Cancelar</a></button>
                                 </div>
                             </div>
                         </div>

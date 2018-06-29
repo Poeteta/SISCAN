@@ -72,24 +72,18 @@
                         <h5 class="title">Editar Perfil</h5>
                     </div>
                     <div class="card-body">
-                        <form>
+                
                             <div class="row">
-                                <div class="col-md-5 pr-1">
-                                    <div class="form-group">
-                                        <label>Hospital (disabled)</label>
-                                        <input type="HIDE" class="form-control" disabled="" placeholder="Company" value="Huaycan">
-                                    </div>
-                                </div>
-                                <div class="col-md-3 px-1">
+                                <div class="col-md-3">
                                     <div class="form-group">
                                         <label>DNI</label>
-                                        <input type="text" class="form-control" placeholder="Username" value="{{$trabajadores->DNI}}" disabled="">
+                                        <input type="text" class="form-control" placeholder="Username" value="{{$usuarioshow->Usuario_dni}}" disabled="">
                                     </div>
                                 </div>
                                 <div class="col-md-4 pl-1">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Telefono</label>
-                                        <input type="number" class="form-control" placeholder="" value="{{$trabajadores->Telefono}}" disabled="">
+                                        <input type="number" class="form-control" placeholder="" value="{{$usuarioshow->Usuario_telf}}" disabled="">
                                     </div>
                                 </div>
                             </div>
@@ -97,51 +91,41 @@
                                 <div class="col-md-6 pr-1">
                                     <div class="form-group">
                                         <label>Nombre (s)</label>
-                                        <input type="text" class="form-control" placeholder="Company" value="{{$trabajadores->Nom_per}}" disabled="">
+                                        <input type="text" class="form-control" placeholder="Company" value="{{$usuarioshow->Usuario_nombre}}" disabled="">
                                     </div>
                                 </div>
                                 <div class="col-md-6 pl-1">
                                     <div class="form-group">
                                         <label>Apellido (s)</label>
-                                        <input type="text" class="form-control" placeholder="Last Name" value="{{$trabajadores->Apel_pater}} {{$trabajadores->Apel_mat}}" disabled="">
+                                        <input type="text" class="form-control" placeholder="Last Name" value="{{$usuarioshow->Usuario_apelpa.' '.$usuarioshow->Usuario_Apelma}}" disabled="">
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <label>Dirección</label>
-                                        <input type="text" class="form-control" placeholder="Home Address" value="{{$trabajadores->Direccion}}" disabled="">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-4 pr-1">
-                                    <div class="form-group">
-                                        <label>Distrito</label>
-                                        <input type="text" class="form-control" placeholder="City" value="{{$trabajadores->Nom_Dist}}" disabled="">
-                                    </div>
-                                </div>
-                                <div class="col-md-4 px-1">
-                                    <div class="form-group">
-                                        <label>Sexo</label>
-                                        <input type="text" class="form-control" placeholder="Country" value="{{$trabajadores->Sexo}}" disabled="">
-                                    </div>
-                                </div>
-                                <div class="col-md-4 pl-1">
+                                <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Fecha de Nacimiento</label>
-                                        <input type="text" class="form-control" value="{{$trabajadores->Fecha_nac}}" disabled="">
+                                        <input type="text" class="form-control" value="{{$usuarioshow->Usuario_fechan}}" disabled="">
                                     </div>
                                 </div>
-                                <div class="form-control">
-                                    <a data-target="#modal-editPersona-{{$trabajadores->idPersona}}" data-toggle="modal">
-                                        <button class="btn btn-info">Editar datos de {{$trabajadores->Nom_per}} </button>
-                                    </a>
-                                </div>
-                                @include('seguridad.usuario.editPersona')
+
+                              
                             </div>
-                        </form>
+
+
+
+                              
+                                  <div class="button-container">
+                        <div class="text-center">
+                            <a data-target="#modal-editPersona-{{$usuarioshow->idUsuario}}" data-toggle="modal">
+                                <button class="btn btn-info">Editar usuario {{$usuarioshow->Nom_user}} </button>
+                            </a>
+                        </div>
+                    </div>
+      
+                    @include('seguridad.usuario.editPersona')
+
+         
                     </div>
                 </div>
             </div>
@@ -152,7 +136,7 @@
                     <div class="card-body">
                         <div class="author">
                             <a href="#">
-                                <?php if ($trabajadores->Estado_user == '1'): ?>
+                                <?php if ($usuarioshow->Estado_user == '1'): ?>
                                 <h5 class="title">Activo</h5>
                                 <?php else: ?>
                                 <h5 class="title">Inactivo</h5>
@@ -160,21 +144,21 @@
                             </a>
                         </div>
                         <p class="description">
-                            Usuario: {{$trabajadores->Nom_user}}
+                            Usuario: {{$usuarioshow->Nom_user}}
                         </p>
                         <p class="description">
-                            Rol: {{$trabajadores->Nom_rol}}
+                            Rol: {{$usuarioshow->Rol_nom}}
                         </p>
                     </div>
                     <hr>
                     <div class="button-container">
                         <div class="text-center">
-                            <a data-target="#modal-editUsuario-{{$trabajadores->idUsuario}}" data-toggle="modal">
-                                <button class="btn btn-info">Editar usuario {{$trabajadores->Nom_user}} </button>
+                            <a data-target="#modal-editUsuario-{{$usuarioshow->idUsuario}}" data-toggle="modal">
+                                <button class="btn btn-info">Editar usuario {{$usuarioshow->Nom_user}} </button>
                             </a>
                         </div>
                     </div>
-                     @include('seguridad.usuario.editUsuario')
+                      @include('seguridad.usuario.editUsuario')
                 </div>
             </div>
         </div>
