@@ -1,12 +1,12 @@
-<div class="modal fade modal-slide-in-right" aria-hidden="true" role="dialog" tabindex="-1" id="modal-editUsuario-{{$trabajadores->idUsuario}}">
-    {{Form::Open(array('action'=>array('UsuarioController@updateUsuario',$trabajadores->idUsuario),'method'=>'patch'))}}
+<div class="modal fade modal-slide-in-right" aria-hidden="true" role="dialog" tabindex="-1" id="modal-editUsuario-{{$usuarioshow->idUsuario}}">
+    {{Form::Open(array('action'=>array('UsuarioController@updateUsuario',$usuarioshow->idUsuario),'method'=>'patch'))}}
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">×</span>
                 </button>
-                <h4 class="modal-title">{{$trabajadores->Nom_user}}</h4>
+                <h4 class="modal-title">{{$usuarioshow->Nom_user}}</h4>
             </div>
             <div class="modal-body">
                 <div class="row">
@@ -14,7 +14,7 @@
                         <div class="form-group">
                             <label>Estado</label>
                             <select name="Estado_user" class="form-control border-input">
-                                <?php if ($trabajadores->Estado_user == 1): ?>
+                                <?php if ($usuarioshow->Estado_user == 1): ?>
                                 <option value="1" selected>Activo</option>
                                 <option value="0">Desactivo</option>
                                 <?php elseif ($trabajadores->Estado_user == 0): ?>
@@ -29,7 +29,7 @@
                             <label>Rol de trabajador</label>
                             <select name="Rol_idRol" class="form-control border-input">
                                 @foreach($roles as $r)
-                                <option value="{{$r->idRol}}">{{$r->Nom_rol}}</option>
+                                <option value="{{$r->idRol}}">{{$r->Rol_nom}}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -39,7 +39,7 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label>Nombre de Usuario</label>
-                            <input id="Nom_user" type="text" class="form-control border-input" name="Nom_user" value="{{$trabajadores->Nom_user}}">
+                            <input id="Nom_user" type="text" class="form-control border-input" name="Nom_user" value="{{$usuarioshow->Nom_user}}">
                         </div>
                     </div>
                 </div>

@@ -65,12 +65,13 @@
 
             <div class="col-md-10 ml-auto mr-auto">
                 <div class="card card-calendar">
-                    <div class="card-body ">
+                    <div class="card-body">
+                        <div class="row">
                         <div class="col-md-2 col-lg-2">
                             <a href="usuario/create">
                                 <button class="btn btn-success"><i class=" glyphicon glyphicon-plus"></i> Nuevo</button>
                             </a>
-                        </div>
+                        </div></div>
                     	 @include('seguridad.usuario.search')
 
 
@@ -92,18 +93,17 @@
                                                     <th>Opciones</th>
                                                 </thead>
                                                 <tbody>
-                                                    @foreach ($personas as $per)
+                                                    @foreach ($usuario as $usu)
                                                     <tr>
-                                                        <td>{{ $per->Nom_per.' '.$per->Apel_pater.' '.$per->Apel_mat}}</td>
-                                                        <td>{{ $per->Nom_user}}</td>
-                                                    
-                                                        <td>{{ $per->Telefono}}</td>
-                                                        <td>{{ $per->DNI}}</td>
-                                                        <td>{{ $per->Nom_rol}}</td>
+                                                        <td>{{ $usu->Usuario_nombre.' '.$usu->Usuario_apelpa.' '.$usu->Usuario_Apelma}}</td>
+                                                        <td>{{ $usu->Nom_user}}</td>
+                                                        <td>{{ $usu->Usuario_telf}}</td>
+                                                        <td>{{ $usu->Usuario_dni}}</td>
+                                                        <td>{{ $usu->Rol_nom}}</td>
                                                         
                                                         <td>
                                                             <!-- aqui ejecuta una accion pidiendo permiso al controlador enviando la id -->
-                                                            <a href="{{URL::action('UsuarioController@show',$per->idPersona)}}">
+                                                            <a href="{{URL::action('UsuarioController@show',$usu->idUsuario)}}">
                                                                 <button class="btn btn-info"><i class="glyphicon glyphicon-th-list"></i> Editar Trabajador
                                                                 </button>
                                                             </a>
@@ -113,6 +113,7 @@
                                                 </tbody>
                                             </table>
                                         </div>
+                                        {{$usuario->render()}}   
                                     </div>
                                 </div>
                             </div>

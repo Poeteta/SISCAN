@@ -59,7 +59,7 @@
     <!-- End Navbar -->
     <div class="panel-header panel-header-sm">
     </div>
-    <div class="content">
+        @include('reporte.madre.search')
         <div class="card card-plain card-subcategories">
             <div class="card-body ">
                 <!--
@@ -94,6 +94,7 @@
                 </ul>
                 <div class="tab-content tab-space tab-subcategories">
                     <div class="tab-pane active" id="link7">
+                        
                         <div class="row">
                             <div class="col-md-5">
                                 <div class="card">
@@ -308,7 +309,7 @@
         var chart = new google.visualization.PieChart(document.getElementById('piechart'));
         
         chart.draw(data, options);
-        
+       
        
       }
 </script>
@@ -329,7 +330,7 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <div class="card-header">
-                                            <h5 class="title">Examen de Mamas</h5>
+                                            <h5 class="title">Vacunas Antitetanico</h5>
                                         </div>
                                         <div class="card-body">
                         
@@ -345,33 +346,18 @@
                                                         
                                                     </tr>
                                                 </thead>
-                                                <tfoot>
-                                                    <tr>
-                                                        <th>Total</th>
-                                                        <th>{{$examamasi->idexamama + $examamafecha->idexamama + $examamano->idexamama}}</th>
-                                                   
-                                                        
-                                                    </tr>
-                                                </tfoot>
+                       
                                                 <tbody>
                                                    
                                                     <tr>
-                                                        <td>Inicio</td>
-                                                        <td>{{$examamasi->idexamama}}</td>
+                                                        <td>Vacunas antes del programa</td>
+                                                        <td>{{$vacunaantest->idvacunaantest}}</td>
                                                     </tr>
                                                     <tr>
-                                                        <td>Durante el proceso</td>
-                                                        <td>{{$examamafecha->idexamama}}</td>
+                                                        <td>Vacunas durante el programa</td>
+                                                        <td>{{$vacunadurante->idvacunadurnt}}</td>
                                                         
                                                     </tr>
-                                                    <tr>
-                                                        <td>Sospechoso</td>
-                                                        <td>{{$examamano->idexamama}}</td>
-                                                   
-                                                        
-                                                       
-                                                    </tr>
-                                              
                                                 </tbody>
                                             </table>
                                         </div>
@@ -381,50 +367,45 @@
                             <div class="col-md-7 mr-auto">
                                 <div class="card card-chart">
                                   <div class="card-header">
-                                    <h5 class="card-category">Examen de Mamas</h5>
+                                    <h5 class="card-category">Vacunas Antitetanico</h5>
                                     <h4 class="card-title">Reporte gráfico</h4>
                              
 
                                         @push('scripts')
 <script type="text/javascript">
-      google.charts.load('current', {'packages':['bar']});
-      google.charts.setOnLoadCallback(drawStuff);
+     google.charts.load("current", {packages:['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+      var data4 = google.visualization.arrayToDataTable([
+        ["Element", "Cantidad", { role: "style" } ],
+        ["Vacunas antes del programa", {{$vacunaantest->idvacunaantest}}, "#4285f4"],
+        ["Vacunas durante el programa", {{$vacunadurante->idvacunadurnt}}, "#db4437"]
+      ]);
+      var view4 = new google.visualization.DataView(data4);
+      view4.setColumns([0, 1,
+                       { calc: "stringify",
+                         sourceColumn: 1,
+                         type: "string",
+                         role: "annotation" },
+                       2]);
 
-      function drawStuff() {
-        var data = new google.visualization.arrayToDataTable([
-          ['Opening Move', 'Percentage'],
-          ["King's pawn (e4)", 44],
-          ["Queen's pawn (d4)", 31],
-          ["Knight to King 3 (Nf3)", 12],
-          ["Queen's bishop pawn (c4)", 10],
-          ['Other', 3]
-        ]);
-
-        var options = {
-          title: 'Chess opening moves',
-          width: 500,
-          legend: { position: 'none' },
-          chart: { title: 'Chess opening moves',
-                   subtitle: 'popularity by percentage' },
-          bars: 'horizontal', // Required for Material Bar Charts.
-          axes: {
-            x: {
-              0: { side: 'top', label: 'Percentage'} // Top x-axis.
-            }
-          },
-          bar: { groupWidth: "90%" }
-        };
-
-        var chart = new google.charts.Bar(document.getElementById('top_x_div'));
-        chart.draw(data, options);
-        
+      var options4 = {
+        title: "Reporte de Asistencias",
+        width: 500,
+        height: 300,
+        bar: {groupWidth: "75%"},
+        legend: { position: "none" },
       };
+      var chart4 = new google.visualization.ColumnChart(document.getElementById("columnchart_values4"));
+      chart4.draw(view4, options4);
+      $('#linkexamama').removeClass('active'); 
+  } 
 </script>
 @endpush
 
                                   </div>
                                   <div class="card-body">
-                                     <div id="barchart_material" style="width: 500px; height: 300px;"></div>
+                                     <div id="columnchart_values4" style="width: 500px; height: 300px;"></div>
                                   </div>
                           
                                 </div>
@@ -440,7 +421,7 @@
                 </div>
             </div>
         </div>
-    </div>
+   
 </div>
 
 </div>
