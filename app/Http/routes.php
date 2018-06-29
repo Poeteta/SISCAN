@@ -53,11 +53,14 @@ Route::resource('reporte/madre','ReporteMadreController');
     Route::get('home', 'FamiliaController@show');
 
     Route::resource('evaluacion/resultado','FamiliaController');
-    Route::resource('evaluacion/generalinfon','ninoController');
+    Route::resource('evaluacion/familia','evalController');
     Route::resource('Familia','NuevaFamiliaController');
     Route::resource('/Carnet-Familiar','CarnetFammiliarController');
     Route::resource('/Carnet-General','CarnetFammiliarController');
+/* HEAD
+=======
     
+>>>>>>> 415a58e82799f00d43b6aad160a3bd9221e6829b*/
 
 });
 
@@ -66,6 +69,9 @@ Route::resource('reporte/madre','ReporteMadreController');
 
 
 /*MODULO DE EVALUACION --DIEGO - DEYVIS - PACHECO--*/
+ Route::resource('/eva','evalController');
+ Route::get('eva/{idFamilia}', 'evalController@show');
+ Route::POST('eva/store','evalController@store');
  Route::POST('Familia/store','FamiliaController@store');
  Route::resource('seguridad/UserSafety','ProfileController');
  Route::PATCH('seguridad/UserSafety/editPass/','ProfileController@updatePassword');

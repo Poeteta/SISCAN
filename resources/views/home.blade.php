@@ -97,7 +97,12 @@
     <div class="panel-header panel-header-sm">
     </div>
     
+
+    <div class="content">
+        <div class="cold-md-6 mr-automl-auto">
     
+    </div>
+
         <div class="col-md-6 mr-auto ml-auto">
             <!--      Wizard container        -->
             <div class="wizard-container">
@@ -827,9 +832,14 @@
 
                         <div class="card-footer">
                             <div class="pull-right">
+
+                                <input type='button' class='btn btn-next btn-fill btn-rose btn-wd' name='next' value='Siguiente' />
+                                <input type='submit' class='btn btn-finish btn-fill btn-rose btn-wd' name='finish' value='Guardar' />
+
                                 <input type='button' style="float: right;" 
                             class='btn btn-next btn-fill btn-rose btn-wd' name='next' value='Siguiente' />
                                 <input type='submit' style="float: right;"  class='btn btn-finish btn-fill btn-rose btn-wd' name='finish' value='Guardar' />
+
                             </div>
 
                             <div class="pull-left">

@@ -46,7 +46,7 @@
       </div>
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
-        	<a class="navbar-brand"><img src="img/logo invertido.png" style="width: 20%; height: 10%; float: left;"></a>
+          <a class="navbar-brand"><img src="img/logo invertido.png" style="width: 20%; height: 10%; float: left;"></a>
           <!--Logo
           <a class="navbar-brand" href="index.html">Medi<span>+</span>  </a> -->
           

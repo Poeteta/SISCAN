@@ -18,7 +18,6 @@ class historial_familia extends Model
 /*paso 4 - indicar las tablas de la base de datos al modelo*/
 
    protected $fillable = [
-      
       'Tipo_Familia',
       'Modo_Capta',
       'HF_fecha',

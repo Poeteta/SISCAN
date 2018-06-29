@@ -4,7 +4,11 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+<<<<<<< HEAD
+class fecha_sesion extends Model
+=======
 class Fecha_Sesion extends Model
+>>>>>>> 415a58e82799f00d43b6aad160a3bd9221e6829b
 {
    protected $table='fecha_sesion';
    protected $primaryKey='idFecha_Sesion';
@@ -25,6 +29,10 @@ class Fecha_Sesion extends Model
       'Fechaqui',
       'Sesiones_idSesiones',
       'Familia_idFamilia',
+      'Fechase',
+      'Fechatre',
+      'Fechacu',
+      'Fechaqui',
   
    ];
 

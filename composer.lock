@@ -697,6 +697,18 @@
         },
         {
             "name": "nesbot/carbon",
+<<<<<<< HEAD
+            "version": "1.31.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/briannesbitt/Carbon.git",
+                "reference": "4dbe0e51d24a4c7e000999324d21fc25edbf7b05"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/4dbe0e51d24a4c7e000999324d21fc25edbf7b05",
+                "reference": "4dbe0e51d24a4c7e000999324d21fc25edbf7b05",
+=======
             "version": "1.30.0",
             "source": {
                 "type": "git",
@@ -707,6 +719,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/863a1a651ea324e1838da3a52753a4239b9d4bea",
                 "reference": "863a1a651ea324e1838da3a52753a4239b9d4bea",
+>>>>>>> 415a58e82799f00d43b6aad160a3bd9221e6829b
                 "shasum": ""
             },
             "require": {
@@ -718,6 +731,13 @@
                 "phpunit/phpunit": "^4.8.35 || ^5.7"
             },
             "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Carbon\\Laravel\\ServiceProvider"
+                    ]
+                }
+            },
             "autoload": {
                 "psr-4": {
                     "": "src/"
@@ -741,7 +761,11 @@
                 "datetime",
                 "time"
             ],
+<<<<<<< HEAD
+            "time": "2018-06-24T14:32:22+00:00"
+=======
             "time": "2018-06-15T11:52:26+00:00"
+>>>>>>> 415a58e82799f00d43b6aad160a3bd9221e6829b
         },
         {
             "name": "nikic/php-parser",
