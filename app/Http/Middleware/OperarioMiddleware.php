@@ -16,16 +16,12 @@ class OperarioMiddleware
     public function handle($request, Closure $next)
     {
      switch (auth()->User()->Rol_idRol) {
-         case '1':
-            return redirect()->to('/administrador/reporte/index');  
-            break;
-
          case '2':
            
             break;
 
          case '3':
-           return redirect()->to('/seguridad/usuario');
+           return redirect()->to('dhome');
             break;   
          
          default:

@@ -56,9 +56,8 @@ class Kernel extends HttpKernel
         |
         v
  */
-      'is_admin' => \App\Http\Middleware\AdministradorMiddleware::class,
-      'is_operario' => \App\Http\Middleware\OperarioMiddleware::class,
       'is_director' => \App\Http\Middleware\DirectorMiddleware::class,
+      'is_operario' => \App\Http\Middleware\OperarioMiddleware::class,
 
     ];
 }

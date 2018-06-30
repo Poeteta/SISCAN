@@ -1,4 +1,4 @@
-  @extends('layouts.app') @section('htmlheader_title') Home @endsection @section('main-content')
+ @extends('layouts.app') @section('htmlheader_title') Home @endsection @section('main-content')
 <div class="main-panel">
         <!-- Navbar -->
         <nav class="navbar navbar-expand-lg navbar-transparent  navbar-absolute bg-primary fixed-top">
@@ -62,8 +62,10 @@
     <div class="col-md-3"></div>
 <div class="col-md-6">
 <div class="card" style="border: 2px solid black; ">
-        {!!Form::open(array('url'=>'eva/store','method'=>'POST','autocomplete'=>'off'))!!} 
+        {{Form::Open(array('action'=>array('evalController@store'),'method'=>'POST'))}}
         {{Form::token()}} {{ csrf_field() }}
+
+
       <div class="card-header">
           <h5 class="title">Evaluacion Final de la Familia: {{$family->Fam_nom}}
         </h5>
@@ -197,13 +199,13 @@
                                             <span class="btn-group" data-toggle="buttons-radio">
                                                  <span class="button-checkbox">
                                                  <button type="button" class="btn btn-default btn-sm" data-color="primary">SI</button>
-                                                 <input type="checkbox" hidden="" value="1" name="Planificacion_idPlanificacion" />
+                                                 <input type="checkbox" hidden="" value="1" name="Eval_Plan_Fam" />
                                                  </span>
                                                 <br>
                                                 <br>
                                                 <span class="button-checkbox">
                                                  <button type="button" class="btn btn-default btn-sm" data-color="primary">NO</button>
-                                                 <input type="checkbox" hidden="" value="0" name="Planificacion_idPlanificacion" />
+                                                 <input type="checkbox" hidden="" value="0" name="Eval_Plan_Fam" />
                                                  </span>
                                             </span>
                                             </div>
@@ -219,13 +221,13 @@
                                             <span class="btn-group" data-toggle="buttons-radio">
                                                  <span class="button-checkbox">
                                                  <button type="button" class="btn btn-default btn-sm" data-color="primary">SI</button>
-                                                 <input type="checkbox" hidden="" value="1" name="Eval_Fam_Plan" />
+                                                 <input type="checkbox" hidden="" value="1" name="Eval_Usa_Plan_Fam" />
                                                  </span>
                                                 <br>
                                                 <br>
                                                 <span class="button-checkbox">
                                                  <button type="button" class="btn btn-default btn-sm" data-color="primary">NO</button>
-                                                 <input type="checkbox" hidden="" value="0" name="Eval_Fam_Plan" />
+                                                 <input type="checkbox" hidden="" value="0" name="Eval_Usa_Plan_Fam" />
                                                  </span>
                                             </span>
                                             </div>
@@ -439,7 +441,7 @@
 
                                         <div class="col-md-4" style="margin-left: 27%;">
                                             <div class="form-group">
-                                               <input type="text" class="" style="border: none;border-bottom: 2px dotted black;">
+                                               <input type="text" class="" name="Abandono" style="border: none;border-bottom: 2px dotted black;">
                                             </div>
                                             
                                         </div>
@@ -463,7 +465,6 @@
   <script type="text/javascript">
       $(function () {
     $('.button-checkbox').each(function () {
-
         // Settings
         var $widget = $(this),
             $button = $widget.find('button'),
@@ -477,7 +478,6 @@
                     icon: 'glyphicon glyphicon-unchecked'
                 }
             };
-
         // Event Handlers
         $button.on('click', function () {
             $checkbox.prop('checked', !$checkbox.is(':checked'));
@@ -487,19 +487,15 @@
         $checkbox.on('change', function () {
             updateDisplay();
         });
-
         // Actions
         function updateDisplay() {
             var isChecked = $checkbox.is(':checked');
-
             // Set the button's state
             $button.data('state', (isChecked) ? "on" : "off");
-
             // Set the button's icon
             $button.find('.state-icon')
                 .removeClass()
                 .addClass('state-icon ' + settings[$button.data('state')].icon);
-
             // Update the button's color
             if (isChecked) {
                 $button
@@ -512,15 +508,12 @@
                     .addClass('btn-default');
             }
         }
-
         // Initialization
         function init() {
-
             updateDisplay();
-
             // Inject the icon if applicable
             if ($button.find('.state-icon').length == 0) {
-                $button.prepend('<i class="state-icon ' + settings[$button.data('state')].icon + '"></i> ');
+                $button.prepend('<i class="state-icon ' + settings[$button.data('state')].icon + '"></i> ');
             }
         }
         init();

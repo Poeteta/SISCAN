@@ -1,7 +1,5 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use Illuminate\Support\Facades\Redirect;
@@ -10,7 +8,6 @@ use DB;
 use Response;
 use Illuminate\Support\Collection;
 use App\Evaluacion;
-
 class evalController extends Controller
 {
     public function index(Request $request)
@@ -27,7 +24,6 @@ class evalController extends Controller
           return view('evaluacion.index',["familia"=>$familia,"searchText"=>$query]);
         }
     }
-
     public function store(Request $request){
         try{
             DB::beginTransaction();
@@ -48,6 +44,7 @@ class evalController extends Controller
             $evaluacion->Eval_Acude_Hosp=$request->get('Eval_Acude_Hosp');
             $evaluacion->Eval_Viv_Ordena=$request->get('Eval_Viv_Ordena');
             $evaluacion->Eval_Arbol=$request->get('Eval_Arbol');
+            $evaluacion->Eval_Depo_Agua=$request->get('Eval_Depo_Agua');
             $evaluacion->Abandono=$request->get('Abandono');
             $evaluacion->Estado_Eval=$request->get('Estado_Eval');
             $evaluacion->Familia_idFamilia=$request->get('Familia_idFamilia');
@@ -58,13 +55,12 @@ class evalController extends Controller
              {
           DB::rollback();
              }
-
-             return view ('evaluacion.index');
+             return Redirect::to('evaluacion')->with('msg','Se registro correctamente...');
         }
         public function show($id){
             $fam=DB::table('familia')
             ->where('idFamilia','=',$id)
             ->first();
-    	    return view ('evaluacion.resultado',["family"=>$fam]);
+          return view ('evaluacion.resultado',["family"=>$fam]);
         }
 }

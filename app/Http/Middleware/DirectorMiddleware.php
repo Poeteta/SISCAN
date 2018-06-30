@@ -16,14 +16,9 @@ class DirectorMiddleware
     public function handle($request, Closure $next)
     {
         switch (auth()->User()->Rol_idRol) {
-         
-
-         case '1':
-           return redirect()->to('/administrador/reporte/index');
-            break;
 
          case '2':
-           return redirect()->to('/operario/registro/index');
+           return redirect()->to('dhome');
             break; 
             
          case '3':
