@@ -82,7 +82,12 @@
                 <a class="nav-link" href="about.html"></a>
               </li>-->
               <li class="nav-item" >
-                <a class="nav-link" href="/login">Ingresar</a>
+                @if (Auth::guest())
+                   <a class="nav-link" href="{{ url('/login') }}">Ingresar</a>
+                @else
+                 <a class="nav-link" href="{{ url('/perfil') }}">Ingresar al sistema como: <strong style="color: black">{{ Auth::User()->Usuario_nombre}}</strong></a>
+                @endif
+      
               </li>
             </ul>
           </div>
