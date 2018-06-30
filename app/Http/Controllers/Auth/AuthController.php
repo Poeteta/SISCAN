@@ -87,11 +87,11 @@ class AuthController extends Controller
      switch (auth()->User()->Rol_idRol) {
  
          case '2':
-            return 'dhome';
+            return 'perfil';
             break;
 
          case '3':
-         return 'dhome';
+         return 'perfil';
          break;
          
          default:

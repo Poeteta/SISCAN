@@ -26,15 +26,9 @@
 
                     <ul class="nav">
                         <li>
-                            <a href="#">
+                            <a href="{{url('/perfil')}}">
                                 
                                 <span class="sidebar-normal" style="text-align: center;">Mi Perfil</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                
-                                <span class="sidebar-normal" style="text-align: center;">Editar Perfil</span>
                             </a>
                         </li>
                         <li>
@@ -51,13 +45,13 @@
         <ul class="nav">
           
             <li class="active">
-                <a href="{{url('home')}}">
+                <a href="{{url('/home')}}">
                             <i class="now-ui-icons design-2_ruler-pencil"></i>
                             <p>Registrar Carnet</p>
                         </a>
             </li>
             <li>
-                <a href="{{url('EvaluarF/EvaluarF')}}">
+                <a href="{{url('/evaluacion')}}">
                             <i class="now-ui-icons design_bullet-list-67"></i>
                             <p>Evaluación</p>
                         </a>
@@ -65,43 +59,10 @@
                         
             </li>
         </ul>
-        @elseif(auth()->User()->Rol_idRol == 1 )
-        <ul>
-             <li class="active">
-                <a href="{{url('home')}}">
-                            <i class="now-ui-icons design-2_ruler-pencil"></i>
-                            <p>Registrar Carnet</p>
-                        </a>
-            </li>
-            <li>
-                <a href="{{url('EvaluarF/EvaluarF')}}}">
-                            <i class="now-ui-icons design_bullet-list-67"></i>
-                            <p>Evaluación</p>
-                        </a>
-            </li>
-            <li>
-                <a href="{{url('/')}}">
-                            <i class="now-ui-icons business_chart-bar-32"></i>
-                            <p>Reportes</p>
-                        </a>
-            </li>
-            <li>
-                <a href="{{url('/')}}">
-                            <i class="now-ui-icons files_single-copy-04"></i>
-                            <p>Registro General</p>
-                        </a>
-            </li>
-        </ul>
         @elseif(auth()->User()->Rol_idRol == '3' )
         <ul class="nav">
-            <li class="active">
-                <a href="{{url('dhome')}}">
-                            <i class="now-ui-icons design_app"></i>
-                            <p>Menu Principal</p>
-                        </a>
-            </li>
             <li>
-                <a href="{{url('seguridad/usuario/')}}">
+                <a href="{{url('/seguridad/usuario/')}}">
                             <i class="now-ui-icons users_circle-08"></i>
                             <p>Usuarios</p>
                         </a>
@@ -120,7 +81,7 @@
                       <ul class="nav">
                       
                         <li >
-                            <a href="{{url('reporte/general')}}">
+                            <a href="{{url('/reporte/general/')}}">
                                 <span class="sidebar-mini-icon">RG</span>
                                 <span class="sidebar-normal"> Reporte General </span>
                             </a>
@@ -128,14 +89,14 @@
 
                       
                         <li >
-                            <a href="{{url('reporte/madre')}}">
+                            <a href="{{url('/reporte/madre/')}}">
                                 <span class="sidebar-mini-icon">V</span>
                                 <span class="sidebar-normal"> Reporte Madres </span>
                             </a>
                         </li>
                       
                         <li >
-                            <a href="{{url('reporte/nino')}}">
+                            <a href="{{url('/reporte/nino/')}}">
                                 <span class="sidebar-mini-icon">W</span>
                                 <span class="sidebar-normal"> Reporte Niños </span>
                             </a>
@@ -146,13 +107,6 @@
 
             </li>
 
-             <li>
-                <a href="{{url('Herramientas')}}">
-                            <i class="now-ui-icons ui-1_settings-gear-63"></i>
-                            <p>Herramientas</p>
-                        </a>
-            </li>
-            
         </ul>
         @endif
     </div>

@@ -42,9 +42,11 @@ Route::resource('reporte/madre','ReporteMadreController');
 
  /*PERMISOS PARA TODOS*/
 
- Route::resource('seguridad/UserSafety','ProfileController');
  Route::PATCH('seguridad/UserSafety/editPass/','ProfileController@updatePassword');
  Route::PATCH('seguridad/usuario/editUser/{idPersona}','ProfileController@updatePeople');
  Route::resource('seguridad/UserSafety','ProfileController');
 
- Route::resource('dhome','DHomeController');
+
+ Route::POST('perfil/editPass/','PerfilController@updatePassword');
+ Route::PATCH('perfil/editPersona/{idUsuario}','PerfilController@updatePersona');
+ Route::resource('perfil','PerfilController');

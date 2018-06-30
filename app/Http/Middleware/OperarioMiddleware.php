@@ -21,7 +21,7 @@ class OperarioMiddleware
             break;
 
          case '3':
-           return redirect()->to('dhome');
+           return redirect()->to('perfil');
             break;   
          
          default:

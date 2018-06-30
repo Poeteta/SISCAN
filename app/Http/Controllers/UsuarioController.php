@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\User;
 use Illuminate\Support\Facades\Redirect;
-use Illuminate\Support\Facades\input;
+use Illuminate\Support\Facades\Input;
 use App\Http\Requests\UsuarioFormRequest;
 use App\Http\Requests\EditUsuarioFormRequest;
 use App\Http\Requests\EditPersonaFormRequest;

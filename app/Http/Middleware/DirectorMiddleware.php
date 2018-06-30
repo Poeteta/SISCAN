@@ -18,7 +18,7 @@ class DirectorMiddleware
         switch (auth()->User()->Rol_idRol) {
 
          case '2':
-           return redirect()->to('dhome');
+           return redirect()->to('perfil');
             break; 
             
          case '3':
