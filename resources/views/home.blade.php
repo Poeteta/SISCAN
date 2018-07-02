@@ -41,55 +41,8 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-transparent  navbar-absolute bg-primary fixed-top">
         <div class="container-fluid">
-            <div class="navbar-wrapper">
-                <div class="navbar-toggle">
-                    <button type="button" class="navbar-toggler">
-                        <span class="navbar-toggler-bar bar1"></span>
-                        <span class="navbar-toggler-bar bar2"></span>
-                        <span class="navbar-toggler-bar bar3"></span>
-                    </button>
-                </div>
+            <div class="navbar-wrapper">                
                 <a class="navbar-brand" href="#pablo">FAMILIA Registrar</a>
-            </div>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index"
-                aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-bar navbar-kebab"></span>
-                <span class="navbar-toggler-bar navbar-kebab"></span>
-                <span class="navbar-toggler-bar navbar-kebab"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navigation">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#pablo">
-                            <i class="now-ui-icons media-2_sound-wave"></i>
-                            <p>
-                                <span class="d-lg-none d-md-block">Stats</span>
-                            </p>
-                        </a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="http://example.com/" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false">
-                            <i class="now-ui-icons location_world"></i>
-                            <p>
-                                <span class="d-lg-none d-md-block">Some Actions</span>
-                            </p>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#pablo">
-                            <i class="now-ui-icons users_single-02"></i>
-                            <p>
-                                <span class="d-lg-none d-md-block">Account</span>
-                            </p>
-                        </a>
-                    </li>
-                </ul>
             </div>
         </div>
     </nav>
@@ -139,10 +92,10 @@
                             <div class="tab-content" >
                                 <div class="tab-pane fade show active" id="about" >
                                
-                                        <img src="{{ asset('img/Header2.png') }}" height="120px" width="450px">
+                                        <img src="{{ asset('img/Header2.png') }}" height="200px" width="550px" style="margin-bottom: 3%;">
                                   
                                     <div style="border:none; border-bottom:2px solid black; border-top: 2px solid black;" class="row">
-                                        <label class="col-md-6 col-form-label"><strong>N° FAMILIA BENEFICIARIA</strong></label>
+                                        <label class="col-md-6 col-form-label"><strong style="padding-left: 10%;">N° FAMILIA BENEFICIARIA</strong></label>
 
                                         <div class="col-md-6">
                                             <div class="form-group">
@@ -152,7 +105,7 @@
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <label class="col-md-3 col-form-label"><strong>FAMILIA:</strong></label>
+                                        <label class="col-md-3 col-form-label" style="padding-left: 7%;"><strong>FAMILIA:</strong></label>
 
                                         <div class="col-md-9">
                                             <div class="form-group">
@@ -161,9 +114,9 @@
                                             </div>
                                         </div>
                                     </div>
-                                  <h6>Responsable de la Familia</h6>
+                                  <h6 style="padding-left: 5%;">Responsable de la Familia</h6>
                                   <div class="row">
-                                        <label class="col-md-3 col-form-label">A.P</label>
+                                        <label class="col-md-3 col-form-label" style="padding-left: 7%;">A.P</label>
 
                                         <div class="col-md-9">
                                             <div class="form-group">
@@ -172,7 +125,7 @@
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <label class="col-md-3 col-form-label">A.M</label>
+                                        <label class="col-md-3 col-form-label" style="padding-left: 7%;">A.M</label>
                                         <div class="col-md-9">
                                             <div class="form-group">
                                                 <input type="text" name="Madre_Apelma" style="border: none;border-bottom: 2px dotted black;">
@@ -181,7 +134,7 @@
                                     </div>
 
                                     <div class="row">
-                                        <label class="col-md-3 col-form-label">Nombres</label>
+                                        <label class="col-md-3 col-form-label" style="padding-left: 7%;">Nombres</label>
 
                                         <div class="col-md-9">
                                             <div class="form-group">
@@ -190,7 +143,7 @@
                                         </div>
                                     </div>
                                      <div class="row">
-                                        <label class="col-md-3 col-form-label">Dirección</label>
+                                        <label class="col-md-3 col-form-label" style="padding-left: 7%;">Dirección</label>
 
                                         <div class="col-md-9">
                                             <div class="form-group">
@@ -203,7 +156,7 @@
 
                                     <div>
                                          <div class="row">
-                                        <label class="col-md-3 col-form-label">HC</label>
+                                        <label class="col-md-3 col-form-label" style="padding-left: 7%;">HC</label>
 
                                         <div class="col-md-9">
                                             <div class="form-group">
@@ -212,7 +165,7 @@
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <label class="col-md-3 col-form-label">DNI</label>
+                                        <label class="col-md-3 col-form-label" style="padding-left: 7%;">DNI</label>
 
                                         <div class="col-md-9">
                                             <div class="form-group">
@@ -225,7 +178,7 @@
                                     </div>
                                 <div class="article-container">
                                     <div class="article" >
-                                       <h6>Caracteristicas de la Familia</h6>
+                                       <h6 style="padding-left: 7%;">Caracteristicas de la Familia</h6>
                                         <div class="col-sm-10 checkbox-radios">
                                         <div class="form-check form-check-radio">
                                             <label class="form-check-label">
@@ -289,7 +242,7 @@
                                 <!-- End div of cap-->
                                   </div>
                                     <div style="border:none; border-top: 2px solid black; border-bottom: 2px solid black;" class="row">
-                                        <label class="col-md-10 col-form-label" style="left: 30%;"><strong>ASISTENCIA A SESIONES</strong></label>
+                                        <label class="col-md-12 col-form-label" style="text-align: center;"><strong>ASISTENCIA A SESIONES</strong></label>
                                     </div>
                                     <div class="form-group">
                                   <table class="table-bordered">
@@ -321,23 +274,23 @@
                             
                                 <div class="tab-pane fade" id="account">
                                     <div style="border:none; border-bottom:2px solid black;" class="row">
-                                        <label class="col-md-10 col-form-label" style="left: 30%;"><h6>DATOS DE LA MADRE</h6>(Mujeres en Edad Fertil)</label>
+                                        <label class="col-md-12 col-form-label" style="text-align: center;"><h6>DATOS DE LA MADRE</h6>(Mujeres en Edad Fertil)</label>
                                     </div>
                                     <div class="article-container" style="border:none; border-bottom:2px solid black;">
                         
-                                    <div class="article" >
-                                       <label>Inicio</label>
-                                         <div class="col-md-4">
+                                    <div class="article">
+                                       <label style="padding-left: 40%;">Inicio</label>
+                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <span class="btn-group" data-toggle="buttons-radio">
                                                  <span class="button-checkbox">
-                                                 <button type="button" class="btn btn-default btn-sm" data-color="primary">SI</button>
+                                                 <button type="button" class="btn btn-default btn-sm" data-color="primary" style="margin-left: 60%; width: 120%;">SI</button>
                                                  <input type="checkbox" hidden="" value="1" name="Gestante_Inicio" />
                                                  </span>
                                                 <br>
                                                 <br>
                                                 <span class="button-checkbox">
-                                                 <button type="button" class="btn btn-default btn-sm" data-color="primary">NO</button>
+                                                 <button type="button" class="btn btn-default btn-sm" data-color="primary" style="margin-left: 90%; width: 100%;">NO</button>
                                                  <input type="checkbox" hidden="" value="0" name="Gestante_Final" />
                                                  </span>
                                             </span>
@@ -345,19 +298,19 @@
                                         </div>
                                     </div>
                                     <div class="article">
-                                       <label>Final</label>
+                                       <label style="padding-left: 40%;">Final</label>
 
-                                    <div class="col-md-4">
+                                    <div class="col-md-6">
                                         <div class="form-group">
                                             <span class="btn-group" data-toggle="buttons-radio">
                                                  <span class="button-checkbox">
-                                                 <button type="button" class="btn btn-default btn-sm" data-color="primary">SI</button>
+                                                 <button type="button" class="btn btn-default btn-sm" data-color="primary" style="margin-left: 60%; width: 120%;">SI</button>
                                                  <input type="checkbox" hidden="" value="1" name="Gestante_Final" />
                                                  </span>
                                                 <br>
                                                 <br>
                                                  <span class="button-checkbox">
-                                                 <button type="button" class="btn btn-default btn-sm" data-color="primary">NO</button>
+                                                 <button type="button" class="btn btn-default btn-sm" data-color="primary" style="margin-left: 90%; width: 100%;">NO</button>
                                                  <input type="checkbox" hidden="" value="0" name="Gestante_Final" />
                                                  </span>
                                             </span>
@@ -367,7 +320,7 @@
                                   </div>
 
                                     <div class="article-container">
-                                    <label class="col-md-10 col-form-label"><strong>PLANIFICACIÓN FAMILIAR</strong></label>
+                                    <label class="col-md-12 col-form-label"><strong>PLANIFICACIÓN FAMILIAR</strong></label>
 
                                     <div class="article" >
                                         <div class="col-sm-10 checkbox-radios">
@@ -438,27 +391,27 @@
                                      </div>
                                   </div>
                                   <div style="border:none; border-top: 2px solid black;" class="row">
-                                        <label class="col-md-10 col-form-label"><strong>CONTROL PRENATAL</strong></label>
+                                        <label class="col-md-12 col-form-label" style="padding-left: 5%;"><strong>CONTROL PRENATAL</strong></label>
                                     </div>
                                      <div class="row">
 
-                                        <label class="col-md-3 col-form-label">Antes del Programa</label>
+                                        <label class="col-md-4 col-form-label" style="padding-left: 8%;">Antes del Programa</label>
 
-                                        <div class="col-md-9">
+                                        <div class="col-md-8">
                                             <div class="form-group">
                                                 <span class="btn-group" data-toggle="buttons-radio">
                                                 <span class="button-checkbox">
-                                                 <button type="button" class="btn btn-default btn-sm" data-color="primary">SI</button>
+                                                 <button type="button" class="btn btn-default btn-sm" style="width: 120%;" data-color="primary">SI</button>
                                                  <input type="checkbox" hidden="" value="1" name="CPN_Antes_pg" />
                                                  </span>
                                                 <br>
                                                 <br>
                                                 <span class="button-checkbox">
-                                                 <button type="button" class="btn btn-default btn-sm" data-color="primary">NO</button>
+                                                 <button type="button" class="btn btn-default btn-sm" data-color="primary" style="margin-left: 20%;">NO</button>
                                                  <input type="checkbox" hidden="" value="0" name="CPN_Antes_pg" />
                                                  </span>
                                             </span>
-                                                <input type="text" class="" name="CPN_cantidad" style="border: none;border-bottom: 2px dotted black;" placeholder="Cantidad">
+                                                <input type="text" class="" name="CPN_cantidad" style="margin-left: 5%; border: none;border-bottom: 2px dotted black;" placeholder="Cantidad">
                                             </div>
                                         </div>
                                     </div>
@@ -484,23 +437,23 @@
                                     </div>
 
                                     <div style="border:none; border-top: 2px solid black; border-bottom: 2px solid black;" class="row">
-                                        <label class="col-md-10 col-form-label" style="left: 33%;"><strong>PAPANICOLAU</strong></label>
+                                        <label class="col-md-12 col-form-label" style="text-align: center;"><strong>PAPANICOLAU</strong></label>
                                     </div>
                                      <div class="article-container">
                         
                                     <div class="article" >
-                                       <label>Antes del Programa</label>
-                                         <div class="col-md-4">
+                                       <label style="padding-left: 25%;">Antes del Programa</label>
+                                         <div class="col-md-6">
                                          <div class="form-group">
                                             <span class="btn-group" data-toggle="buttons-radio">
                                                 <span class="button-checkbox">
-                                                 <button type="button" class="btn btn-default btn-sm" data-color="primary">SI</button>
-                                                 <input type="checkbox" hidden="" value="1" name="Papanicolau_Antes_pg" />
-                                                 </span>
+                                                    <button type="button" class="btn btn-default btn-sm" data-color="primary" style="margin-left: 80%; width: 120%;">SI</button>
+                                                    <input type="checkbox" hidden="" value="1" name="Papanicolau_Antes_pg" />
+                                                </span>
                                                 <br>
                                                 <br>
                                                 <span class="button-checkbox">
-                                                 <button type="button" class="btn btn-default btn-sm" data-color="primary">NO</button>
+                                                 <button type="button" class="btn btn-default btn-sm" data-color="primary" style="margin-left: 100%; width: 100%;">NO</button>
                                                  <input type="checkbox" hidden="" value="0" name="Papanicolau_Antes_pg" />
                                                  </span>
                                             </span>
@@ -509,17 +462,20 @@
                                          
                                     </div>
                                     <div class="article">
-                                       <label>Obtuvo Resultado</label>
-
-                                        <div class="col-md-4">
+                                       <label style="padding-left: 25%;">Obtuvo Resultado</label>
+                                        <div class="col-md-6">
                                             <div class="form-group">
                                                 <span class="btn-group" data-toggle="buttons-radio">
-                                                <button class="btn btn-default btn-sm">SI</button>
-                                                <input type="checkbox" hidden="" value="1" name="Papanicolau_resul" />
+                                                    <span class="button-checkbox">
+                                                        <button class="btn btn-default btn-sm" style="margin-left: 80%; width: 120%;">SI</button>
+                                                        <input type="checkbox" hidden="" value="1" name="Papanicolau_resul" />
+                                                </span>
                                                 <br>
                                                 <br>
-                                                <button class="btn btn-default btn-sm">NO</button>
+                                                <span class="button-checkbox">
+                                                <button class="btn btn-default btn-sm" style="margin-left: 100%;">NO</button>
                                                 <input type="checkbox" hidden="" value="0" name="Papanicolau_resul" />
+                                                </span>
                                             </span>
                                             </div>
                                         </div>
@@ -527,7 +483,7 @@
                                   </div>
                                    <div class="row">
 
-                                        <label class="col-md-4 col-form-label">Durante el Programa</label>
+                                        <label class="col-md-4 col-form-label" style="padding-left: 10%;">Durante el Programa</label>
 
                                         <div class="col-md-8">
                                             <div class="form-group">
@@ -536,23 +492,23 @@
                                         </div>
                                     </div>
                                     <div style="border:none; border-top: 2px solid black; border-bottom: 2px solid black;" class="row">
-                                        <label class="col-md-10 col-form-label" style="left: 20%;"><strong>EXAMEN Y AUTOEXAMEN DE MAMAS</strong></label>
+                                        <label class="col-md-12 col-form-label" style="text-align: center;"><strong>EXAMEN Y AUTOEXAMEN DE MAMAS</strong></label>
                                     </div>
                                      <div class="article-container">
                         
                                     <div class="article" >
-                                       <label>Antes del Programa</label>
-                                         <div class="col-md-4">
+                                       <label style="padding-left: 25%;">Antes del Programa</label>
+                                         <div class="col-md-6">
                                             <div class="form-group">
                                              <span class="btn-group" data-toggle="buttons-radio">
                                                 <span class="button-checkbox">
-                                                 <button type="button" class="btn btn-default btn-sm" data-color="primary">SI</button>
+                                                 <button type="button" class="btn btn-default btn-sm" data-color="primary" style="margin-left: 80%; width: 120%;">SI</button>
                                                  <input type="checkbox" hidden="" value="1" name="Ex_automama" />
                                                  </span>
                                                 <br>
                                                 <br>
                                                 <span class="button-checkbox">
-                                                 <button type="button" class="btn btn-default btn-sm" data-color="primary">NO</button>
+                                                 <button type="button" class="btn btn-default btn-sm" data-color="primary" style="margin-left: 100%; width: 100%;">NO</button>
                                                  <input type="checkbox" hidden="" value="0" name="Ex_automama" />
                                                  </span>
                                             </span>
@@ -561,19 +517,19 @@
                                          
                                     </div>
                                     <div class="article">
-                                       <label>Sospechoso</label>
+                                       <label style="padding-left: 40%;">Sospechoso</label>
 
-                                        <div class="col-md-4">
+                                        <div class="col-md-6">
                                             <div class="form-group">
                                              <span class="btn-group" data-toggle="buttons-radio">
                                                 <span class="button-checkbox">
-                                                 <button type="button" class="btn btn-default btn-sm" data-color="primary">SI</button>
+                                                 <button type="button" class="btn btn-default btn-sm" data-color="primary" style="margin-left: 80%; width: 120%;">SI</button>
                                                  <input type="checkbox" hidden="" value="1" name="Ex_automama_sospechoso" />
                                                  </span>
                                                 <br>
                                                 <br>
                                                 <span class="button-checkbox">
-                                                 <button type="button" class="btn btn-default btn-sm" data-color="primary">NO</button>
+                                                 <button type="button" class="btn btn-default btn-sm" data-color="primary" style="margin-left: 100%;">NO</button>
                                                  <input type="checkbox" hidden="" value="0" name="Ex_automama_sospechoso" />
                                                  </span>
                                             </span>
@@ -583,7 +539,7 @@
                                   </div>
                                    <div class="row">
 
-                                        <label class="col-md-4 col-form-label">Durante el Programa</label>
+                                        <label class="col-md-4 col-form-label" style="padding-left: 10%;">Durante el Programa</label>
 
                                         <div class="col-md-8">
                                             <div class="form-group">
@@ -592,23 +548,23 @@
                                         </div>
                                     </div>
                                     <div style="border:none; border-top: 2px solid black; border-bottom: 2px solid black;" class="row">
-                                        <label class="col-md-10 col-form-label" style="left: 33%;"><strong>VACUNA ANTITENICA</strong></label>
+                                        <label class="col-md-12 col-form-label" style="text-align: center;"><strong>VACUNA ANTITENICA</strong></label>
                                     </div>
                                      <div class="article-container">
                         
                                     <div class="article" >
-                                       <label>Antes del Programa</label>
+                                       <label style="padding-left: 10%;">Antes del Programa</label>
                                          <div class="col-md-2">
                                             <div class="form-group">
                                                 <span class="btn-group" data-toggle="buttons-radio">
                                                  <span class="button-checkbox">
-                                                 <button type="button" class="btn btn-default btn-sm" data-color="primary">SI</button>
+                                                 <button type="button" class="btn btn-default btn-sm" data-color="primary" style="margin-left: 20%; width: 120%;">SI</button>
                                                  <input type="checkbox" hidden="" value="1" name="Vacuna_antite_pg" />
                                                  </span>
                                                 <br>
                                                 <br>
                                                 <span class="button-checkbox">
-                                                 <button type="button" class="btn btn-default btn-sm" data-color="primary">NO</button>
+                                                 <button type="button" class="btn btn-default btn-sm" data-color="primary" style="margin-left: 60%;">NO</button>
                                                  <input type="checkbox" hidden="" value="0" name="Vacuna_antite_pg" />
                                                  </span>
                                             </span>
@@ -617,18 +573,18 @@
                                          
                                     </div>
                                     <div class="article">
-                                       <label>Cantidad</label>
+                                       
 
                                         <div class="col-md-">
                                             <div class="form-group">
-                                               <input type="text" class="" style="border: none;border-bottom: 2px dotted black;" name="Vacuna_cantidad">
+                                               <input type="text" class=""  placeholder="Cantidad" style=" margin-top: 20%; border: none;border-bottom: 2px dotted black;" name="Vacuna_cantidad">
                                             </div>
                                         </div>
                                      </div>
                                   </div>
                                    <div class="row">
 
-                                        <label class="col-md-4 col-form-label">Durante el Programa</label>
+                                        <label class="col-md-4 col-form-label" style="padding-left: 10%;">Durante el Programa</label>
 
                                         <div class="col-md-8">
                                             <div class="form-group">
@@ -708,9 +664,9 @@
                                     @if ($che->Tipo_Chequeo_idTipo_Chequeo == 1)
                                     <div class="row">
 
-                                        <label class="col-md-3 col-form-label">{{$che->Chequeo_nom}}</label>
+                                        <label class="col-md-4 col-form-label" style="padding-left: 4%;">{{$che->Chequeo_nom}}</label>
 
-                                        <div class="col-md-9">
+                                        <div class="col-md-8">
                                             <div class="form-group">
                                               <span class="btn-group" data-toggle="buttons-radio">
                                                 <span class="button-checkbox">
@@ -832,13 +788,9 @@
 
                         <div class="card-footer">
                             <div class="pull-right">
-
-                                <input type='button' class='btn btn-next btn-fill btn-rose btn-wd' name='next' value='Siguiente' />
-                                <input type='submit' class='btn btn-finish btn-fill btn-rose btn-wd' name='finish' value='Guardar' />
-
-                                <input type='button' style="float: right;" 
-                            class='btn btn-next btn-fill btn-rose btn-wd' name='next' value='Siguiente' />
-                                <input type='submit' style="float: right;"  class='btn btn-finish btn-fill btn-rose btn-wd' name='finish' value='Guardar' />
+                                
+                                <input type='button' style="float: right;" class='btn btn-next btn-fill btn-rose btn-wd' name='next' value='Siguiente' />
+                                <input type='submit' style="float: right;" class='btn btn-finish btn-fill btn-rose btn-wd' name='finish' value='Guardar' />
 
                             </div>
 
