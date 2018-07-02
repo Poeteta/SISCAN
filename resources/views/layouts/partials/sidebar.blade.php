@@ -48,7 +48,7 @@
                         </a>
             </li>
             <li>
-                <a href="{{url('/evaluacion')}}">
+                <a href="{{url('/eva')}}">
                             <i class="now-ui-icons design_bullet-list-67"></i>
                             <p>Evaluación</p>
                         </a>

@@ -18,10 +18,8 @@
     <div class="col-md-3"></div>
 <div class="col-md-6">
 <div class="card" style="border: 2px solid black; ">
-        {{Form::Open(array('action'=>array('evalController@store'),'method'=>'POST'))}}
+        {!!Form::open(array('url'=>'evaluacion/store','method'=>'POST','autocomplete'=>'off'))!!} 
         {{Form::token()}} {{ csrf_field() }}
-
-
       <div class="card-header">
           <h5 class="title">Evaluacion Final de la Familia: {{$family->Fam_nom}}
         </h5>
