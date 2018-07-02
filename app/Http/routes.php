@@ -25,6 +25,7 @@ Route::resource('seguridad/usuario','UsuarioController');
 Route::resource('reporte/general','ReporteController');
 Route::resource('reporte/nino','ReporteNinosController');
 Route::resource('reporte/madre','ReporteMadreController');
+Route::resource('periodo','PeriodoController');
 
   });
 
