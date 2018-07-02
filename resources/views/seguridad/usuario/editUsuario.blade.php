@@ -44,7 +44,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-default pull-left" data-dismiss="modal" style="width: 20%;">Cerrar</button>
                     <button type="submit" class="btn btn-primary">Confirmar</button>
                 </div>
             </div>
