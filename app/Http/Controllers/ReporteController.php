@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Familia;
 use App\Http\Requests;
+use App;
 use DB;
+use PDF;
 class ReporteController extends Controller
 {
     public function __construct()
@@ -15,8 +17,8 @@ class ReporteController extends Controller
  public function index(Request $request)
     {   
 
-        if ($request)
-        {    
+        if ($request){    
+
        $query=trim($request->get('fecha'));     
        $modo_hospital = DB::table('historial_familia')
             ->selectRaw('Modo_Capta, count(*) as idfamhos')
@@ -149,6 +151,5 @@ class ReporteController extends Controller
  }
 
 
- 
 
 }

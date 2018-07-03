@@ -12,9 +12,6 @@ Route::auth();
                        !!!!!!!! MUY IMPORTANTE !!!!
  */
 
-
-
-
 //DIRECTOR
 
 /*MODULO DE REPORTE,TRABAJADORES --HANS--  NO TOCAR*/  
@@ -22,9 +19,15 @@ Route::group(['middleware' =>['auth','is_director']], function (){
 Route::PATCH('seguridad/usuario/editPersona/{idUsuario}','UsuarioController@updatePersona'); 
 Route::PATCH('seguridad/usuario/editUsuario/{idUsuario}','UsuarioController@updateUsuario');
 Route::resource('seguridad/usuario','UsuarioController');
+
+
 Route::resource('reporte/general','ReporteController');
 Route::resource('reporte/nino','ReporteNinosController');
 Route::resource('reporte/madre','ReporteMadreController');
+
+
+
+
 
   });
 
