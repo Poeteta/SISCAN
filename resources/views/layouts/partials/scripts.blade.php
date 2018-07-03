@@ -15,7 +15,7 @@
 <script type="text/javascript" src="{{ URL::asset('js/jquery.bootstrap-wizard.js') }}"></script>
 <script src="{{ asset('js/plugins/bootstrap-selectpicker.js') }}" type="text/javascript"></script>
 <script src="{{ asset('js/plugins/bootstrap-datetimepicker.js') }}" type="text/javascript"></script>
-<script src="{{ asset('js/plugins/jquery.dataTables.min.js') }}" type="text/javascript"></script>
+
 <script src="{{ asset('js/plugins/bootstrap-tagsinput.js') }}" type="text/javascript"></script>
 <script src="{{ asset('js/plugins/jasny-bootstrap.min.js') }}" type="text/javascript"></script>
 
