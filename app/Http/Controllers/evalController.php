@@ -55,7 +55,7 @@ class evalController extends Controller
              {
           DB::rollback();
              }
-             return Redirect::to('evaluacion')->with('msg','Se registro correctamente...');
+             return redirect('evaluacion/familia')->with('status', 'Familia Evaluada Exitosamente!');
         }
         public function show($id){
             $fam=DB::table('familia')

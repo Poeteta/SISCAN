@@ -108,15 +108,7 @@
     @endif
         
     <div class="row">
-            <div class="cold-md-4 mr-auto ml-auto hide" id="second" style="width: 45%; height: 20%;  padding-top: 89px;">
-                <div class="wizard-container">
-                    <div class="card-body" style="border:2px solid black; background-color: #FFFFFF; color: rgba(0,0,0, 0.87); background: #fff;">
-                            <div class="tab-content results" >
-                            </div>
-                    </div>
-                </div>
-            </div>
-        <div class="col-md-6 mr-auto ml-auto">
+        <div class="col-md-6 mr-auto ml-auto" style="right: 20%;">
             <!--      Wizard container        -->
             <div class="wizard-container">
                 <div class="card card-wizard" data-color="primary" id="wizardProfile">
@@ -147,6 +139,7 @@
                                 </ul>
                             </div>
                         </div>
+
 
                         <div class="card-body" style="border:2px solid black;">
                             <div class="tab-content" >
@@ -658,9 +651,10 @@
 
           
                 <div class="tab-pane fade kid" id="address">
+
                         <div class="buttons" style="clear: both; margin-top: 10px;">
-                            <input type="button" class="clone" id="showsd" value="Agregar">
-                            <input type="button" class="remove" onclick="removed" value="Eliminar">
+                            <input type="button" onclick="show()" class="btn btn-primary" value="Agregar">
+                            <input type="button" class="remove" onclick="removed()" value="Eliminar">
                              </div>
                                  <div class="row">
                                     <label class="col-sm-2 col-form-label">Historia Clinica</label>
@@ -811,6 +805,7 @@
                                      <div style="border:none;  border-bottom: 2px solid black; border-top: 2px solid black;" class="row">
                                         <label class="col-md-10 col-form-label" style="left: 30%;"><strong>PROBLEMAS DE SALUD</strong></label>
                                     </div>
+                                    
                                      <table class="table-bordered" id="saludtable">
                                        <thead>
                                         <tr>
@@ -821,7 +816,7 @@
                                           <th >Otro</th>
                                           <th><a class="" type="btn-success" id="addpsalud"><i class="now-ui-icons ui-1_simple-add"></i></a>
 
-                                       </tr>
+                                       </tr class="form-g">
                                          <tr>
                                           <th scope="col"></th>
                                           <th scope="col"></th>
@@ -836,19 +831,16 @@
                                       <tr>
                                          <td><input type="text" name="Problema_enfermedad[]" class="form-control"></td>
                                          <td><input type="date" name="Problema_fecha[]" class="form-control "></td>
-                                         <td><input type="radio" name="Problema_atendido[]" value="1" id="atendido" class="form-control"></td>
-                                         <td><input type="radio" name="Problema_atendido[]" value="0" id="atendido" class="form-control"></td>
+                                         <td><input type="radio" name="Problema_atendido[]" value="1" id="atendidoa" class="form-control"></td>
+                                         <td><input type="radio" name="Problema_atendido[]" value="0" id="atendidoa" class="form-control"></td>
                                          <td><input type="radio" name="Problema_hospital[]" value="Huaycan" id="Problema" class="form-control"></td>
                                          <td><input type="radio" name="Problema_hospital[]" value="Otro" id="Problema" class="form-control"></td>
                                       </tr>
-   
                                    </tbody>
                                    </table>
-
-                            
-
+                                    @include('Familia.two')
                             </div>
-                        </div>
+                
                         @include('Familia.RegistroSulfato')
                       
                       
@@ -888,8 +880,10 @@
 
         var tbodya = $('#saludtable').children('tbodya');
         var tablea = tbodya.length ? tbodya : $('#saludtable');
+    
         $('#addpsalud').click(function(){
             tablea.append('<tr><td><input type="text" name="Problema_enfermedad[]" class="form-control"></td><td><input type="date" name="Problema_fecha[]" class="form-control "></td><td><input type="radio" name="Problema_atendido[]" value="1" id="atendido" class="form-control"></td><td><input type="radio" name="Problema_atendido[]" value="0" id="atendido" class="form-control"></td><td><input type="radio" name="Problema_hospital[]" value="Huaycan" id="Problema" class="form-control"></td><td><input type="radio" name="Problema_hospital[]" value="Otro" id="Problema" class="form-control"></td></tr>');
+        
         })
 
         var tbodyb = $('#cntable').children('tbodyb');
@@ -988,16 +982,35 @@
 });
   </script>
   <script>
+        function bindAllOnClick(context) {
+        context.change(function(){
+        var check = $(this).prop('checked');
+        if(typeof check === 'undefined') 
+            check = $(this).is(':checked');
 
-      $('.wizard-container').on('click', '.clone', function() {
-         $('.clone').closest('.wizard-container').find('.kid').first().clone().appendTo('.results');
-      });
-      $("#showsd").click(function(){
-        $("#second").show();
-    });
-      $(".remove").click(function(){
-        $("#second").hide().remove();
-    });
+        $(this).parent().parent().find('p :checkbox').each(
+            function(){
+                if(check) {
+                    this.checked = true;
+                    console.log('test');
+                }
+                else this.checked = false;
+            });
+           });
+         }
+
   </script>
+  <script type="text/javascript">
+      function show(){
+      document.getElementById('second').style.display = 'block';
+      }
+
+      function removed(){
+      document.getElementById('second').remove();
+      }
+  </script>
+
+
+
   
     @endsection
