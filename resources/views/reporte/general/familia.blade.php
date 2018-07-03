@@ -1,5 +1,4 @@
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jspdf/0.9.0rc1/jspdf.min.js'></script>
- <button id="cmd">Generate PDF</button>
  <div class="row" id="content">
                             <div class="col-md-5">
                                 <div class="card">
@@ -115,7 +114,7 @@
 
                                   </div>
                                   <div class="card-body"><script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.min.js"></script>
-                                     <input id="save-pdf" type="button" value="Save as PDF" disabled />
+                                     <input id="save-pdf" type="button" value="Exportar en PDF" disabled />
                                      <div id="donutchart" style="width: 500px; height: 300px;"></div>
                                   </div>
                           
