@@ -1,4 +1,6 @@
 @extends('layouts.app') @section('htmlheader_title') Home @endsection @section('main-content')
+
+
 <div class="main-panel">
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-transparent  navbar-absolute bg-primary fixed-top">
@@ -87,7 +89,7 @@
                     </li>
                 </ul>
                 <div class="tab-content tab-space tab-subcategories">
-                    <div class="tab-pane active" id="link7">
+                    <div class="tab-pane active"  id="link7">
 
                     @include('reporte.general.familia')
 
@@ -119,9 +121,39 @@
     
 </div>
 
-<script>
-    $("#content").children().click(function (e) {
-        e.stopPropagation();
+@push('scripts')
+<script type="text/javascript">
+
+    var doc = new jsPDF();
+var specialElementHandlers = {
+    '#editor': function (element, renderer) {
+        return true;
+    }
+};
+
+$('#cmd').click(function () {
+    
+    doc.fromHTML($('#content').html(), 15, 15, {
+        'width': 170,
+        'elementHandlers': specialElementHandlers,
+ 
     });
+
+    doc.setProperties({
+ title: 'Hans',
+ subject: 'This is the subject',
+ author: 'Author Name',
+ keywords: 'generated, javascript, web 2.0, ajax',
+ creator: 'Creator Name'
+});
+
+
+    doc.save('sample-file.pdf');
+
+
+});
 </script>
+@endpush
+
+
 @endsection
