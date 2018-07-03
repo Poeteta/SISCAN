@@ -1056,7 +1056,6 @@
     },
     {
         "name": "nesbot/carbon",
-<<<<<<< HEAD
         "version": "1.31.0",
         "version_normalized": "1.31.0.0",
         "source": {
@@ -1072,8 +1071,6 @@
         "version": "1.30.0",
         "version_normalized": "1.30.0.0",
 
-=======
->>>>>>> dda997f2014e9dea46d32a2631e3e7d17102104b
         "version": "1.31.1",
         "version_normalized": "1.31.1.0",
         "source": {
@@ -1083,17 +1080,16 @@
         },
         "dist": {
             "type": "zip",
-<<<<<<< HEAD
+
             "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/863a1a651ea324e1838da3a52753a4239b9d4bea",
             "reference": "863a1a651ea324e1838da3a52753a4239b9d4bea",
 
             "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/385780c8ca2dbfd25452666e3f55e8dc1df58c41",
             "reference": "385780c8ca2dbfd25452666e3f55e8dc1df58c41",
 
-=======
+
             "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/385780c8ca2dbfd25452666e3f55e8dc1df58c41",
             "reference": "385780c8ca2dbfd25452666e3f55e8dc1df58c41",
->>>>>>> dda997f2014e9dea46d32a2631e3e7d17102104b
             "shasum": ""
         },
         "require": {
@@ -1104,12 +1100,10 @@
             "friendsofphp/php-cs-fixer": "~2",
             "phpunit/phpunit": "^4.8.35 || ^5.7"
         },
-<<<<<<< HEAD
 
         "time": "2018-06-24T14:32:22+00:00",
         "time": "2018-06-15T11:52:26+00:00",
-=======
->>>>>>> dda997f2014e9dea46d32a2631e3e7d17102104b
+
         "time": "2018-06-25T13:15:16+00:00",
         "type": "library",
         "extra": {
@@ -1145,7 +1139,7 @@
         ]
     
 },
-    {
+    
         "name": "nikic/php-parser",
         "version": "v2.1.1",
         "version_normalized": "2.1.1.0",
