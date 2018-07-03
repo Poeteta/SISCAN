@@ -8,28 +8,25 @@
                                 <h5 class="modal-title" id="myModalLabel">Micronutrientes</h5>
                               </div>
                               <div class="modal-body">
-                                 <table class="table-bordered responsive">
-                                       <thead>
-                                         <tr>
-                                          @foreach($chequeo as $che)
-                                          @if ($che->Tipo_Chequeo_idTipo_Chequeo == 2)
-                                          <th scope="col" style="font-size: 2;" class="vertical">{{$che->Chequeo_nom}}</th>
-                                          @endif
-                                          @endforeach                                       
-                                       </tr>
-                                      </thead>
-                                   <tbody>
-                                      <tr>
-                                         @foreach($chequeo as $che)
-                                         @if ($che->Tipo_Chequeo_idTipo_Chequeo == 2)
-                                         <th><input type="date" name="Nino_hcfecha[]" class="form-control"></th>
-                                         <input type="hidden" name="Chequeo_idChequeo[]" value="{{$che->idChequeo}}">
-                                         @endif
-                                         @endforeach   
-                                      </tr>
-   
-                                   </tbody>
-                                   </table>
+                                <div id="writing-mode">
+                          <table>
+                                 @foreach($chequeo as $che)
+                                 @if ($che->Tipo_Chequeo_idTipo_Chequeo == 2)
+                                <tr>
+                                 <th>{{$che->Chequeo_nom}}</th>
+                                 <td contenteditable="true" ;></td>
+                                 <td contenteditable="true" ;></td>
+                                 <td contenteditable="true" ;></td>
+                                 <td contenteditable="true" ;></td>
+                                 <td contenteditable="true" ;></td>
+                                 <td contenteditable="true" ;><th><input type="date" name="Nino_hcfecha[]" class="form-control"></th><input type="hidden" name="Chequeo_idChequeo[]" value="{{$che->idChequeo}}"></td>
+                                 <td contenteditable="true" ;></td>
+                                 <td contenteditable="true" ;></td> 
+                               </tr>
+                                 @endif
+                                @endforeach  
+                         </table>
+                               </div>
                               </div>
                               <div class="modal-footer justify-content-center">
                                     <button type="button" class="btn btn-info btn-round" data-dismiss="modal">Registrar</button>

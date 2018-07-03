@@ -97,12 +97,25 @@
     <div class="panel-header panel-header-sm">
     </div>
     
-
     <div class="content">
-        <div class="cold-md-6 mr-automl-auto">
-    
-    </div>
-
+    @if (session('status'))
+        
+        <div class="alert alert-success alert-with-icon" data-notify="container">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    <span data-notify="icon" class="now-ui-icons ui-1_bell-53"></span>
+                    <span data-notify="message">{{ session('status') }}</span>
+                </div>
+    @endif
+        
+    <div class="row">
+            <div class="cold-md-4 mr-auto ml-auto hide" id="second" style="width: 45%; height: 20%;  padding-top: 89px;">
+                <div class="wizard-container">
+                    <div class="card-body" style="border:2px solid black; background-color: #FFFFFF; color: rgba(0,0,0, 0.87); background: #fff;">
+                            <div class="tab-content results" >
+                            </div>
+                    </div>
+                </div>
+            </div>
         <div class="col-md-6 mr-auto ml-auto">
             <!--      Wizard container        -->
             <div class="wizard-container">
@@ -137,9 +150,9 @@
 
                         <div class="card-body" style="border:2px solid black;">
                             <div class="tab-content" >
-                                <div class="tab-pane fade show active" id="about" >
+                                <div class="tab-pane show active" id="about" >
                                
-                                        <img src="{{ asset('img/Header2.png') }}" height="120px" width="450px">
+                                        <img src="{{ asset('img/Header2.png') }}" height="200px" width="550px" style="margin-bottom: 3%;">
                                   
                                     <div style="border:none; border-bottom:2px solid black; border-top: 2px solid black;" class="row">
                                         <label class="col-md-6 col-form-label"><strong>N° FAMILIA BENEFICIARIA</strong></label>
@@ -194,7 +207,7 @@
 
                                         <div class="col-md-9">
                                             <div class="form-group">
-                                                <input type="text" style="border: none;border-bottom: 2px dotted black;" name="Fam_direccion">
+                                                <input type="text" style="border: none;border-bottom: 2px dotted black;" name="Fam_direccion" data-validation="length alphanumeric" >
                                             </div>
                                         </div>
                                     </div>
@@ -257,7 +270,7 @@
                                         <div class="col-sm-12 checkbox-radios">
                                         <div class="form-check form-check-radio">
                                             <label class="form-check-label">
-                                                <input class="form-check-input" type="radio" name="Modo_Capta" id="" value="Visita ">
+                                                <input class="form-check-input" type="radio" name="Modo_Capta" id="" value="Visita">
                                                 <span class="form-check-sign"></span>
                                                 Visita Hospitalaria
                                             </label>
@@ -319,7 +332,7 @@
                             </div>
 
                             
-                                <div class="tab-pane fade" id="account">
+                                <div class="tab-pane " id="account">
                                     <div style="border:none; border-bottom:2px solid black;" class="row">
                                         <label class="col-md-10 col-form-label" style="left: 30%;"><h6>DATOS DE LA MADRE</h6>(Mujeres en Edad Fertil)</label>
                                     </div>
@@ -632,7 +645,9 @@
 
                                         <div class="col-md-8">
                                             <div class="form-group">
-                                                <input type="date" class="" >
+                                                <input type="date" class="" name="Madre_hcfecha[]">
+                                                <input type="date" class="" name="Madre_hcfecha[]">
+                                                <input type="date" class="" name="Madre_hcfecha[]">
                                             </div>
                                         </div>
                                     </div>
@@ -642,7 +657,11 @@
 
 
           
-                <div class="tab-pane fade" id="address">
+                <div class="tab-pane fade kid" id="address">
+                        <div class="buttons" style="clear: both; margin-top: 10px;">
+                            <input type="button" class="clone" id="showsd" value="Agregar">
+                            <input type="button" class="remove" onclick="removed" value="Eliminar">
+                             </div>
                                  <div class="row">
                                     <label class="col-sm-2 col-form-label">Historia Clinica</label>
 
@@ -735,7 +754,7 @@
                                     <div style="border:none; border-bottom:2px solid black; border-top: 2px solid black;" class="row">
                                         <label class="col-md-10 col-form-label" style="left: 30%;"><strong>CONTROL NUTRICIONAL</strong></label>
                                     </div>
-                                    <table class="table-bordered">
+                                    <table class="table-bordered" id="cntable">
                                        <thead>
                                          <tr>
                                           <th scope="col" style="font-size: 2;">N° Evaluación</th>
@@ -744,11 +763,12 @@
                                           <th scope="col">Talla</th>
                                           <th scope="col">Hb/Hto</th>
                                           <th scope="col">Observacion</th>
+                                          <th><a class="" type="btn-success" id="addcn"><i class="now-ui-icons ui-1_simple-add"></i></a>
                                        </tr>
                                       </thead>
                                    <tbody>
                                       <tr>
-                                         <th><input type="text" name="Cn_fecha[]" class="form-control"></th>
+                                         <td><input type="text" name="Cn_fecha[]" class="form-control"></td>
                                          <td><input type="number" name="Cn_edad[]" class="form-control"></td>
                                          <td><input type="number" name="Cn_peso[]" class="form-control"></td>
                                          <td><input type="number" name="Cn_talla[]" class="form-control"></td>
@@ -758,6 +778,7 @@
    
                                    </tbody>
                                    </table>
+                                   <br>
                                    <div style="border:none;  border-top: 2px solid black;" class="row">
                                         <label class="col-md-10 col-form-label"><strong>MICRONUTRIENTES (Niños menores 3 años)</strong></label>
                                     </div>
@@ -790,7 +811,7 @@
                                      <div style="border:none;  border-bottom: 2px solid black; border-top: 2px solid black;" class="row">
                                         <label class="col-md-10 col-form-label" style="left: 30%;"><strong>PROBLEMAS DE SALUD</strong></label>
                                     </div>
-                                     <table class="table-bordered">
+                                     <table class="table-bordered" id="saludtable">
                                        <thead>
                                         <tr>
                                           <th >Enfermedad</th>
@@ -798,6 +819,7 @@
                                           <th colspan="2">Atendido</th>
                                           <th >HH</th>
                                           <th >Otro</th>
+                                          <th><a class="" type="btn-success" id="addpsalud"><i class="now-ui-icons ui-1_simple-add"></i></a>
 
                                        </tr>
                                          <tr>
@@ -812,7 +834,7 @@
                                       </thead>
                                    <tbody>
                                       <tr>
-                                         <th><input type="text" name="Problema_enfermedad[]" class="form-control"></th>
+                                         <td><input type="text" name="Problema_enfermedad[]" class="form-control"></td>
                                          <td><input type="date" name="Problema_fecha[]" class="form-control "></td>
                                          <td><input type="radio" name="Problema_atendido[]" value="1" id="atendido" class="form-control"></td>
                                          <td><input type="radio" name="Problema_atendido[]" value="0" id="atendido" class="form-control"></td>
@@ -829,21 +851,16 @@
                         </div>
                         @include('Familia.RegistroSulfato')
                       
+                      
 
                         <div class="card-footer">
                             <div class="pull-right">
-
                                 <input type='button' class='btn btn-next btn-fill btn-rose btn-wd' name='next' value='Siguiente' />
                                 <input type='submit' class='btn btn-finish btn-fill btn-rose btn-wd' name='finish' value='Guardar' />
-
-                                <input type='button' style="float: right;" 
-                            class='btn btn-next btn-fill btn-rose btn-wd' name='next' value='Siguiente' />
-                                <input type='submit' style="float: right;"  class='btn btn-finish btn-fill btn-rose btn-wd' name='finish' value='Guardar' />
-
                             </div>
 
                             <div class="pull-left">
-                                <input type='button' style="float: left;" class='btn btn-previous btn-fill btn-default btn-wd' name='previous' value='Anterior' />
+                                <input type='button' class='btn btn-previous btn-fill btn-default btn-wd' name='previous' value='Anterior' />
                             </div>
                             <div class="clearfix"></div>
                         </div>
@@ -852,6 +869,7 @@
             </div>
             <!-- wizard container -->
         </div>
+      </div>
     </div>
     <script>
         $(document).ready(function () {
@@ -865,13 +883,31 @@
         var tbody = $('#cpntable').children('tbody');
         var table = tbody.length ? tbody : $('#cpntable');
         $('#addcpn').click(function(){
-            table.append('<tr><td><input type="number" class="form-control"></td><td><input type="date" class="form-control"></td><td><input type="text" class="form-control resp"></td></tr>');
+            table.append('<tr><td><input type="number" name="Cpn_numero[]" class="form-control"></td><td><input type="date" name="Cpn_fecha[]" class="form-control"></td><td><input type="text" name="Cpn_responsable[]" class="form-control resp"></td></tr>');
+        })
+
+        var tbodya = $('#saludtable').children('tbodya');
+        var tablea = tbodya.length ? tbodya : $('#saludtable');
+        $('#addpsalud').click(function(){
+            tablea.append('<tr><td><input type="text" name="Problema_enfermedad[]" class="form-control"></td><td><input type="date" name="Problema_fecha[]" class="form-control "></td><td><input type="radio" name="Problema_atendido[]" value="1" id="atendido" class="form-control"></td><td><input type="radio" name="Problema_atendido[]" value="0" id="atendido" class="form-control"></td><td><input type="radio" name="Problema_hospital[]" value="Huaycan" id="Problema" class="form-control"></td><td><input type="radio" name="Problema_hospital[]" value="Otro" id="Problema" class="form-control"></td></tr>');
+        })
+
+        var tbodyb = $('#cntable').children('tbodyb');
+        var tableb = tbodyb.length ? tbodyb : $('#cntable');
+        $('#addcn').click(function(){
+            tableb.append('<tr><td><input type="text" name="Cn_fecha[]" class="form-control"></td><td><input type="number" name="Cn_edad[]" class="form-control"></td><td><input type="number" name="Cn_peso[]" class="form-control"></td><td><input type="number" name="Cn_talla[]" class="form-control"></td><td><input type="number" name="Cn_hb_hto[]" class="form-control"></td><td><input type="text" name="Cn_Observacion[]" class="form-control"></td></tr>');
         })
     </script>
 
      <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
      <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
      <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+     <script>
+        $.validate({
+          lang: 'es'
+        });
+      </script>
   <script>
    $('.datepicker').each(function(){
     $(this).datepicker();
@@ -950,6 +986,18 @@
         init();
     });
 });
+  </script>
+  <script>
+
+      $('.wizard-container').on('click', '.clone', function() {
+         $('.clone').closest('.wizard-container').find('.kid').first().clone().appendTo('.results');
+      });
+      $("#showsd").click(function(){
+        $("#second").show();
+    });
+      $(".remove").click(function(){
+        $("#second").hide().remove();
+    });
   </script>
   
     @endsection

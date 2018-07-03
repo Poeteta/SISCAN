@@ -14,27 +14,24 @@
         <div class="user">
                         
             <div class="info">
-                <a data-toggle="collapse" href="#collapseExample" class="collapsed">
-                    <i class="now-ui-icons business_badge"></i>
-                    <span style="text-align: center;">
-                        {{ Auth::user()->Nom_user}}
-                        <b class="caret"></b>
-                    </span>
+                <a style="margin-left: 18%;" data-toggle="collapse" href="#collapseExample" class="collapsed">
+                    <i style="float: left;" class="now-ui-icons business_badge"></i>
+                    <span style="padding-left: 20%;" class="sidebar-normal">{{ Auth::user()->Nom_user}}<b class="caret"></b></span>
                 </a>
                 
                 <div class="collapse" id="collapseExample">
 
                     <ul class="nav">
                         <li>
-                            <a href="{{url('/perfil')}}">
-                                
-                                <span class="sidebar-normal" style="text-align: center;">Mi Perfil</span>
+                            <a style="padding-left: 15%;" href="{{url('/perfil')}}">
+                                <i class="now-ui-icons users_single-02"></i>    
+                                <span class="sidebar-normal">Mi Perfil</span>
                             </a>
                         </li>
                         <li>
-                            <a href="{{url('/logout')}}">
-                                
-                                <span class="sidebar-normal" style="text-align: center;">Cerrar Sesión</span>
+                            <a style="padding-left: 15%;" href="{{url('/logout')}}">
+                                <i class="now-ui-icons media-1_button-power"></i>
+                                <span class="sidebar-normal">Cerrar Sesión</span>
                             </a>
                         </li>
                     </ul>
@@ -51,7 +48,7 @@
                         </a>
             </li>
             <li>
-                <a href="{{url('/evaluacion')}}">
+                <a href="{{url('/eva')}}">
                             <i class="now-ui-icons design_bullet-list-67"></i>
                             <p>Evaluación</p>
                         </a>
@@ -78,11 +75,11 @@
                   </a>
 
                   <div class="collapse " id="formsExamples">
-                      <ul class="nav">
+                      <ul class="nav" style="margin-left: 5%;">
                       
                         <li >
                             <a href="{{url('/reporte/general/')}}">
-                                <span class="sidebar-mini-icon">RG</span>
+                                <i class="now-ui-icons education_paper"></i>
                                 <span class="sidebar-normal"> Reporte General </span>
                             </a>
                         </li>
@@ -90,14 +87,14 @@
                       
                         <li >
                             <a href="{{url('/reporte/madre/')}}">
-                                <span class="sidebar-mini-icon">V</span>
+                                <i class="now-ui-icons files_paper"></i>
                                 <span class="sidebar-normal"> Reporte Madres </span>
                             </a>
                         </li>
                       
                         <li >
                             <a href="{{url('/reporte/nino/')}}">
-                                <span class="sidebar-mini-icon">W</span>
+                                <i class="now-ui-icons files_single-copy-04"></i>
                                 <span class="sidebar-normal"> Reporte Niños </span>
                             </a>
                         </li>

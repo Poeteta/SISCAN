@@ -38,7 +38,8 @@ Route::resource('reporte/madre','ReporteMadreController');
     // Operario 
     Route::group(['middleware' =>['auth','is_operario']], function (){
     Route::get('home', 'FamiliaController@show');
-    Route::resource('evaluacion','evalController');
+    Route::resource('evaluacion/familia','evalController');
+  
 
 });
 
@@ -48,8 +49,10 @@ Route::resource('reporte/madre','ReporteMadreController');
  Route::PATCH('seguridad/UserSafety/editPass/','ProfileController@updatePassword');
  Route::PATCH('seguridad/usuario/editUser/{idPersona}','ProfileController@updatePeople');
  Route::resource('seguridad/UserSafety','ProfileController');
-
-
+ Route::POST('Familia/store','FamiliaController@store');
+ Route::resource('/eva','evalController');
+ Route::get('eva/{idFamilia}', 'evalController@show');
+ Route::POST('eva/store','evalController@store');
  Route::POST('perfil/editPass/','PerfilController@updatePassword');
  Route::PATCH('perfil/editPersona/{idUsuario}','PerfilController@updatePersona');
  Route::resource('perfil','PerfilController');

@@ -5,7 +5,7 @@
 <div class="input-group mb-3">
  <input type="text" class="form-control border-input" name="searchText" placeholder="Buscar..." value="{{$searchText}}">
   <div class="input-group-append">
-    <button type="submit" class="btn btn-primary">Buscar</button>
+    <button style="margin-left: 10%;" type="submit" class="btn btn-primary">Buscar</button>
   </div>
 </div>
  
