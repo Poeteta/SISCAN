@@ -7,23 +7,39 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\input;
 use DB;
 use Response;
+use App\Http\Requests\PeriodoRequest;
 use Illuminate\Support\Collection;
 use App\periodo_programa;
 
 class PeriodoController extends Controller
 {
-    public function index(Request $request)
+    public function index()
     {
-        if ($request)
-        {   
-          $query=trim($request);
-          $periodo=DB::table('periodo_programa as p')
-          ->select('p.idPeriodo_Programa','p.Fecha_Inicio', 'p.Fecha_Fin')
-          ->where('p.Fecha_Inicio','LIKE','%'.$query.'%')
-          ->orderBy('p.idPerido_Programa','desc')
+        
+          $periodo=DB::table('periodo_programa')
+          ->orderBy('idPeriodo_Programa','asc')
           ->paginate(5);
-          return view('periodo.index',["periodo"=>$periodo,"searchText"=>$query]);
-        }
+          return view('periodo.index',["periodo"=>$periodo]);
+        
+    }
+    public function store(PeriodoRequest $request)
+    {
+      $periodos=new periodo_programa;
+      $periodos->Fecha_Inicio=$request->get('Fecha_Inicio');
+      $periodos->Fecha_Fin=$request->get('Fecha_Fin');
+      $periodos->save();
+      return Redirect::to('periodo');
+
+    }
+
+    public function update(PeriodoRequest $request, $id)
+    {
+      $periodos= periodo_programa::findOrFail($id); 
+      $periodos->Fecha_Inicio=$request->get('Fecha_Inicio');
+      $periodos->Fecha_Fin=$request->get('Fecha_Fin');
+      $periodos->update();
+      return Redirect::to('periodo');
+
     }
    
 }

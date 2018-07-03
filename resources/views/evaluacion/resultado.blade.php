@@ -13,15 +13,22 @@
             <div class="panel-header panel-header-sm">
 </div>
             <div class="content">
+                 <div class="content">
+    @if (session('status'))
+        
+        <div class="alert alert-success alert-with-icon" data-notify="container">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    <span data-notify="icon" class="now-ui-icons ui-1_bell-53"></span>
+                    <span data-notify="message">{{ session('status') }}</span>
+                </div>
+    @endif
 
 <div class="row">
     <div class="col-md-3"></div>
 <div class="col-md-6">
 <div class="card" style="border: 2px solid black; ">
-        {{Form::Open(array('action'=>array('evalController@store'),'method'=>'POST'))}}
+        {!!Form::open(array('url'=>'eva/store','method'=>'POST','autocomplete'=>'off'))!!} 
         {{Form::token()}} {{ csrf_field() }}
-
-
       <div class="card-header">
           <h5 class="title">Evaluacion Final de la Familia: {{$family->Fam_nom}}
         </h5>

@@ -48,7 +48,7 @@
                         </a>
             </li>
             <li>
-                <a href="{{url('/evaluacion')}}">
+                <a href="{{url('/eva')}}">
                             <i class="now-ui-icons design_bullet-list-67"></i>
                             <p>Evaluación</p>
                         </a>
@@ -62,6 +62,12 @@
                 <a href="{{url('/seguridad/usuario/')}}">
                             <i class="now-ui-icons users_circle-08"></i>
                             <p>Usuarios</p>
+                        </a>
+            </li>
+            <li>
+                <a href="{{url('/periodo/')}}">
+                            <i class="now-ui-icons gestures_tap-01"></i>
+                            <p>Periodos</p>
                         </a>
             </li>
             <li>

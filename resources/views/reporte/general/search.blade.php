@@ -9,7 +9,7 @@
   <div class="col-lg-4">
     <label for="selectperiodotipo" class="text-white">Seleccionar periodo de programa</label>
     <select name="fecha" style="background: rgb(255,255,255);" class="form-control"  id="selectperiodotipo">
-      <option disabled>Seleccionar periodo</option>
+      <option >Seleccionar periodo</option>
       @foreach($periodo_programa as $pepro)
       <option  value="{{$pepro->idPeriodo_Programa}}">{{$pepro->Fecha_Inicio}}</option>
       @endforeach

@@ -1,4 +1,4 @@
-<div class="card-body">
+<div>
     {!! Form::open(array('url'=>'evaluacion/familia','method'=>'GET','autocomplete'=>'off','role'=>'search')) !!}
 
     <div class="form-group">
@@ -13,3 +13,4 @@
     {{Form::close()}}
         
 </div>
+<br>

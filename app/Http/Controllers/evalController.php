@@ -16,8 +16,7 @@ class evalController extends Controller
         {   
           $query=trim($request->get('searchText'));
           $familia=DB::table('familia as f')
-          ->join('Historial_Familia as hf','hf.Familia_idFamilia','=', 'f.idFamilia')
-          ->select('f.idFamilia','f.Fam_numero','f.Fam_nom','f.Fam_direccion', 'hf.Tipo_Familia', 'hf.Modo_Capta')
+          ->select('f.idFamilia','f.Fam_numero','f.Fam_nom','f.Fam_direccion')
           ->where('f.Fam_nom','LIKE','%'.$query.'%')
           ->orwhere('f.Fam_numero','LIKE','%'.$query.'%')
           ->orderBy('f.idFamilia','desc')
@@ -56,7 +55,7 @@ class evalController extends Controller
              {
           DB::rollback();
              }
-             return Redirect::to('evaluacion')->with('msg','Se registro correctamente...');
+             return Redirect::to('evaluacion/familia')->with('msg','Se registro correctamente...');
         }
         public function show($id){
             $fam=DB::table('familia')
