@@ -18,7 +18,7 @@ class PeriodoController extends Controller
         
           $periodo=DB::table('periodo_programa')
           ->orderBy('idPeriodo_Programa','asc')
-          ->paginate(5);
+          ->paginate(6);
           return view('periodo.index',["periodo"=>$periodo]);
         
     }

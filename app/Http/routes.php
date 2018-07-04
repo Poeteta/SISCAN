@@ -42,6 +42,7 @@ Route::resource('periodo','PeriodoController');
     Route::resource('evaluacion/familia','evalController');
     Route::POST('Familia/store','FamiliaController@store');
     Route::POST('eva/store','evalController@store');
+     Route::resource('/eva','evalController');
 
 });
 

@@ -42,54 +42,8 @@
     <nav class="navbar navbar-expand-lg navbar-transparent  navbar-absolute bg-primary fixed-top">
         <div class="container-fluid">
             <div class="navbar-wrapper">
-                <div class="navbar-toggle">
-                    <button type="button" class="navbar-toggler">
-                        <span class="navbar-toggler-bar bar1"></span>
-                        <span class="navbar-toggler-bar bar2"></span>
-                        <span class="navbar-toggler-bar bar3"></span>
-                    </button>
-                </div>
-                <a class="navbar-brand" href="#pablo">FAMILIA Registrar</a>
-            </div>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index"
-                aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-bar navbar-kebab"></span>
-                <span class="navbar-toggler-bar navbar-kebab"></span>
-                <span class="navbar-toggler-bar navbar-kebab"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navigation">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#pablo">
-                            <i class="now-ui-icons media-2_sound-wave"></i>
-                            <p>
-                                <span class="d-lg-none d-md-block">Stats</span>
-                            </p>
-                        </a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="http://example.com/" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false">
-                            <i class="now-ui-icons location_world"></i>
-                            <p>
-                                <span class="d-lg-none d-md-block">Some Actions</span>
-                            </p>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#pablo">
-                            <i class="now-ui-icons users_single-02"></i>
-                            <p>
-                                <span class="d-lg-none d-md-block">Account</span>
-                            </p>
-                        </a>
-                    </li>
-                </ul>
+               
+                <a class="navbar-brand">FAMILIA Registrar</a>
             </div>
         </div>
     </nav>
@@ -108,15 +62,7 @@
     @endif
         
     <div class="row">
-            <div class="cold-md-4 mr-auto ml-auto hide" id="second" style="width: 45%; height: 20%;  padding-top: 89px;">
-                <div class="wizard-container">
-                    <div class="card-body" style="border:2px solid black; background-color: #FFFFFF; color: rgba(0,0,0, 0.87); background: #fff;">
-                            <div class="tab-content results" >
-                            </div>
-                    </div>
-                </div>
-            </div>
-        <div class="col-md-6 mr-auto ml-auto">
+        <div class="col-md-6 mr-auto ml-auto" style="right: 20%;">
             <!--      Wizard container        -->
             <div class="wizard-container">
                 <div class="card card-wizard" data-color="primary" id="wizardProfile">
@@ -147,6 +93,7 @@
                                 </ul>
                             </div>
                         </div>
+
 
                         <div class="card-body" style="border:2px solid black;">
                             <div class="tab-content" >
@@ -207,7 +154,7 @@
 
                                         <div class="col-md-9">
                                             <div class="form-group">
-                                                <input type="text" style="border: none;border-bottom: 2px dotted black;" name="Fam_direccion" data-validation="length alphanumeric" >
+                                                <input type="text" style="border: none;border-bottom: 2px dotted black;" name="Fam_direccion" >
                                             </div>
                                         </div>
                                     </div>
@@ -527,12 +474,16 @@
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <span class="btn-group" data-toggle="buttons-radio">
-                                                <button class="btn btn-default btn-sm">SI</button>
-                                                <input type="checkbox" hidden="" value="1" name="Papanicolau_resul" />
+                                                 <span class="button-checkbox">
+                                                 <button type="button" class="btn btn-default btn-sm" data-color="primary">SI</button>
+                                                 <input type="checkbox" hidden="" value="1" name="Papanicolau_resul" />
+                                                 </span>
                                                 <br>
                                                 <br>
-                                                <button class="btn btn-default btn-sm">NO</button>
-                                                <input type="checkbox" hidden="" value="0" name="Papanicolau_resul" />
+                                                <span class="button-checkbox">
+                                                 <button type="button" class="btn btn-default btn-sm" data-color="primary">NO</button>
+                                                 <input type="checkbox" hidden="" value="0" name="Papanicolau_resul" />
+                                                 </span>
                                             </span>
                                             </div>
                                         </div>
@@ -658,9 +609,10 @@
 
           
                 <div class="tab-pane fade kid" id="address">
+
                         <div class="buttons" style="clear: both; margin-top: 10px;">
-                            <input type="button" class="clone" id="showsd" value="Agregar">
-                            <input type="button" class="remove" onclick="removed" value="Eliminar">
+                            <input type="button" onclick="show()" class="btn btn-primary" value="Agregar">
+                            <input type="button" class="remove" onclick="removed()" value="Eliminar">
                              </div>
                                  <div class="row">
                                     <label class="col-sm-2 col-form-label">Historia Clinica</label>
@@ -811,6 +763,7 @@
                                      <div style="border:none;  border-bottom: 2px solid black; border-top: 2px solid black;" class="row">
                                         <label class="col-md-10 col-form-label" style="left: 30%;"><strong>PROBLEMAS DE SALUD</strong></label>
                                     </div>
+                                    
                                      <table class="table-bordered" id="saludtable">
                                        <thead>
                                         <tr>
@@ -821,7 +774,7 @@
                                           <th >Otro</th>
                                           <th><a class="" type="btn-success" id="addpsalud"><i class="now-ui-icons ui-1_simple-add"></i></a>
 
-                                       </tr>
+                                       </tr class="form-g">
                                          <tr>
                                           <th scope="col"></th>
                                           <th scope="col"></th>
@@ -836,31 +789,28 @@
                                       <tr>
                                          <td><input type="text" name="Problema_enfermedad[]" class="form-control"></td>
                                          <td><input type="date" name="Problema_fecha[]" class="form-control "></td>
-                                         <td><input type="radio" name="Problema_atendido[]" value="1" id="atendido" class="form-control"></td>
-                                         <td><input type="radio" name="Problema_atendido[]" value="0" id="atendido" class="form-control"></td>
+                                         <td><input type="radio" name="Problema_atendido[]" value="1" id="atendidoa" class="form-control"></td>
+                                         <td><input type="radio" name="Problema_atendido[]" value="0" id="atendidoa" class="form-control"></td>
                                          <td><input type="radio" name="Problema_hospital[]" value="Huaycan" id="Problema" class="form-control"></td>
                                          <td><input type="radio" name="Problema_hospital[]" value="Otro" id="Problema" class="form-control"></td>
                                       </tr>
-   
                                    </tbody>
                                    </table>
-
-                            
-
+                                    @include('Familia.two')
                             </div>
-                        </div>
+                
                         @include('Familia.RegistroSulfato')
                       
                       
 
                         <div class="card-footer">
                             <div class="pull-right">
-                                <input type='button' class='btn btn-next btn-fill btn-rose btn-wd' name='next' value='Siguiente' />
-                                <input type='submit' class='btn btn-finish btn-fill btn-rose btn-wd' name='finish' value='Guardar' />
+                                <input type='button' class='btn btn-next btn-fill btn-rose btn-wd' name='next' style="float: right;" value='Siguiente' />
+                                <input type='submit' class='btn btn-finish btn-fill btn-rose btn-wd' style="float: right;" name='finish' value='Guardar' />
                             </div>
 
                             <div class="pull-left">
-                                <input type='button' class='btn btn-previous btn-fill btn-default btn-wd' name='previous' value='Anterior' />
+                                <input type='button' class='btn btn-previous btn-fill btn-default btn-wd' style="float: left;" name='previous' value='Anterior' />
                             </div>
                             <div class="clearfix"></div>
                         </div>
@@ -888,8 +838,10 @@
 
         var tbodya = $('#saludtable').children('tbodya');
         var tablea = tbodya.length ? tbodya : $('#saludtable');
+    
         $('#addpsalud').click(function(){
             tablea.append('<tr><td><input type="text" name="Problema_enfermedad[]" class="form-control"></td><td><input type="date" name="Problema_fecha[]" class="form-control "></td><td><input type="radio" name="Problema_atendido[]" value="1" id="atendido" class="form-control"></td><td><input type="radio" name="Problema_atendido[]" value="0" id="atendido" class="form-control"></td><td><input type="radio" name="Problema_hospital[]" value="Huaycan" id="Problema" class="form-control"></td><td><input type="radio" name="Problema_hospital[]" value="Otro" id="Problema" class="form-control"></td></tr>');
+        
         })
 
         var tbodyb = $('#cntable').children('tbodyb');
@@ -988,16 +940,35 @@
 });
   </script>
   <script>
+        function bindAllOnClick(context) {
+        context.change(function(){
+        var check = $(this).prop('checked');
+        if(typeof check === 'undefined') 
+            check = $(this).is(':checked');
 
-      $('.wizard-container').on('click', '.clone', function() {
-         $('.clone').closest('.wizard-container').find('.kid').first().clone().appendTo('.results');
-      });
-      $("#showsd").click(function(){
-        $("#second").show();
-    });
-      $(".remove").click(function(){
-        $("#second").hide().remove();
-    });
+        $(this).parent().parent().find('p :checkbox').each(
+            function(){
+                if(check) {
+                    this.checked = true;
+                    console.log('test');
+                }
+                else this.checked = false;
+            });
+           });
+         }
+
   </script>
+  <script type="text/javascript">
+      function show(){
+      document.getElementById('second').style.display = 'block';
+      }
+
+      function removed(){
+      document.getElementById('second').remove();
+      }
+  </script>
+
+
+
   
     @endsection

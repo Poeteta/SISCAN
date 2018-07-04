@@ -14,22 +14,22 @@
         <div class="user">
                         
             <div class="info">
-                <a style="margin-left: 18%;" data-toggle="collapse" href="#collapseExample" class="collapsed">
+                <a style="margin-left: 8%;" data-toggle="collapse" href="#collapseExample" class="collapsed">
                     <i style="float: left;" class="now-ui-icons business_badge"></i>
-                    <span style="padding-left: 20%;" class="sidebar-normal">{{ Auth::user()->Nom_user}}<b class="caret"></b></span>
+                    <span style="padding-left: 30%;" class="sidebar-normal">{{ Auth::user()->Nom_user}}<b class="caret"></b></span>
                 </a>
                 
                 <div class="collapse" id="collapseExample">
 
                     <ul class="nav">
                         <li>
-                            <a style="padding-left: 15%;" href="{{url('/perfil')}}">
+                            <a style="padding-left: 10%;" href="{{url('/perfil')}}">
                                 <i class="now-ui-icons users_single-02"></i>    
                                 <span class="sidebar-normal">Mi Perfil</span>
                             </a>
                         </li>
                         <li>
-                            <a style="padding-left: 15%;" href="{{url('/logout')}}">
+                            <a style="padding-left: 10%;" href="{{url('/logout')}}">
                                 <i class="now-ui-icons media-1_button-power"></i>
                                 <span class="sidebar-normal">Cerrar Sesión</span>
                             </a>

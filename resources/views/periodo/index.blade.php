@@ -1,19 +1,17 @@
 @extends('layouts.app') @section('htmlheader_title') Home @endsection @section('main-content')
 <div class="main-panel">
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-transparent  navbar-absolute bg-primary fixed-top">
-        <div class="container-fluid">
-            
-        </div>
-    </nav>
+   
     <!-- End Navbar -->
-    <div class="panel-header">
+    <div style="height: 20%;" class="panel-header">
         <div class="header text-center">
             <h2 class="title">Lista de Periodos</h2>
         </div>
     </div>
     <div class="content">
+
         <div class="row">
+
             <div class="col-md-10 ml-auto mr-auto">
                 <div class="card card-calendar">
                     <div class="card-body">
@@ -71,7 +69,7 @@
                                                     <td style="float: left;">{{ $peri->idPeriodo_Programa}}</td>
                                                     <td style="text-align: center;">{{ $peri->Fecha_Inicio}}</td>
                                                     <td style="text-align: center;">{{ $peri->Fecha_Fin}}</td>
-                                                    <td><a data-target="#modal-periodoedit-{{$peri->idPeriodo_Programa}}" data-toggle="modal"><button class="btn btn-danger" type="submit">Editar</button></a></td>
+                                                    <td style="text-align: center;"><a data-target="#modal-periodoedit-{{$peri->idPeriodo_Programa}}" data-toggle="modal"><button class="btn btn-danger" type="submit">Editar</button></a></td>
                                                     @include('periodo.PeriodoEdit')
                                                 </tr>
                                                 @endforeach
