@@ -1,0 +1,122 @@
+@charset "UTF-8";
+
+
+.icons {
+  font-size: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.icon {
+  display: inline-block;
+  width: 40px;
+  height: 50px;
+  border-radius: 2px;
+  cursor: pointer;
+  position: relative;
+  margin: 0 5px;
+}
+.icon::after {
+  content: '';
+  position: absolute;
+  display: block;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-radius: 0 2px;
+  transition: all 0.2s linear;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+.icon--doc {
+  background-color: #4285f4;
+}
+.icon--doc::after {
+  background: linear-gradient(45deg, #8ab4f8 50%, #fff 50%);
+}
+.icon--doc i::before {
+  content: '☰';
+}
+.icon--pdf {
+  background-color: #db4437;
+}
+.icon--pdf::after {
+  background: linear-gradient(45deg, #e78178 50%, #fff 50%);
+}
+.icon--pdf i::before {
+  content: '☵';
+}
+.icon--sheets {
+  background-color: #0f9d58;
+}
+.icon--sheets::after {
+  background: linear-gradient(45deg, #16e37f 50%, #fff 50%);
+}
+.icon--sheets i::before {
+  content: '⊟';
+}
+.icon--slides {
+  background-color: #f5b707;
+}
+.icon--slides::after {
+  background: linear-gradient(45deg, #facd4f 50%, #fff 50%);
+}
+.icon--slides i::before {
+  content: '⧉';
+}
+.icon--code {
+  background-color: #00a78e;
+}
+.icon--code::after {
+  background: linear-gradient(45deg, #00f4cf 50%, #fff 50%);
+}
+.icon--code i::before {
+  content: '< >';
+}
+.icon i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  display: block;
+  font-size: 10px;
+  color: #fff;
+  font-weight: 500;
+}
+.icon i::before, .icon i::after {
+  display: block;
+  transition: all 0.2s linear;
+}
+.icon i::before {
+  text-align: center;
+  font-size: 12px;
+  opacity: 0;
+  -webkit-transform: translateY(5px);
+          transform: translateY(5px);
+}
+.icon i::after {
+  content: attr(title);
+  -webkit-transform: translateY(-5px);
+          transform: translateY(-5px);
+}
+.icon:hover {
+  border-radius: 2px 4px 2px 2px;
+}
+.icon:hover::after {
+  width: 12px;
+  height: 12px;
+}
+.icon:hover i::before {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  opacity: 1;
+}
+.icon:hover i::after {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}

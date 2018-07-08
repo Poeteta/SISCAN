@@ -63,6 +63,8 @@
 
       @include('reporte.general.search')
 
+    
+
         <div class="card card-plain card-subcategories">
             <div class="card-body ">
                 <!--

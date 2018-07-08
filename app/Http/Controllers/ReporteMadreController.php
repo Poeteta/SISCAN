@@ -18,7 +18,7 @@ class ReporteMadreController extends Controller
     public function index (Request $request){
 
         if ($request)
-        {    
+        {
        $query=trim($request->get('fecha'));
         $examamasi = DB::table('hca_madre as hcm')
             ->join('madre as m','m.idMadre','=','hcm.Madre_idMadre')
@@ -68,13 +68,77 @@ class ReporteMadreController extends Controller
             ->selectRaw('hc.Chequeo_idChequeo, count(*) as idvacunadurnt')
             ->where('hc.Chequeo_idChequeo','=','35')
             ->where('h.Periodo_Programa_idPeriodo_Programa','LIKE','%'.$query.'%')
-            ->first();     
+            ->first();
+
+         
+        $cpn = DB::table('cpn as cp')
+                     ->join('madre as m','m.idMadre','=','cp.Madre_idMadre')
+                     ->join('familia as f','f.idFamilia','=','m.Familia_idFamilia')
+                     ->join('historial_familia as h','h.Familia_idFamilia','=','f.idFamilia')
+                     ->select(DB::raw('count(*) as user_count, cp.Madre_idMadre'))
+                     ->where('cp.Madre_idMadre', '<>', 0)
+                     ->groupBy('cp.Madre_idMadre')
+                     ->where('h.Periodo_Programa_idPeriodo_Programa','LIKE','%'.$query.'%')
+                     ->get();
+
+        $Papanicolau_Antes_pg1 = DB::table('hca_madre as hc')
+                     ->join('madre as m','m.idMadre','=','hc.Madre_idMadre')
+                     ->join('familia as f','f.idFamilia','=','m.Familia_idFamilia')
+                     ->join('historial_familia as h','h.Familia_idFamilia','=','f.idFamilia')
+                     ->select('hc.Papanicolau_Antes_pg','hc.Madre_idMadre','h.Periodo_Programa_idPeriodo_Programa')
+            ->selectRaw('hc.Papanicolau_Antes_pg, count(*) as idcount')
+            ->where('hc.Papanicolau_Antes_pg','=','1')
+            ->where('h.Periodo_Programa_idPeriodo_Programa','LIKE','%'.$query.'%')
+            ->first();
+
+        $Papanicolau_Antes_pg0 = DB::table('hca_madre as hc')
+                     ->join('madre as m','m.idMadre','=','hc.Madre_idMadre')
+                     ->join('familia as f','f.idFamilia','=','m.Familia_idFamilia')
+                     ->join('historial_familia as h','h.Familia_idFamilia','=','f.idFamilia')
+                     ->select('hc.Papanicolau_Antes_pg','hc.Madre_idMadre','h.Periodo_Programa_idPeriodo_Programa')
+            ->selectRaw('hc.Papanicolau_Antes_pg, count(*) as idcount')
+            ->where('hc.Papanicolau_Antes_pg','=','0')
+            ->where('h.Periodo_Programa_idPeriodo_Programa','LIKE','%'.$query.'%')
+            ->first();
+
+
+       $Papanicolau_resul1 = DB::table('hca_madre as hc')
+                     ->join('madre as m','m.idMadre','=','hc.Madre_idMadre')
+                     ->join('familia as f','f.idFamilia','=','m.Familia_idFamilia')
+                     ->join('historial_familia as h','h.Familia_idFamilia','=','f.idFamilia')
+                     ->select('hc.Papanicolau_resul','hc.Madre_idMadre','h.Periodo_Programa_idPeriodo_Programa')
+            ->selectRaw('hc.Papanicolau_resul, count(*) as idcount')
+            ->where('hc.Papanicolau_resul','=','1')
+            ->where('h.Periodo_Programa_idPeriodo_Programa','LIKE','%'.$query.'%')
+            ->first();            
+
+$Papanicolau_resul0 = DB::table('hca_madre as hc')
+                     ->join('madre as m','m.idMadre','=','hc.Madre_idMadre')
+                     ->join('familia as f','f.idFamilia','=','m.Familia_idFamilia')
+                     ->join('historial_familia as h','h.Familia_idFamilia','=','f.idFamilia')
+                     ->select('hc.Papanicolau_resul','hc.Madre_idMadre','h.Periodo_Programa_idPeriodo_Programa')
+            ->selectRaw('hc.Papanicolau_resul, count(*) as idcount')
+            ->where('hc.Papanicolau_resul','=','0')
+            ->where('h.Periodo_Programa_idPeriodo_Programa','LIKE','%'.$query.'%')
+            ->first();  
+
+
+$sulfatoferroso = DB::table('hc_madre as hc')
+                     ->join('madre as m','m.idMadre','=','hc.Madre_idMadre')
+                     ->join('familia as f','f.idFamilia','=','m.Familia_idFamilia')
+                     ->join('historial_familia as h','h.Familia_idFamilia','=','f.idFamilia')
+                     ->select('hc.Chequeo_idChequeo')
+                     ->where('hc.Chequeo_idChequeo', '<>', 0)
+                     ->where('h.Periodo_Programa_idPeriodo_Programa','LIKE','%'.$query.'%')
+                     ->get();
+
+
 
         $periodo_programa= DB::table('periodo_programa')     
             ->get(); 
 
 
-        return view ('reporte.madre.index',["examamasi"=>$examamasi,"examamafecha"=>$examamafecha,"examamano"=>$examamano,"vacunaantest"=>$vacunaantest,"vacunadurante"=>$vacunadurante,"periodo_programa"=>$periodo_programa,"fecha"=>$query]);
+        return view ('reporte.madre.index',["examamasi"=>$examamasi,"examamafecha"=>$examamafecha,"examamano"=>$examamano,"vacunaantest"=>$vacunaantest,"vacunadurante"=>$vacunadurante,"periodo_programa"=>$periodo_programa,"fecha"=>$query,"cpn"=>$cpn,"Papanicolau_Antes_pg1"=>$Papanicolau_Antes_pg1,"Papanicolau_Antes_pg0"=>$Papanicolau_Antes_pg0,"Papanicolau_resul1"=>$Papanicolau_resul1,"Papanicolau_resul0"=>$Papanicolau_resul0,"sulfatoferroso"=>$sulfatoferroso]);
 
        }
     }

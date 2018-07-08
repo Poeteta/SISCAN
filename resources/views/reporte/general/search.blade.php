@@ -27,6 +27,9 @@
 
 </div>
 
+
+@include('reporte.general.exportar')
+
 </div>
 
 
