@@ -131,8 +131,17 @@ $control_nutricional = DB::table('control_nutricional as hc')
             ->where('hf.Periodo_Programa_idPeriodo_Programa','LIKE','%'.$query.'%')
             ->get();
 
+           $fechareporteinicio = DB::table('periodo_programa')
+           ->where('idPeriodo_Programa','LIKE','%'.$query.'%') 
+           ->orderBy('Fecha_Inicio','asc') 
+           ->first(); 
 
-           return view ('reporte.nino.index',["fecha"=>$query,"tbc"=>$tbc,"hepatitis"=>$hepatitis,"pentalvente"=>$pentalvente,"polio"=>$polio,"rotavirus"=>$rotavirus,"neumococo"=>$neumococo,"spr"=>$spr,"dpt"=>$dpt,"amarilica"=>$amarilica,"influenza"=>$influenza,"sulfatoferroso"=>$sulfatoferroso,"problemas_salud"=>$problemas_salud,"periodo_programa"=>$periodo_programa,"control_nutricional"=>$control_nutricional]);
+           $fechareportecierre = DB::table('periodo_programa')
+            ->where('idPeriodo_Programa','LIKE','%'.$query.'%') 
+           ->orderBy('Fecha_Inicio','desc') 
+           ->first(); 
+
+           return view ('reporte.nino.index',["fecha"=>$query,"tbc"=>$tbc,"hepatitis"=>$hepatitis,"pentalvente"=>$pentalvente,"polio"=>$polio,"rotavirus"=>$rotavirus,"neumococo"=>$neumococo,"spr"=>$spr,"dpt"=>$dpt,"amarilica"=>$amarilica,"influenza"=>$influenza,"sulfatoferroso"=>$sulfatoferroso,"problemas_salud"=>$problemas_salud,"periodo_programa"=>$periodo_programa,"control_nutricional"=>$control_nutricional,"fechareporteinicio"=>$fechareporteinicio,"fechareportecierre"=>$fechareportecierre]);
          
 
      }

@@ -70,10 +70,10 @@ var imgData = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABpQAAAHDCAYAAAAqdfl
     doc.text(260, 10, 'DOCUMENTO TECNICO: REPORTE DE FAMILIAS - HOSPITAL DE HUAYCAN');
     doc.setFontSize(11);
     doc.setTextColor(0);
-    doc.text(350, 30, 'REPORTE GENERAL');
+    doc.text(355, 30, 'REPORTE NIÑOS');
     doc.text(50, 70, 'El hospital de Huaycán haciendo uso del "Programa Nacional para la reducción de la desnutrición crónica infantil y la prevención de la anemia en el ');
 
-    doc.text(50, 85, 'país", en su establecimiento, en el periodo de 3/7/2018 hasta él 3/7/2018 ha obtenido los resultados plasmados en este documento.')
+    doc.text(50, 85, 'país", en su establecimiento, en el periodo de {{$fechareporteinicio->Fecha_Inicio}} hasta él {{$fechareportecierre->Fecha_Fin}} ha obtenido los resultados plasmados en este documento.')
 
 
     doc.autoTable(data.columns, data.rows, {

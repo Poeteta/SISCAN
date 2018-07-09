@@ -132,13 +132,21 @@ $sulfatoferroso = DB::table('hc_madre as hc')
                      ->where('h.Periodo_Programa_idPeriodo_Programa','LIKE','%'.$query.'%')
                      ->get();
 
+ $fechareporteinicio = DB::table('periodo_programa')
+           ->where('idPeriodo_Programa','LIKE','%'.$query.'%') 
+           ->orderBy('Fecha_Inicio','asc') 
+           ->first(); 
 
+           $fechareportecierre = DB::table('periodo_programa')
+            ->where('idPeriodo_Programa','LIKE','%'.$query.'%') 
+           ->orderBy('Fecha_Inicio','desc') 
+           ->first(); 
 
         $periodo_programa= DB::table('periodo_programa')     
             ->get(); 
 
 
-        return view ('reporte.madre.index',["examamasi"=>$examamasi,"examamafecha"=>$examamafecha,"examamano"=>$examamano,"vacunaantest"=>$vacunaantest,"vacunadurante"=>$vacunadurante,"periodo_programa"=>$periodo_programa,"fecha"=>$query,"cpn"=>$cpn,"Papanicolau_Antes_pg1"=>$Papanicolau_Antes_pg1,"Papanicolau_Antes_pg0"=>$Papanicolau_Antes_pg0,"Papanicolau_resul1"=>$Papanicolau_resul1,"Papanicolau_resul0"=>$Papanicolau_resul0,"sulfatoferroso"=>$sulfatoferroso]);
+        return view ('reporte.madre.index',["examamasi"=>$examamasi,"examamafecha"=>$examamafecha,"examamano"=>$examamano,"vacunaantest"=>$vacunaantest,"vacunadurante"=>$vacunadurante,"periodo_programa"=>$periodo_programa,"fecha"=>$query,"cpn"=>$cpn,"Papanicolau_Antes_pg1"=>$Papanicolau_Antes_pg1,"Papanicolau_Antes_pg0"=>$Papanicolau_Antes_pg0,"Papanicolau_resul1"=>$Papanicolau_resul1,"Papanicolau_resul0"=>$Papanicolau_resul0,"sulfatoferroso"=>$sulfatoferroso,"fechareporteinicio"=>$fechareporteinicio,"fechareportecierre"=>$fechareportecierre]);
 
        }
     }

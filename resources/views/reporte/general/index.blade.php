@@ -74,13 +74,13 @@
                     <li class="nav-item">
                         <a class="nav-link active" data-toggle="tab" href="#link7" role="tablist">
                             <i class="now-ui-icons objects_umbrella-13"></i>
-                            Familia
+                            Familia   
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" data-toggle="tab" href="#link8" role="tablist">
                             <i class="now-ui-icons shopping_shop"></i>
-                            Evaluación
+                            Evaluación 
                         </a>
                     </li>
                     <li class="nav-item">
