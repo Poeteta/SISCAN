@@ -121,7 +121,7 @@ class FamiliaController extends Controller
           $historialmadre = new hca_Madre();
           $historialmadre->Gestante_Inicio=$request->get('Gestante_Inicio');
           $historialmadre->Gestante_Final=$request->get('Gestante_Final');
-          $historialmadre->Planificacion_idPlanificacion=1;
+          $historialmadre->Planificacion_idPlanificacion=$request->get('Planificacion_nom');
           $historialmadre->CPN_Antes_Pg=$request->get('CPN_Antes_pg');
           $historialmadre->CPN_cantidad=$request->get('CPN_cantidad');
           $historialmadre->Papanicolau_Antes_pg=$request->get('Papanicolau_Antes_pg');
@@ -251,8 +251,29 @@ class FamiliaController extends Controller
     {
         //
     }
-    public function listarfamilia($id){
-        //
+
+    public function autocompletar(){
+        $term = Input::get('Fam_numero');
+        $results = array();
+        $queries = DB::table('familia as f')
+            ->join('madre as m','f.idFamilia','=','m.Familia_idFamilia')
+            ->select('m.Madre_Apelpa','m.Madre_Apelma','m.Madre_Nom','m.Madre_DNI','m.Madre_HC','f.Fam_numero','f.Fam_nom','f.Fam_direccion')
+            ->where('f.Fam_numero', 'LIKE', '%'.$term.'%')
+            ->take(8)->get();
+        
+        foreach ($queries as $query)
+        {
+            $results[] = [ 
+            'id' => $query->Fam_numero, 
+            'value' => $query->Fam_nom,
+            'valuefamdir' => $query->Fam_direccion,
+            'valuenom' => $query->Madre_Nom,
+            'valueapelp' => $query->Madre_Apelpa,
+            'valueapelm' => $query->Madre_Apelma,
+            'valuehc' => $query->Madre_HC, 
+            'valuedni' => $query->Madre_DNI ];
+        }
+        return Response::json($results);
     }
 
 }

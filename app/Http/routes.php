@@ -39,8 +39,8 @@ Route::resource('reporte/madre','ReporteMadreController');
     Route::group(['middleware' =>['auth','is_operario']], function (){
     Route::get('home', 'FamiliaController@show');
     Route::resource('evaluacion/familia','evalController');
+    Route::get("autocompletar",array('as'=>'autocompletar','uses'=> 'FamiliaController@autocompletar'));
   
-
 });
 
 

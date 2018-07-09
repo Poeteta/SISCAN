@@ -153,7 +153,7 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <input type="number" style="border: none;border-bottom: 2px dotted black;" 
-                                                name="Fam_numero">
+                                                name="Fam_numero" id="Fam_numero">
                                             </div>
                                         </div>
                                     </div>
@@ -163,7 +163,7 @@
                                         <div class="col-md-9">
                                             <div class="form-group">
                                                 <input type="text" style="border: none;border-bottom: 2px dotted black;"
-                                                name="Fam_nom">
+                                                name="Fam_nom" id="Fam_nom">
                                             </div>
                                         </div>
                                     </div>
@@ -173,7 +173,7 @@
 
                                         <div class="col-md-9">
                                             <div class="form-group">
-                                                <input type="text" name="Madre_Apelpa" style="border: none;border-bottom: 2px dotted black;">
+                                                <input type="text" name="Madre_Apelpa" id="Madre_Apelpa" style="border: none;border-bottom: 2px dotted black;">
                                             </div>
                                         </div>
                                     </div>
@@ -181,7 +181,7 @@
                                         <label class="col-md-3 col-form-label">A.M</label>
                                         <div class="col-md-9">
                                             <div class="form-group">
-                                                <input type="text" name="Madre_Apelma" style="border: none;border-bottom: 2px dotted black;">
+                                                <input type="text" name="Madre_Apelma" id="Madre_Apelma" style="border: none;border-bottom: 2px dotted black;">
                                             </div>
                                         </div>
                                     </div>
@@ -191,7 +191,7 @@
 
                                         <div class="col-md-9">
                                             <div class="form-group">
-                                                <input type="text" name="Madre_Nom" style="border: none;border-bottom: 2px dotted black;">
+                                                <input type="text" name="Madre_Nom" id="Madre_Nom" style="border: none;border-bottom: 2px dotted black;">
                                             </div>
                                         </div>
                                     </div>
@@ -200,7 +200,7 @@
 
                                         <div class="col-md-9">
                                             <div class="form-group">
-                                                <input type="text" style="border: none;border-bottom: 2px dotted black;" name="Fam_direccion" data-validation="length alphanumeric" >
+                                                <input type="text" style="border: none;border-bottom: 2px dotted black;" name="Fam_direccion" id="Fam_direccion">
                                             </div>
                                         </div>
                                     </div>
@@ -213,7 +213,7 @@
 
                                         <div class="col-md-9">
                                             <div class="form-group">
-                                                <input type="number" name="Madre_HC" style="border: none;border-bottom: 2px dotted black;">
+                                                <input type="number" name="Madre_HC" id="Madre_HC" style="border: none;border-bottom: 2px dotted black;">
                                             </div>
                                         </div>
                                     </div>
@@ -222,7 +222,7 @@
 
                                         <div class="col-md-9">
                                             <div class="form-group">
-                                                <input type="number" name="Madre_DNI" style="border: none;border-bottom: 2px dotted black;">
+                                                <input type="number" name="Madre_DNI" id="Madre_DNI" style="border: none;border-bottom: 2px dotted black;">
                                             </div>
                                         </div>
                                     </div>
@@ -379,7 +379,7 @@
                                         <div class="col-sm-10 checkbox-radios">
                                         <div class="form-check form-check-radio">
                                             <label class="form-check-label">
-                                                <input class="form-check-input" type="radio" name="Planificacion_nom" id="exampleRadios3" value="Natural">
+                                                <input class="form-check-input" type="radio" name="Planificacion_nom" id="exampleRadios3" value="1">
                                                 <span class="form-check-sign"></span>
                                                 Natural
                                             </label>
@@ -387,21 +387,21 @@
 
                                         <div class="form-check form-check-radio">
                                             <label class="form-check-label">
-                                                <input class="form-check-input" type="radio" name="Planificacion_nom" id="exampleRadios4" value="Condon">
+                                                <input class="form-check-input" type="radio" name="Planificacion_nom" id="exampleRadios4" value="2">
                                                 <span class="form-check-sign"></span>
                                                 Condon
                                             </label>
                                         </div>
                                         <div class="form-check form-check-radio">
                                             <label class="form-check-label">
-                                                <input class="form-check-input" type="radio" name="Planificacion_nom" id="exampleRadios4" value="Pildoras">
+                                                <input class="form-check-input" type="radio" name="Planificacion_nom" id="exampleRadios4" value="3">
                                                 <span class="form-check-sign"></span>
                                                 Pildoras
                                             </label>
                                         </div>
                                            <div class="form-check form-check-radio">
                                             <label class="form-check-label">
-                                                <input class="form-check-input" type="radio" name="Planificacion_nom" id="exampleRadios4" value="Inyectables">
+                                                <input class="form-check-input" type="radio" name="Planificacion_nom" id="exampleRadios4" value="4">
                                                 <span class="form-check-sign"></span>
                                                 Inyectables
                                             </label>
@@ -413,7 +413,7 @@
                                         <div class="col-sm-12 checkbox-radios">
                                         <div class="form-check form-check-radio">
                                             <label class="form-check-label">
-                                                <input class="form-check-input" type="radio" name="Planificacion_nom" id="" value="T de Cobre">
+                                                <input class="form-check-input" type="radio" name="Planificacion_nom" id="" value="5">
                                                 <span class="form-check-sign"></span>
                                                 T de Cobre
                                             </label>
@@ -421,21 +421,21 @@
 
                                         <div class="form-check form-check-radio">
                                             <label class="form-check-label">
-                                                <input class="form-check-input" type="radio" name="Planificacion_nom" id="" value="Ligadura de Trompa">
+                                                <input class="form-check-input" type="radio" name="Planificacion_nom" id="" value="6">
                                                 <span class="form-check-sign"></span>
                                                 Ligadura de Trompa
                                             </label>
                                         </div>
                                         <div class="form-check form-check-radio">
                                             <label class="form-check-label">
-                                                <input class="form-check-input" type="radio" name="Planificacion_nom" id="" value="Vasectomia">
+                                                <input class="form-check-input" type="radio" name="Planificacion_nom" id="" value="7">
                                                 <span class="form-check-sign"></span>
                                                 Vasectomia
                                             </label>
                                         </div>
                                         <div class="form-check form-check-radio">
                                             <label class="form-check-label">
-                                                <input class="form-check-input" type="radio" name="Planificacion_nom" id="" value="Otros">
+                                                <input class="form-check-input" type="radio" name="Planificacion_nom" id="" value="8">
                                                 <span class="form-check-sign"></span>
                                                 Otros
                                             </label>
@@ -455,7 +455,7 @@
                                                 <span class="btn-group" data-toggle="buttons-radio">
                                                 <span class="button-checkbox">
                                                  <button type="button" class="btn btn-default btn-sm" data-color="primary">SI</button>
-                                                 <input type="checkbox" hidden="" value="1" name="CPN_Antes_pg" />
+                                                 <input type="checkbox" hidden="" value="1" name="CPN_Antes_pg" class="myCheck"/>
                                                  </span>
                                                 <br>
                                                 <br>
@@ -464,7 +464,7 @@
                                                  <input type="checkbox" hidden="" value="0" name="CPN_Antes_pg" />
                                                  </span>
                                             </span>
-                                                <input type="text" class="" name="CPN_cantidad" style="border: none;border-bottom: 2px dotted black;" placeholder="Cantidad">
+                                                <input type="text" class="mySelect" name="CPN_cantidad" style="border: none;border-bottom: 2px dotted black;" placeholder="Cantidad">
                                             </div>
                                         </div>
                                     </div>
@@ -1009,6 +1009,22 @@
       document.getElementById('second').remove();
       }
   </script>
+  <script type="text/javascript">
+    $('#Fam_numero').autocomplete({
+      source : '{!!URL::route('autocompletar')!!}',
+      minlenght: 3,
+      select:function(e,ui){
+        $('#Fam_numero').val(ui.item.id);
+        $('#Fam_nom').val(ui.item.value);
+        $('#Fam_direccion').val(ui.item.valuefamdir);
+        $('#Madre_Nom').val(ui.item.valuenom);
+        $('#Madre_Apelpa').val(ui.item.valueapelp);
+        $('#Madre_Apelma').val(ui.item.valueapelm);
+        $('#Madre_HC').val(ui.item.valuehc);
+        $('#Madre_DNI').val(ui.item.valuedni);
+      }
+    });
+</script>
 
 
 
