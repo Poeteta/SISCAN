@@ -1,5 +1,6 @@
 <?php
 namespace App\Http\Controllers;
+
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use Illuminate\Support\Facades\Redirect;
@@ -8,6 +9,7 @@ use DB;
 use Response;
 use Illuminate\Support\Collection;
 use App\Evaluacion;
+
 class evalController extends Controller
 {
     public function index(Request $request)
@@ -55,6 +57,7 @@ class evalController extends Controller
              {
           DB::rollback();
              }
+             
              return redirect('evaluacion/familia')->with('status', 'Familia Evaluada Exitosamente!');
         }
         public function show($id){

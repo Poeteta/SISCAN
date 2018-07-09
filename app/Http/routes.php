@@ -24,6 +24,7 @@ Route::resource('seguridad/usuario','UsuarioController');
 Route::resource('reporte/general','ReporteController');
 Route::resource('reporte/nino','ReporteNinosController');
 Route::resource('reporte/madre','ReporteMadreController');
+Route::resource('periodo','PeriodoController');
 
 
 
@@ -39,8 +40,15 @@ Route::resource('reporte/madre','ReporteMadreController');
     Route::group(['middleware' =>['auth','is_operario']], function (){
     Route::get('home', 'FamiliaController@show');
     Route::resource('evaluacion/familia','evalController');
+<<<<<<< HEAD
     Route::get("autocompletar",array('as'=>'autocompletar','uses'=> 'FamiliaController@autocompletar'));
   
+=======
+    Route::POST('Familia/store','FamiliaController@store');
+    Route::POST('eva/store','evalController@store');
+     Route::resource('/eva','evalController');
+
+>>>>>>> 0fd03d5585ff82044cde3f023d3adcc080b2fbf5
 });
 
 
@@ -49,10 +57,8 @@ Route::resource('reporte/madre','ReporteMadreController');
  Route::PATCH('seguridad/UserSafety/editPass/','ProfileController@updatePassword');
  Route::PATCH('seguridad/usuario/editUser/{idPersona}','ProfileController@updatePeople');
  Route::resource('seguridad/UserSafety','ProfileController');
- Route::POST('Familia/store','FamiliaController@store');
  Route::resource('/eva','evalController');
  Route::get('eva/{idFamilia}', 'evalController@show');
- Route::POST('eva/store','evalController@store');
  Route::POST('perfil/editPass/','PerfilController@updatePassword');
  Route::PATCH('perfil/editPersona/{idUsuario}','PerfilController@updatePersona');
  Route::resource('perfil','PerfilController');

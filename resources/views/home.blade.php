@@ -42,54 +42,8 @@
     <nav class="navbar navbar-expand-lg navbar-transparent  navbar-absolute bg-primary fixed-top">
         <div class="container-fluid">
             <div class="navbar-wrapper">
-                <div class="navbar-toggle">
-                    <button type="button" class="navbar-toggler">
-                        <span class="navbar-toggler-bar bar1"></span>
-                        <span class="navbar-toggler-bar bar2"></span>
-                        <span class="navbar-toggler-bar bar3"></span>
-                    </button>
-                </div>
-                <a class="navbar-brand" href="#pablo">FAMILIA Registrar</a>
-            </div>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index"
-                aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-bar navbar-kebab"></span>
-                <span class="navbar-toggler-bar navbar-kebab"></span>
-                <span class="navbar-toggler-bar navbar-kebab"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navigation">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#pablo">
-                            <i class="now-ui-icons media-2_sound-wave"></i>
-                            <p>
-                                <span class="d-lg-none d-md-block">Stats</span>
-                            </p>
-                        </a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="http://example.com/" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false">
-                            <i class="now-ui-icons location_world"></i>
-                            <p>
-                                <span class="d-lg-none d-md-block">Some Actions</span>
-                            </p>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#pablo">
-                            <i class="now-ui-icons users_single-02"></i>
-                            <p>
-                                <span class="d-lg-none d-md-block">Account</span>
-                            </p>
-                        </a>
-                    </li>
-                </ul>
+               
+                <a class="navbar-brand">FAMILIA Registrar</a>
             </div>
         </div>
     </nav>
@@ -200,7 +154,11 @@
 
                                         <div class="col-md-9">
                                             <div class="form-group">
+<<<<<<< HEAD
                                                 <input type="text" style="border: none;border-bottom: 2px dotted black;" name="Fam_direccion" id="Fam_direccion">
+=======
+                                                <input type="text" style="border: none;border-bottom: 2px dotted black;" name="Fam_direccion" >
+>>>>>>> 0fd03d5585ff82044cde3f023d3adcc080b2fbf5
                                             </div>
                                         </div>
                                     </div>
@@ -520,12 +478,16 @@
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <span class="btn-group" data-toggle="buttons-radio">
-                                                <button class="btn btn-default btn-sm">SI</button>
-                                                <input type="checkbox" hidden="" value="1" name="Papanicolau_resul" />
+                                                 <span class="button-checkbox">
+                                                 <button type="button" class="btn btn-default btn-sm" data-color="primary">SI</button>
+                                                 <input type="checkbox" hidden="" value="1" name="Papanicolau_resul" />
+                                                 </span>
                                                 <br>
                                                 <br>
-                                                <button class="btn btn-default btn-sm">NO</button>
-                                                <input type="checkbox" hidden="" value="0" name="Papanicolau_resul" />
+                                                <span class="button-checkbox">
+                                                 <button type="button" class="btn btn-default btn-sm" data-color="primary">NO</button>
+                                                 <input type="checkbox" hidden="" value="0" name="Papanicolau_resul" />
+                                                 </span>
                                             </span>
                                             </div>
                                         </div>
@@ -847,12 +809,12 @@
 
                         <div class="card-footer">
                             <div class="pull-right">
-                                <input type='button' class='btn btn-next btn-fill btn-rose btn-wd' name='next' value='Siguiente' />
-                                <input type='submit' class='btn btn-finish btn-fill btn-rose btn-wd' name='finish' value='Guardar' />
+                                <input type='button' class='btn btn-next btn-fill btn-rose btn-wd' name='next' style="float: right;" value='Siguiente' />
+                                <input type='submit' class='btn btn-finish btn-fill btn-rose btn-wd' style="float: right;" name='finish' value='Guardar' />
                             </div>
 
                             <div class="pull-left">
-                                <input type='button' class='btn btn-previous btn-fill btn-default btn-wd' name='previous' value='Anterior' />
+                                <input type='button' class='btn btn-previous btn-fill btn-default btn-wd' style="float: left;" name='previous' value='Anterior' />
                             </div>
                             <div class="clearfix"></div>
                         </div>

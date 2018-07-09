@@ -1,86 +1,83 @@
- <div class="row">
+       
+                        <div class="row">
                             <div class="col-md-5">
                                 <div class="card">
                                     <div class="card-body">
                                         <div class="card-header">
-                                            <h5 class="title">Vacunas</h5>
+                                            <h5 class="title">Control Prenatal</h5>
                                         </div>
                                         <div class="card-body">
                         
                                             <div class="toolbar">
                                                 <!--        Here you can write extra buttons/actions for the toolbar              -->
                                             </div>
-                                            <table id="tablavacunanino" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                                            <table id="tablacpn" class="table table-striped table-bordered" cellspacing="0" width="100%">
                                                 <thead>
                                                     <tr>
-                                                        <th>Vacuna de niños</th>
-                                                        <th>N° de Niños</th>
+                                                        <th>Etapas de Control Prenatal</th>
+                                                        <th>Cantidad</th>
                                                       
                                                         
                                                     </tr>
                                                 </thead>
+
                                                 <tbody>
-                                                   
-                                                    <tr>
-                                                        <td>Tuberculosis <small>(BCG)</small></td>
-                                                        <td>{{$tbc->idcount}}</td>
+                          <?php $number1n = 0; ?>
+                          <?php $number2n = 0; ?>
+                          <?php $number3n = 0; ?>
+                          <?php $number4n = 0; ?>
+                          <?php $number5n = 0; ?>
+                          <?php $number6n = 0; ?>
+                          @foreach($cpn as $cp)
+
+                          @if($cp->user_count == 1)
+                          <?php $number1n++ ?>  
+                          @elseif($cp->user_count == 2)
+                          <?php $number2n++ ?>
+                          @elseif($cp->user_count == 3)
+                          <?php $number3n++ ?>
+                          @elseif($cp->user_count == 4)
+                          <?php $number4n++ ?>
+                          @elseif($cp->user_count == 5)
+                          <?php $number5n++ ?>
+                          @elseif($cp->user_count == 6)
+                          <?php $number6n++ ?>
+                          @endif
+ 
+
+                          @endforeach                  
+                                                        <tr>
+                                                        <td>Primera</td>
+                                                        <td>{{ $number1n }}</td> 
                                                     </tr>
                                                     <tr>
-                                                        <td>Hepatitis B</td>
-                                                        <td>{{$hepatitis->idcount}}</td>
+                                                        <td>Segunda</td>
+                                                        <td>{{ $number2n }}</td>
                                                         
                                                     </tr>
                                                     <tr>
-                                                        <td>Pentavalente</td>
-                                                        <td>{{$pentalvente->idcount}}</td>
+                                                        <td>Tercera</td>
+                                                        <td>{{ $number3n }}</td>
                                                    
                                                         
                                                        
                                                     </tr>
                                                     <tr>
-                                                        <td>Polio</td>
-                                                        <td>{{$polio->idcount}}</td>
+                                                        <td>Cuarta</td>
+                                                        <td>{{ $number4n }}</td>
                                                 
                                                         
                                                     </tr>
                                                     <tr>
-                                                        <td>Rotavirus</td>
-                                                        <td>{{$rotavirus->idcount}}</td>
+                                                        <td>Quinta</td>
+                                                        <td>{{ $number5n }}</td>
                                                         
                                                      
                                                        
                                                     </tr>
                                                     <tr>
-                                                        <td>Neumococo</td>
-                                                        <td>{{$neumococo->idcount}}</td>
-                                                        
-                                                   
-                                                       
-                                                    </tr>
-                                                    <tr>
-                                                        <td>SPR <small>(Saranpión, Parotiditis, Rubéola)</small> </td>
-                                                        <td>{{$spr->idcount}}</td>
-                                                        
-                                                   
-                                                       
-                                                    </tr>
-                                                    <tr>
-                                                        <td>DPT</td>
-                                                        <td>{{$dpt->idcount}}</td>
-                                                        
-                                                   
-                                                       
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Amarílica</td>
-                                                        <td>{{$amarilica->idcount}}</td>
-                                                        
-                                                   
-                                                       
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Influenza</td>
-                                                        <td>{{$influenza->idcount}}</td>
+                                                        <td>Sexta</td>
+                                                        <td>{{ $number6n }}</td>
                                                         
                                                    
                                                        
@@ -94,7 +91,7 @@
                             <div class="col-md-7 mr-auto">
                                 <div class="card card-chart">
                                   <div class="card-header">
-                                    <h5 class="card-category">Vacunas</h5>
+                                    <h5 class="card-category">Control Prenatal</h5>
                                     <h4 class="card-title">Reporte gráfico</h4>
                              
 
@@ -105,16 +102,12 @@
     function drawChart() {
       var data3 = google.visualization.arrayToDataTable([
         ["Element", "Cantidad", { role: "style" } ],
-        ["Tuberculosis (BCG)", {{$tbc->idcount}}, "#b87333"],
-        ["Hepatitis B", {{$hepatitis->idcount}}, "#b87333"],
-        ["Pentavalente", {{$pentalvente->idcount}}, "#b87333"],
-        ["Polio", {{$polio->idcount}}, "#b87333"],
-        ["Rotavirus", {{$rotavirus->idcount}}, "#b87333"],
-        ["Neumococo",{{$neumococo->idcount}}, "#b87333"],
-        ["SPR", {{$spr->idcount}}, "#b87333"],
-        ["DPT", {{$dpt->idcount}}, "#b87333"],
-        ["Amarílica", {{$amarilica->idcount}}, "#b87333"],
-        ["Influenza", {{$influenza->idcount}}, "#b87333"]
+        ["Etapa 1", {{ $number1n }} , "#b87333"],
+        ["Etapa 2",{{ $number2n }}, "#b87333"],
+        ["Etapa 3", {{ $number3n }}, "#b87333"],
+        ["Etapa 4", {{ $number4n }} , "#b87333"],
+        ["Etapa 5", {{ $number5n }} , "#b87333"],
+        ["Etapa 6", {{ $number6n }} , "#b87333"]
       ]);
       var view3 = new google.visualization.DataView(data3);
       view3.setColumns([0, 1,
@@ -125,7 +118,7 @@
                        2]);
 
       var options3 = {
-        title: "Reporte de Vacunas que recibieron los niños",
+        title: "Reporte de Control Prenatal",
         width: 500,
         height: 300,
         bar: {groupWidth: "75%"},
@@ -133,10 +126,12 @@
       };
       var chart3 = new google.visualization.ColumnChart(document.getElementById("columnchart_values3"));
 
-       google.visualization.events.addListener(chart3, 'ready', function () {
+google.visualization.events.addListener(chart3, 'ready', function () {
   var content = '<img src="' + chart3.getImageURI() + '">';
-  $('#graph-imagesvacunanino').append(content);
+  $('#graph-imagescpn').append(content);
 });
+
+
 
       chart3.draw(view3, options3);
        
@@ -147,7 +142,7 @@
                                   </div>
                                   <div class="card-body">
                                      <div id="columnchart_values3" style="width: 500px; height: 300px;"></div>
-                                     <div id="graph-imagesvacunanino" style='display:none'></div>
+                                      <div id="graph-imagescpn" style='display:none'></div>
                                   </div>
                           
                                 </div>

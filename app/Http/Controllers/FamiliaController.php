@@ -104,7 +104,7 @@ class FamiliaController extends Controller
             $sesion = new Fecha_Sesion();
             $sesion->Familia_idFamilia = $id;
             $sesion->Sesiones_idSesiones = $idsesion[$cont];
-            $sesion->Sesion_Fecha = $Sesion_f1[$cont];
+            $sesion->Fechaun = $Sesion_f1[$cont];
             $sesion->Fechase = $Sesion_f2[$cont];
             $sesion->Fechatre = $Sesion_f3[$cont];
             $sesion->Fechacu = $Sesion_f4[$cont];

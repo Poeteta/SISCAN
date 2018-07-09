@@ -12,5 +12,5 @@
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('css/now-ui-dashboard.mine209.css?v=1.0.0" rel="stylesheet"') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('/css/responsive-calendar.css') }}" rel="stylesheet" type="text/css" />
-
+     <link href="{{ asset('/css/exportar.css') }}" rel="stylesheet" type="text/css" />
 </head>

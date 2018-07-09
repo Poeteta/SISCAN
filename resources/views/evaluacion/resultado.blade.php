@@ -13,6 +13,9 @@
             <div class="panel-header panel-header-sm">
 </div>
             <div class="content">
+
+                 <div class="content">
+
     @if (session('status'))
         
         <div class="alert alert-success alert-with-icon" data-notify="container">
@@ -28,7 +31,10 @@
 <div class="col-md-6">
 <div class="card" style="border: 2px solid black; ">
         {!!Form::open(array('url'=>'eva/store','method'=>'POST','autocomplete'=>'off'))!!} 
+
+        {{Form::token()}} {{ csrf_field() }}
                 {{Form::token()}} {{ csrf_field() }}
+
       <div class="card-header">
           <h5 class="title">Evaluacion Final de la Familia: {{$family->Fam_nom}}
         </h5>

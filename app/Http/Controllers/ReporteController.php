@@ -19,7 +19,9 @@ class ReporteController extends Controller
 
         if ($request){    
 
-       $query=trim($request->get('fecha'));     
+       $query=trim($request->get('fecha'));
+
+     
        $modo_hospital = DB::table('historial_familia')
             ->selectRaw('Modo_Capta, count(*) as idfamhos')
             ->where('Modo_Capta','=','Hospital')
@@ -141,12 +143,20 @@ class ReporteController extends Controller
             ->where('h.Periodo_Programa_idPeriodo_Programa','LIKE','%'.$query.'%')
             ->first();          
 
+          $fechareporteinicio = DB::table('periodo_programa')
+           ->where('idPeriodo_Programa','LIKE','%'.$query.'%') 
+           ->orderBy('Fecha_Inicio','asc') 
+           ->first(); 
 
+           $fechareportecierre = DB::table('periodo_programa')
+            ->where('idPeriodo_Programa','LIKE','%'.$query.'%') 
+           ->orderBy('Fecha_Inicio','desc') 
+           ->first(); 
 
         $periodo_programa= DB::table('periodo_programa')     
             ->get();       
 
-            return view('reporte.general.index',["modo_hospital"=>$modo_hospital,"modo_campana"=>$modo_campana,"modo_visita"=>$modo_visita,"modo_otros"=>$modo_otros,"tipo_nueva"=>$tipo_nueva,"tipo_continuadora"=>$tipo_continuadora,"tipo_reingresante"=>$tipo_reingresante,"periodo_programa"=>$periodo_programa,"fecha"=>$query,"evaluacionapro"=>$evaluacionapro,"evaluaciondesapro"=>$evaluaciondesapro,"asisalimentacion"=>$asisalimentacion,"asissexrepro"=>$asissexrepro,"asishigiambi"=>$asishigiambi,"asishabivida"=>$asishabivida,"asissegvial"=>$asissegvial,"asissalmen"=>$asissalmen,"asisTBC"=>$asisTBC,"asisdengue"=>$asisdengue,"asisactifisi"=>$asisactifisi]);
+            return view('reporte.general.index',["modo_hospital"=>$modo_hospital,"modo_campana"=>$modo_campana,"modo_visita"=>$modo_visita,"modo_otros"=>$modo_otros,"tipo_nueva"=>$tipo_nueva,"tipo_continuadora"=>$tipo_continuadora,"tipo_reingresante"=>$tipo_reingresante,"periodo_programa"=>$periodo_programa,"fecha"=>$query,"evaluacionapro"=>$evaluacionapro,"evaluaciondesapro"=>$evaluaciondesapro,"asisalimentacion"=>$asisalimentacion,"asissexrepro"=>$asissexrepro,"asishigiambi"=>$asishigiambi,"asishabivida"=>$asishabivida,"asissegvial"=>$asissegvial,"asissalmen"=>$asissalmen,"asisTBC"=>$asisTBC,"asisdengue"=>$asisdengue,"asisactifisi"=>$asisactifisi,"fechareporteinicio"=>$fechareporteinicio,"fechareportecierre"=>$fechareportecierre]);
     }
  }
 

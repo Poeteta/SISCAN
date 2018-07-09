@@ -10,12 +10,15 @@
     <label for="selectperiodotipo" class="text-white">Seleccionar periodo de programa</label>
     <select name="fecha" style="background: rgb(255,255,255);" class="form-control"  id="selectperiodotipo">
       <option disabled>Seleccionar periodo</option>
+      <option value="">Reporte de todos los programas</option>
       @foreach($periodo_programa as $pepro)
-      <option  value="{{$pepro->idPeriodo_Programa}}">{{$pepro->Fecha_Inicio}}</option>
+      <option  value="{{$pepro->idPeriodo_Programa}}">{{$pepro->Fecha_Inicio}} - {{$pepro->Fecha_Fin}}</option>
       @endforeach
     </select>
 
-
+<script type="text/javascript">
+  $("#selectperiodotipo").val($("#selectperiodotipo option:first").val());
+</script>
    
   </div> 
  <div class="col-lg-4 col-md-offset-2">
@@ -26,7 +29,7 @@
 
 
 </div>
-
+@include('reporte.madre.exportar')
 </div>
 
 
