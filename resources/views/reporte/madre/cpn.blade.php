@@ -11,10 +11,10 @@
                                             <div class="toolbar">
                                                 <!--        Here you can write extra buttons/actions for the toolbar              -->
                                             </div>
-                                            <table id="datatable" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                                            <table id="tablacpn" class="table table-striped table-bordered" cellspacing="0" width="100%">
                                                 <thead>
                                                     <tr>
-                                                        <th>Etapa</th>
+                                                        <th>Etapas de Control Prenatal</th>
                                                         <th>Cantidad</th>
                                                       
                                                         
@@ -118,13 +118,21 @@
                        2]);
 
       var options3 = {
-        title: "Reporte de Asistencias",
+        title: "Reporte de Control Prenatal",
         width: 500,
         height: 300,
         bar: {groupWidth: "75%"},
         legend: { position: "none" },
       };
       var chart3 = new google.visualization.ColumnChart(document.getElementById("columnchart_values3"));
+
+google.visualization.events.addListener(chart3, 'ready', function () {
+  var content = '<img src="' + chart3.getImageURI() + '">';
+  $('#graph-imagescpn').append(content);
+});
+
+
+
       chart3.draw(view3, options3);
        
   } 
@@ -134,6 +142,7 @@
                                   </div>
                                   <div class="card-body">
                                      <div id="columnchart_values3" style="width: 500px; height: 300px;"></div>
+                                      <div id="graph-imagescpn" style='display:none'></div>
                                   </div>
                           
                                 </div>

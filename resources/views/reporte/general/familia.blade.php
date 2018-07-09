@@ -73,36 +73,11 @@
 
         var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
 
-  var btnSave = document.getElementById('save-pdf');
+        google.visualization.events.addListener(chart, 'ready', function () {
+  var content = '<img src="' + chart.getImageURI() + '">';
+  $('#graph-images').append(content);
+});
 
-  google.visualization.events.addListener(chart, 'ready', function () {
-    btnSave.disabled = false;
-  });
-   
-//  doc.text(20 para IZQUIERDA A DERECHA, 20 PARA ARRIBA Y ABAJO, 'Hello world!');
-  btnSave.addEventListener('click', function () {
-    
-    var doc = new jsPDF();
-    doc.addImage(imgData2, 'PNG', 20, 5, 30, 10);
-    doc.addImage(imgData, 'PNG', 160, 5, 35, 10);
-    doc.setFontSize(8);
-    doc.setTextColor(100);
-    doc.text(55, 10, 'DOCUMENTO TECNICO: REPORTE DE FAMILIAS - HOSPITAL DE HUAYCAN');
-    doc.setFontSize(11);
-    doc.setTextColor(0);
-    doc.text(90, 20, 'REPORTE GENERAL');
-    doc.text(20, 40, 'El hospital de Huaycán haciendo uso del "Programa Nacional para la reducción de la desnutrición');
-    doc.text(20, 45, 'crónica infantil y la prevención de la anemia en el país", en su establecimiento, en el periodo de')
-    doc.text(20, 50, '3/7/2018 hasta él 3/7/2018 ha obtenido los resultados plasmados en este documento.');
-    
-    doc.text(20, 80, 'Tipo de familia         Cantidad'); 
-    doc.text(20, 90, 'Nueva                          {{$tipo_nueva->idtipnueva}}'); 
-    doc.text(20, 95, 'Continuadora               {{$tipo_continuadora->idtipcon}}'); 
-    doc.text(20, 100, 'Reingresante               {{$tipo_reingresante->idtipreing}}'); 
-    doc.addImage(chart.getImageURI(), 80, 60);
-
-    doc.save('ReporteGeneral.pdf');
-  }, false);
    
         chart.draw(data, options);
       }
@@ -111,8 +86,9 @@
 
                                   </div>
                                   <div class="card-body">
-                                     <input id="save-pdf" type="button" value="Exportar en PDF" disabled />
                                      <div id="donutchart" style="width: 500px; height: 300px;"></div>
+
+                                     <div id="graph-images" style='display:none'></div>
                                   </div>
                           
                                 </div>
@@ -187,7 +163,7 @@
 
       function drawChart() {
 
-        var data = google.visualization.arrayToDataTable([
+        var datacapta = google.visualization.arrayToDataTable([
           ['Reporte', 'medio año'],
           ['Hospital', {{$modo_hospital->idfamhos}}],
           ['Campaña de salud',  {{$modo_campana->idfamcam}}],
@@ -196,13 +172,18 @@
 
         ]);
 
-        var options = {
+        var optionscapta = {
           title: 'Modo Captación'
         };
 
-        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+        var chartcapta = new google.visualization.PieChart(document.getElementById('piechart'));
 
-        chart.draw(data, options);
+         google.visualization.events.addListener(chartcapta, 'ready', function () {
+  var content = '<img src="' + chartcapta.getImageURI() + '">';
+  $('#graph-images2').append(content);
+});
+        
+        chartcapta.draw(datacapta, optionscapta);
 
       }
         
@@ -212,6 +193,7 @@
                                   </div>
                                   <div class="card-body">
                                      <div id="piechart" style="width: 500px; height: 300px;"></div>
+                                  <div id="graph-images2" style='display:none'></div>
                                   </div>
                           
                                 </div>

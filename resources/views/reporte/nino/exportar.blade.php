@@ -14,16 +14,17 @@
 function generateExcel() {
     //getting data from our table
     var data_type = 'data:application/vnd.ms-excel';
-    var tablafamilia = document.getElementById('tablafamilia');
-    var tablamodocaptacion = document.getElementById('tablamodocaptacion');
-    var tablaevaluacion = document.getElementById('tablaevaluacion');
-    var tablaasistencia = document.getElementById('tablaasistencia');
+    var tablavacunanino = document.getElementById('tablavacunanino'); 
+    var tablamicronutrientesnino = document.getElementById('tablamicronutrientesnino'); 
+    var tablasulfatonino = document.getElementById('tablasulfatonino'); 
+    var tablacontrolnino = document.getElementById('tablacontrolnino'); 
+    var tablaproblemasnino = document.getElementById('tablaproblemasnino'); 
 
-    var table_html = tablafamilia.outerHTML.replace(/ /g, '%20') + tablamodocaptacion.outerHTML.replace(/ /g, '%20') +  tablaevaluacion.outerHTML.replace(/ /g, '%20') +  tablaasistencia.outerHTML.replace(/ /g, '%20');
+    var table_html = tablavacunanino.outerHTML.replace(/ /g, '%20') + tablamicronutrientesnino.outerHTML.replace(/ /g, '%20') +  tablasulfatonino.outerHTML.replace(/ /g, '%20') +  tablacontrolnino.outerHTML.replace(/ /g, '%20')  + tablaproblemasnino.outerHTML.replace(/ /g, '%20')   ;
 
     var a = document.createElement('a');
     a.href = data_type + ', ' + table_html;
-    a.download = 'ReporteGeneral De <?php echo $now->format('Y-m'); ?>.xls';
+    a.download = 'Reporte Madre De <?php echo $now->format('Y-m'); ?>.xls';
     a.click();
 }
 
@@ -33,15 +34,18 @@ function generateExcel() {
 function generatePDF() {
   var doc = new jsPDF('l', 'pt');
   
-  var elem = document.getElementById('tablamodocaptacion');
-  var elem2 = document.getElementById('tablafamilia');
-  var elem3 = document.getElementById('tablaevaluacion');
-  var elem4 = document.getElementById('tablaasistencia');
+  var elem = document.getElementById('tablavacunanino');
+  var elem2 = document.getElementById('tablamicronutrientesnino');
+  var elem3 = document.getElementById('tablasulfatonino');
+  var elem4 = document.getElementById('tablacontrolnino');
+  var elem5 = document.getElementById('tablaproblemasnino');
+
   
   var data = doc.autoTableHtmlToJson(elem);
   var data2 = doc.autoTableHtmlToJson(elem2);
   var data3 = doc.autoTableHtmlToJson(elem3);
   var data4 = doc.autoTableHtmlToJson(elem4);
+  var data5 = doc.autoTableHtmlToJson(elem5);
 
   
    
@@ -78,16 +82,16 @@ var imgData = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABpQAAAHDCAYAAAAqdfl
     tableWidth: 200,
     fontSize: 8,
     overflow: 'linebreak',
-    startY: doc.autoTableEndPosY() + 120,  
+    startY: doc.autoTableEndPosY() + 130,  
     }
 
   );
    var yAxis = 90;
-   var imageTags = $('#graph-images2 img');
+   var imageTags = $('#graph-imagesvacunanino img');
    for (var i = 0; i < imageTags.length; i++) {
         var someText = '';
         doc.text(60, yAxis, someText); /* Add some text in the PDF */
-        yAxis = yAxis + 5; /* Update yAxis */
+        yAxis = yAxis + 15; /* Update yAxis */
         doc.addImage(imageTags[i], 'png', 380, yAxis, 350, 210, undefined, 'none');
         yAxis = yAxis+ 50; /* Update yAxis */
     }
@@ -109,16 +113,16 @@ try {
     tableWidth: 200,
     fontSize: 8,
     overflow: 'linebreak',
-    startY: doc.autoTableEndPosY() + 110, 
+    startY: doc.autoTableEndPosY() + 250, 
     }
   );
 
-var yAxisdos = 150;
-   var imageTagscapta = $('#graph-images img');
+var yAxisdos = 1;
+   var imageTagscapta = $('#graph-imagesmicronino img');
    for (var i = 0; i < imageTagscapta.length; i++) {
         var someText = '';
         doc.text(60, yAxisdos, someText); /* Add some text in the PDF */
-        yAxisdos = yAxisdos + 150; /* Update yAxis */
+        yAxisdos = yAxisdos + 1; /* Update yAxis */
         doc.addImage(imageTagscapta[i], 'png', 380, yAxisdos, 350, 210, undefined, 'none');
         yAxisdos = yAxisdos+ 50; /* Update yAxis */
     }
@@ -140,13 +144,13 @@ try {
     tableWidth: 200,
     fontSize: 8,
     overflow: 'linebreak',
-    startY: doc.autoTableEndPosY() + 110, 
+    startY: doc.autoTableEndPosY() + 240, 
     }
   );
 
 
 var yAxistres = 5;
-   var imageTagseva = $('#graph-images3 img');
+   var imageTagseva = $('#graph-imagessulfatonino img');
    for (var i = 0; i < imageTagseva.length; i++) {
         var someText = '';
         doc.text(60, yAxistres, someText); /* Add some text in the PDF */
@@ -171,17 +175,17 @@ try {
     tableWidth: 200,
     fontSize: 8,
     overflow: 'linebreak',
-    startY: doc.autoTableEndPosY() + 110, 
+    startY: doc.autoTableEndPosY() + 220, 
     }
   );
 
 
-var yAxiscuatro = 150;
-   var imageTagseva = $('#graph-images4 img');
+var yAxiscuatro = 10;
+   var imageTagseva = $('#graph-imagescontrolnino img');
    for (var i = 0; i < imageTagseva.length; i++) {
         var someText = '';
         doc.text(60, yAxiscuatro, someText); /* Add some text in the PDF */
-        yAxiscuatro = yAxiscuatro + 70; /* Update yAxis */
+        yAxiscuatro = yAxiscuatro + 10; /* Update yAxis */
         doc.addImage(imageTagseva[i], 'png', 380, yAxiscuatro, 350, 210, undefined, 'none');
         yAxiscuatro = yAxiscuatro+ 50; /* Update yAxis */
     }
@@ -197,7 +201,40 @@ try {
 
 
 
- doc.save('ReporteGeneral' + '.pdf')
+
+
+doc.autoTable(data5.columns, data5.rows, {
+    margin: {left: 120},
+    theme: 'grid',
+    tableWidth: 200,
+    fontSize: 8,
+    overflow: 'linebreak',
+    startY: doc.autoTableEndPosY() + 70, 
+    }
+  );
+
+
+var yAxiscinco = 150;
+   var imageTagseva = $('#graph-imagesproblemasnino img');
+   for (var i = 0; i < imageTagseva.length; i++) {
+        var someText = '';
+        doc.text(60, yAxiscinco, someText); /* Add some text in the PDF */
+        yAxiscinco = yAxiscinco + 70; /* Update yAxis */
+        doc.addImage(imageTagseva[i], 'png', 380, yAxiscinco, 350, 210, undefined, 'none');
+        yAxiscinco = yAxiscinco+ 50; /* Update yAxis */
+    }
+
+try {
+       doc.addImage(imageTagseva[i], 'png', 380, yAxiscinco, 350, 210, undefined, 'none');
+       yAxiscinco = yAxiscinco+ 50; /* Update yAxis */
+   }
+   catch (e) {
+       doc.text(120, yAxiscinco + 30, '');
+       yAxiscinco = yAxiscinco + 50 /* Update yAxis */
+   }
+
+
+ doc.save('Reporte Niño' + '.pdf')
 }
 
 

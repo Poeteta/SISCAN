@@ -1,4 +1,4 @@
-{!! Form::open(array('url'=>'reporte/madre','method'=>'GET','autocomplete'=>'off','role'=>'search')) !!}
+{!! Form::open(array('url'=>'reporte/nino','method'=>'GET','autocomplete'=>'off','role'=>'search')) !!}
 
  
       <div class="row"  style="background: rgba(0,0,0,0.7);">
@@ -26,7 +26,7 @@
 
 
 </div>
-@include('reporte.madre.exportar')
+@include('reporte.nino.exportar')
 </div>
 
 

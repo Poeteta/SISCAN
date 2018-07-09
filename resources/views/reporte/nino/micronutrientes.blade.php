@@ -4,17 +4,17 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <div class="card-header">
-                                            <h5 class="title">Control Prenatal</h5>
+                                            <h5 class="title">Micronutrientes</h5>
                                         </div>
                                         <div class="card-body">
                         
                                             <div class="toolbar">
                                                 <!--        Here you can write extra buttons/actions for the toolbar              -->
                                             </div>
-                                            <table id="datatable" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                                            <table id="tablamicronutrientesnino" class="table table-striped table-bordered" cellspacing="0" width="100%">
                                                 <thead>
                                                     <tr>
-                                                        <th>Etapa</th>
+                                                        <th>Dosis de Micronutrientes en Niños</th>
                                                         <th>Cantidad</th>
                                                       
                                                         
@@ -146,7 +146,7 @@
                             <div class="col-md-7 mr-auto">
                                 <div class="card card-chart">
                                   <div class="card-header">
-                                    <h5 class="card-category">Control Prenatal</h5>
+                                    <h5 class="card-category">Micronutrientes</h5>
                                     <h4 class="card-title">Reporte gráfico</h4>
                              
 
@@ -179,14 +179,23 @@
                        2]);
 
       var optionsmicro = {
-        title: "Reporte de Asistencias",
+        title: "Reporte de Micronutrientes en niños",
         width: 500,
         height: 300,
         bar: {groupWidth: "75%"},
         legend: { position: "none" },
       };
       var chartmicro = new google.visualization.ColumnChart(document.getElementById("micro"));
+
+google.visualization.events.addListener(chartmicro, 'ready', function () {
+  var content = '<img src="' + chartmicro.getImageURI() + '">';
+  $('#graph-imagesmicronino').append(content);
+});
+      
       chartmicro.draw(viewmicro, optionsmicro);
+
+
+
         $('#link22').removeClass('active'); 
   } 
 </script>
@@ -195,6 +204,7 @@
                                   </div>
                                   <div class="card-body">
                                      <div id="micro" style="width: 500px; height: 300px;"></div>
+                                    <div id="graph-imagesmicronino" style='display:none'></div> 
                                   </div>
                           
                                 </div>

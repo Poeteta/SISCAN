@@ -4,17 +4,17 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <div class="card-header">
-                                            <h5 class="title">Control Prenatal</h5>
+                                            <h5 class="title">Problemas de Salud</h5>
                                         </div>
                                         <div class="card-body">
                         
                                             <div class="toolbar">
                                                 <!--        Here you can write extra buttons/actions for the toolbar              -->
                                             </div>
-                                            <table id="datatable" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                                            <table id="tablaproblemasnino" class="table table-striped table-bordered" cellspacing="0" width="100%">
                                                 <thead>
                                                     <tr>
-                                                        <th>Etapa</th>
+                                                        <th>Niveles de Problemas de Salud</th>
                                                         <th>Cantidad</th>
                                                       
                                                         
@@ -91,7 +91,7 @@
                             <div class="col-md-7 mr-auto">
                                 <div class="card card-chart">
                                   <div class="card-header">
-                                    <h5 class="card-category">Control Prenatal</h5>
+                                    <h5 class="card-category">Problemas de Salud</h5>
                                     <h4 class="card-title">Reporte gráfico</h4>
                              
 
@@ -118,13 +118,19 @@
                        2]);
 
       var optionsproblemas = {
-        title: "Reporte de Asistencias",
+        title: "Reporte de Problemas de Salud en niños",
         width: 500,
         height: 300,
         bar: {groupWidth: "75%"},
         legend: { position: "none" },
       };
       var chartproblemas = new google.visualization.ColumnChart(document.getElementById("problemas"));
+
+google.visualization.events.addListener(chartproblemas, 'ready', function () {
+  var content = '<img src="' + chartproblemas.getImageURI() + '">';
+  $('#graph-imagesproblemasnino').append(content);
+});
+
       chartproblemas.draw(viewproblemas, optionsproblemas);
        $('#link25').removeClass('active'); 
   } 
@@ -134,6 +140,7 @@
                                   </div>
                                   <div class="card-body">
                                      <div id="problemas" style="width: 500px; height: 300px;"></div>
+                                       <div id="graph-imagesproblemasnino" style='display:none'></div>
                                   </div>
                           
                                 </div>

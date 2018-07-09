@@ -3,7 +3,7 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <div class="card-header">
-                                            <h5 class="title">Familias</h5>
+                                            <h5 class="title">Asistencias</h5>
                                         </div>
                                         <div class="card-body">
                         
@@ -13,7 +13,7 @@
                                             <table id="tablaasistencia" class="table table-striped table-bordered" cellspacing="0" width="100%">
                                                 <thead>
                                                     <tr>
-                                                   <th>Familias</th>
+                                                   <th>Asistencias de Sesiones</th>
                                                    <th>Cantidad</th>
                                                       
                                                         
@@ -113,6 +113,12 @@
         legend: { position: "none" },
       };
       var chart3 = new google.visualization.ColumnChart(document.getElementById("columnchart_values3"));
+
+      google.visualization.events.addListener(chart3, 'ready', function () {
+  var content = '<img src="' + chart3.getImageURI() + '">';
+  $('#graph-images4').append(content);
+});
+
       chart3.draw(view3, options3);
       $('#link9').removeClass('active');
   }
@@ -122,6 +128,7 @@
                                   </div>
                                   <div class="card-body">
                                      <div id="columnchart_values3" style="width: 500px; height: 300px;"></div>
+                                      <div id="graph-images4" style='display:none'></div>
                                   </div>
                           
                                 </div>

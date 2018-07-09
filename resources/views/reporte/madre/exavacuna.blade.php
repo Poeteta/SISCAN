@@ -10,10 +10,10 @@
                                             <div class="toolbar">
                                                 <!--        Here you can write extra buttons/actions for the toolbar              -->
                                             </div>
-                                            <table id="datatable" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                                            <table id="tablaexamenmamas" class="table table-striped table-bordered" cellspacing="0" width="100%">
                                                 <thead>
                                                     <tr>
-                                                        <th>Madres</th>
+                                                        <th>Examen de Mamas</th>
                                                         <th>Cantidad</th>
 
                                                         
@@ -79,6 +79,11 @@
 
         var chart = new google.visualization.PieChart(document.getElementById('piechart'));
         
+         google.visualization.events.addListener(chart, 'ready', function () {
+  var content = '<img src="' + chart.getImageURI() + '">';
+  $('#graph-imagesexamama').append(content);
+});
+
         chart.draw(data, options);
        
        
@@ -89,6 +94,7 @@
                                   </div>
                                   <div class="card-body">
                                      <div id="piechart" style="width: 500px; height: 300px;"></div>
+                                      <div id="graph-imagesexamama" style='display:none'></div>
                                   </div>
                           
                                 </div>
@@ -101,17 +107,17 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <div class="card-header">
-                                            <h5 class="title">Vacunas Antitetanico</h5>
+                                            <h5 class="title">Vacunas Antitetánico</h5>
                                         </div>
                                         <div class="card-body">
                         
                                             <div class="toolbar">
                                                 <!--        Here you can write extra buttons/actions for the toolbar              -->
                                             </div>
-                                            <table id="datatable" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                                            <table id="tablaexamenvacuna" class="table table-striped table-bordered" cellspacing="0" width="100%">
                                                 <thead>
                                                     <tr>
-                                                        <th>Madres</th>
+                                                        <th>Vacunas Antitetánico</th>
                                                         <th>Cantidad</th>
 
                                                         
@@ -168,6 +174,11 @@
         legend: { position: "none" },
       };
       var chart4 = new google.visualization.ColumnChart(document.getElementById("columnchart_values4"));
+
+      google.visualization.events.addListener(chart4, 'ready', function () {
+  var content = '<img src="' + chart4.getImageURI() + '">';
+  $('#graph-imagesexaantite').append(content);
+});
       chart4.draw(view4, options4);
       $('#linkexamama').removeClass('active'); 
   } 
@@ -177,6 +188,7 @@
                                   </div>
                                   <div class="card-body">
                                      <div id="columnchart_values4" style="width: 500px; height: 300px;"></div>
+                                       <div id="graph-imagesexaantite" style='display:none'></div>
                                   </div>
                           
                                 </div>

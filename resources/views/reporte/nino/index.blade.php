@@ -59,7 +59,9 @@
     <!-- End Navbar -->
     <div class="panel-header panel-header-sm">
     </div>
-    <div class="content">
+
+    @include('reporte.nino.search')
+
         <div class="card card-plain card-subcategories">
             <div class="card-body ">
                 <!--
@@ -110,8 +112,8 @@
                       @include('reporte.nino.sulfatoferroso')
                     </div>
 
-                     <div class="tab-pane" id="link24">
-                      
+                     <div class="tab-pane active" id="link24">
+                       @include('reporte.nino.controlnutricional')
                     </div>
                      <div class="tab-pane active" id="link25">
                       @include('reporte.nino.problemas')
@@ -120,7 +122,7 @@
                 </div>
             </div>
         </div>
-    </div>
+   
 </div>
 
 </div>

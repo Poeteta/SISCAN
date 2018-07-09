@@ -4,17 +4,17 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <div class="card-header">
-                                            <h5 class="title">Control Prenatal</h5>
+                                            <h5 class="title">Sulfato Ferroso</h5>
                                         </div>
                                         <div class="card-body">
                         
                                             <div class="toolbar">
                                                 <!--        Here you can write extra buttons/actions for the toolbar              -->
                                             </div>
-                                            <table id="datatable" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                                            <table id="tablasulfatonino" class="table table-striped table-bordered" cellspacing="0" width="100%">
                                                 <thead>
                                                     <tr>
-                                                        <th>Etapa</th>
+                                                        <th>Dosis de Sulfato Ferroso en Niños</th>
                                                         <th>Cantidad</th>
                                                       
                                                         
@@ -146,7 +146,7 @@
                             <div class="col-md-7 mr-auto">
                                 <div class="card card-chart">
                                   <div class="card-header">
-                                    <h5 class="card-category">Control Prenatal</h5>
+                                    <h5 class="card-category">Sulfato Ferroso</h5>
                                     <h4 class="card-title">Reporte gráfico</h4>
                              
 
@@ -179,13 +179,19 @@
                        2]);
 
       var optionssulfato = {
-        title: "Reporte de Asistencias",
+        title: "Reporte de Sulfato Ferroso en niños",
         width: 500,
         height: 300,
         bar: {groupWidth: "75%"},
         legend: { position: "none" },
       };
       var chartsulfato = new google.visualization.ColumnChart(document.getElementById("sulfatoferroso"));
+
+google.visualization.events.addListener(chartsulfato, 'ready', function () {
+  var content = '<img src="' + chartsulfato.getImageURI() + '">';
+  $('#graph-imagessulfatonino').append(content);
+});
+
       chartsulfato.draw(viewsulfato, optionssulfato);
         $('#link23').removeClass('active'); 
   } 
@@ -195,6 +201,8 @@
                                   </div>
                                   <div class="card-body">
                                      <div id="sulfatoferroso" style="width: 500px; height: 300px;"></div>
+
+                                      <div id="graph-imagessulfatonino" style='display:none'></div>
                                   </div>
                           
                                 </div>

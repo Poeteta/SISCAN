@@ -4,17 +4,17 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <div class="card-header">
-                                            <h5 class="title">Antes del programa</h5>
+                                            <h5 class="title">Vacuna Papanicolao antes del programa</h5>
                                         </div>
                                         <div class="card-body">
                         
                                             <div class="toolbar">
                                                 <!--        Here you can write extra buttons/actions for the toolbar              -->
                                             </div>
-                                            <table id="datatable" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                                            <table id="tablaantespapa" class="table table-striped table-bordered" cellspacing="0" width="100%">
                                                 <thead>
                                                     <tr>
-                                                        <th>Etapa</th>
+                                                        <th>Vacuna Papanicolao antes del programa</th>
                                                         <th>Cantidad</th>
                                                       
                                                         
@@ -38,13 +38,13 @@
 
 <br>
 <div class="card-header">
-                                            <h5 class="title">Despues del programa</h5>
+                                            <h5 class="title">Vacuna Papanicolao despues del programa</h5>
                                         </div>
 
-                                           <table id="datatable" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                                           <table id="tabladespuespapa" class="table table-striped table-bordered" cellspacing="0" width="100%">
                                                 <thead>
                                                     <tr>
-                                                        <th>Etapa</th>
+                                                        <th>Vacuna Papanicolao despues del programa</th>
                                                         <th>Cantidad</th>
                                                       
                                                         
@@ -75,7 +75,7 @@
                             <div class="col-md-7 mr-auto">
                                 <div class="card card-chart">
                                   <div class="card-header">
-                                    <h5 class="card-category">Control Prenatal</h5>
+                                    <h5 class="card-category">Vacuna papanicolao</h5>
                                     <h4 class="card-title">Reporte gráfico</h4>
                              
 
@@ -100,13 +100,18 @@
                        2]);
 
       var optionsvacunapapa = {
-        title: "Reporte de Asistencias",
+        title: "Reporte de Vacuna papanicolao",
         width: 500,
         height: 300,
         bar: {groupWidth: "75%"},
         legend: { position: "none" },
       };
       var chartvacunapapa = new google.visualization.ColumnChart(document.getElementById("viewvacunapapa"));
+
+      google.visualization.events.addListener(chartvacunapapa, 'ready', function () {
+  var content = '<img src="' + chartvacunapapa.getImageURI() + '">';
+  $('#graph-imagespapani').append(content);
+});
       chartvacunapapa.draw(viewvacunapapa, optionsvacunapapa);
        $('#link10').removeClass('active'); 
   } 
@@ -116,6 +121,7 @@
                                   </div>
                                   <div class="card-body">
                                      <div id="viewvacunapapa" style="width: 500px; height: 300px;"></div>
+                                     <div id="graph-imagespapani" style='display:none'></div>
                                   </div>
                           
                                 </div>

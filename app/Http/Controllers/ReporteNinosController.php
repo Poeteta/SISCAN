@@ -119,9 +119,20 @@ $problemas_salud = DB::table('problemas_salud as hc')
             ->where('hf.Periodo_Programa_idPeriodo_Programa','LIKE','%'.$query.'%')
             ->get();
 
-
+          $periodo_programa= DB::table('periodo_programa')     
+            ->get();
             
-           return view ('reporte.nino.index',["fecha"=>$query,"tbc"=>$tbc,"hepatitis"=>$hepatitis,"pentalvente"=>$pentalvente,"polio"=>$polio,"rotavirus"=>$rotavirus,"neumococo"=>$neumococo,"spr"=>$spr,"dpt"=>$dpt,"amarilica"=>$amarilica,"influenza"=>$influenza,"sulfatoferroso"=>$sulfatoferroso,"problemas_salud"=>$problemas_salud]);
+$control_nutricional = DB::table('control_nutricional as hc')
+            ->join('nino as n','n.idNino','=','hc.Nino_idNino')
+            ->join('historial_familia as hf','hf.Familia_idFamilia','=','n.Familia_idFamilia')
+            ->select(DB::raw('count(*) as user_count, hc.Nino_idNino'))
+            ->where('hc.Nino_idNino', '<>', 0)
+            ->groupBy('hc.Nino_idNino')
+            ->where('hf.Periodo_Programa_idPeriodo_Programa','LIKE','%'.$query.'%')
+            ->get();
+
+
+           return view ('reporte.nino.index',["fecha"=>$query,"tbc"=>$tbc,"hepatitis"=>$hepatitis,"pentalvente"=>$pentalvente,"polio"=>$polio,"rotavirus"=>$rotavirus,"neumococo"=>$neumococo,"spr"=>$spr,"dpt"=>$dpt,"amarilica"=>$amarilica,"influenza"=>$influenza,"sulfatoferroso"=>$sulfatoferroso,"problemas_salud"=>$problemas_salud,"periodo_programa"=>$periodo_programa,"control_nutricional"=>$control_nutricional]);
          
 
      }

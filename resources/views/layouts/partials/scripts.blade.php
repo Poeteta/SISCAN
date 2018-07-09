@@ -1,5 +1,3 @@
-<!--Scripts Principales-->
-<script src="{{ asset('js/core/jquery-2.2.4.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset('js/core/popper.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset('js/core/bootstrap.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset('js/plugins/perfect-scrollbar.jquery.min.js') }}" type="text/javascript"></script>

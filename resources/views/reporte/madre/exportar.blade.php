@@ -14,16 +14,18 @@
 function generateExcel() {
     //getting data from our table
     var data_type = 'data:application/vnd.ms-excel';
-    var tablafamilia = document.getElementById('tablafamilia');
-    var tablamodocaptacion = document.getElementById('tablamodocaptacion');
-    var tablaevaluacion = document.getElementById('tablaevaluacion');
-    var tablaasistencia = document.getElementById('tablaasistencia');
+    var tablacpn = document.getElementById('tablacpn');
+    var tablasulfato = document.getElementById('tablasulfato');
+    var tablaexamenmamas = document.getElementById('tablaexamenmamas');
+    var tablaexamenvacuna = document.getElementById('tablaexamenvacuna');
+    var tablaantespapa = document.getElementById('tablaantespapa');
+    var tabladespuespapa = document.getElementById('tabladespuespapa');
 
-    var table_html = tablafamilia.outerHTML.replace(/ /g, '%20') + tablamodocaptacion.outerHTML.replace(/ /g, '%20') +  tablaevaluacion.outerHTML.replace(/ /g, '%20') +  tablaasistencia.outerHTML.replace(/ /g, '%20');
+    var table_html = tablacpn.outerHTML.replace(/ /g, '%20') + tablasulfato.outerHTML.replace(/ /g, '%20') +  tablaexamenmamas.outerHTML.replace(/ /g, '%20') +  tablaexamenvacuna.outerHTML.replace(/ /g, '%20')  + tablaantespapa.outerHTML.replace(/ /g, '%20') +  tabladespuespapa.outerHTML.replace(/ /g, '%20')   ;
 
     var a = document.createElement('a');
     a.href = data_type + ', ' + table_html;
-    a.download = 'ReporteGeneral De <?php echo $now->format('Y-m'); ?>.xls';
+    a.download = 'Reporte Madre De <?php echo $now->format('Y-m'); ?>.xls';
     a.click();
 }
 
@@ -33,16 +35,19 @@ function generateExcel() {
 function generatePDF() {
   var doc = new jsPDF('l', 'pt');
   
-  var elem = document.getElementById('tablamodocaptacion');
-  var elem2 = document.getElementById('tablafamilia');
-  var elem3 = document.getElementById('tablaevaluacion');
-  var elem4 = document.getElementById('tablaasistencia');
+  var elem = document.getElementById('tablacpn');
+  var elem2 = document.getElementById('tablasulfato');
+  var elem3 = document.getElementById('tablaexamenmamas');
+  var elem4 = document.getElementById('tablaexamenvacuna');
+  var elem5 = document.getElementById('tablaantespapa');
+  var elem6 = document.getElementById('tabladespuespapa');
   
   var data = doc.autoTableHtmlToJson(elem);
   var data2 = doc.autoTableHtmlToJson(elem2);
   var data3 = doc.autoTableHtmlToJson(elem3);
   var data4 = doc.autoTableHtmlToJson(elem4);
-
+  var data5 = doc.autoTableHtmlToJson(elem5);
+  var data6 = doc.autoTableHtmlToJson(elem6);
   
    
 
@@ -78,16 +83,16 @@ var imgData = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABpQAAAHDCAYAAAAqdfl
     tableWidth: 200,
     fontSize: 8,
     overflow: 'linebreak',
-    startY: doc.autoTableEndPosY() + 120,  
+    startY: doc.autoTableEndPosY() + 130,  
     }
 
   );
    var yAxis = 90;
-   var imageTags = $('#graph-images2 img');
+   var imageTags = $('#graph-imagescpn img');
    for (var i = 0; i < imageTags.length; i++) {
         var someText = '';
         doc.text(60, yAxis, someText); /* Add some text in the PDF */
-        yAxis = yAxis + 5; /* Update yAxis */
+        yAxis = yAxis + 15; /* Update yAxis */
         doc.addImage(imageTags[i], 'png', 380, yAxis, 350, 210, undefined, 'none');
         yAxis = yAxis+ 50; /* Update yAxis */
     }
@@ -109,16 +114,16 @@ try {
     tableWidth: 200,
     fontSize: 8,
     overflow: 'linebreak',
-    startY: doc.autoTableEndPosY() + 110, 
+    startY: doc.autoTableEndPosY() + 250, 
     }
   );
 
-var yAxisdos = 150;
-   var imageTagscapta = $('#graph-images img');
+var yAxisdos = 15;
+   var imageTagscapta = $('#graph-imagessulfato img');
    for (var i = 0; i < imageTagscapta.length; i++) {
         var someText = '';
         doc.text(60, yAxisdos, someText); /* Add some text in the PDF */
-        yAxisdos = yAxisdos + 150; /* Update yAxis */
+        yAxisdos = yAxisdos + 15; /* Update yAxis */
         doc.addImage(imageTagscapta[i], 'png', 380, yAxisdos, 350, 210, undefined, 'none');
         yAxisdos = yAxisdos+ 50; /* Update yAxis */
     }
@@ -140,17 +145,17 @@ try {
     tableWidth: 200,
     fontSize: 8,
     overflow: 'linebreak',
-    startY: doc.autoTableEndPosY() + 110, 
+    startY: doc.autoTableEndPosY() + 40, 
     }
   );
 
 
-var yAxistres = 5;
-   var imageTagseva = $('#graph-images3 img');
+var yAxistres = 150;
+   var imageTagseva = $('#graph-imagesexamama img');
    for (var i = 0; i < imageTagseva.length; i++) {
         var someText = '';
         doc.text(60, yAxistres, someText); /* Add some text in the PDF */
-        yAxistres = yAxistres + 5; /* Update yAxis */
+        yAxistres = yAxistres + 150; /* Update yAxis */
         doc.addImage(imageTagseva[i], 'png', 380, yAxistres, 350, 210, undefined, 'none');
         yAxistres = yAxistres+ 50; /* Update yAxis */
     }
@@ -171,17 +176,17 @@ try {
     tableWidth: 200,
     fontSize: 8,
     overflow: 'linebreak',
-    startY: doc.autoTableEndPosY() + 110, 
+    startY: doc.autoTableEndPosY() + 150, 
     }
   );
 
 
-var yAxiscuatro = 150;
-   var imageTagseva = $('#graph-images4 img');
+var yAxiscuatro = 10;
+   var imageTagseva = $('#graph-imagesexaantite img');
    for (var i = 0; i < imageTagseva.length; i++) {
         var someText = '';
         doc.text(60, yAxiscuatro, someText); /* Add some text in the PDF */
-        yAxiscuatro = yAxiscuatro + 70; /* Update yAxis */
+        yAxiscuatro = yAxiscuatro + 10; /* Update yAxis */
         doc.addImage(imageTagseva[i], 'png', 380, yAxiscuatro, 350, 210, undefined, 'none');
         yAxiscuatro = yAxiscuatro+ 50; /* Update yAxis */
     }
@@ -197,7 +202,56 @@ try {
 
 
 
- doc.save('ReporteGeneral' + '.pdf')
+
+
+doc.autoTable(data5.columns, data5.rows, {
+    margin: {left: 120},
+    theme: 'grid',
+    tableWidth: 200,
+    fontSize: 8,
+    overflow: 'linebreak',
+    startY: doc.autoTableEndPosY() + 150, 
+    }
+  );
+
+
+
+
+
+
+doc.autoTable(data6.columns, data6.rows, {
+    margin: {left: 120},
+    theme: 'grid',
+    tableWidth: 200,
+    fontSize: 8,
+    overflow: 'linebreak',
+    startY: doc.autoTableEndPosY() + 10, 
+    }
+  );
+
+
+
+var yAxiscinco = 150;
+   var imageTagseva = $('#graph-imagespapani img');
+   for (var i = 0; i < imageTagseva.length; i++) {
+        var someText = '';
+        doc.text(60, yAxiscinco, someText); /* Add some text in the PDF */
+        yAxiscinco = yAxiscinco + 70; /* Update yAxis */
+        doc.addImage(imageTagseva[i], 'png', 380, yAxiscinco, 350, 210, undefined, 'none');
+        yAxiscinco = yAxiscinco+ 50; /* Update yAxis */
+    }
+
+try {
+       doc.addImage(imageTagseva[i], 'png', 380, yAxiscinco, 350, 210, undefined, 'none');
+       yAxiscinco = yAxiscinco+ 50; /* Update yAxis */
+   }
+   catch (e) {
+       doc.text(120, yAxiscinco + 30, '');
+       yAxiscinco = yAxiscinco + 50 /* Update yAxis */
+   }
+
+
+ doc.save('Reporte Madre' + '.pdf')
 }
 
 

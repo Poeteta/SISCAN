@@ -3,18 +3,18 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <div class="card-header">
-                                            <h5 class="title">Control Prenatal</h5>
+                                            <h5 class="title">Vacunas</h5>
                                         </div>
                                         <div class="card-body">
                         
                                             <div class="toolbar">
                                                 <!--        Here you can write extra buttons/actions for the toolbar              -->
                                             </div>
-                                            <table id="datatable" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                                            <table id="tablavacunanino" class="table table-striped table-bordered" cellspacing="0" width="100%">
                                                 <thead>
                                                     <tr>
-                                                        <th>Etapa</th>
-                                                        <th>Cantidad</th>
+                                                        <th>Vacuna de niños</th>
+                                                        <th>N° de Niños</th>
                                                       
                                                         
                                                     </tr>
@@ -125,13 +125,19 @@
                        2]);
 
       var options3 = {
-        title: "Reporte de Asistencias",
+        title: "Reporte de Vacunas que recibieron los niños",
         width: 500,
         height: 300,
         bar: {groupWidth: "75%"},
         legend: { position: "none" },
       };
       var chart3 = new google.visualization.ColumnChart(document.getElementById("columnchart_values3"));
+
+       google.visualization.events.addListener(chart3, 'ready', function () {
+  var content = '<img src="' + chart3.getImageURI() + '">';
+  $('#graph-imagesvacunanino').append(content);
+});
+
       chart3.draw(view3, options3);
        
   } 
@@ -141,6 +147,7 @@
                                   </div>
                                   <div class="card-body">
                                      <div id="columnchart_values3" style="width: 500px; height: 300px;"></div>
+                                     <div id="graph-imagesvacunanino" style='display:none'></div>
                                   </div>
                           
                                 </div>
