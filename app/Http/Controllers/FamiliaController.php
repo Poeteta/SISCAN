@@ -42,16 +42,7 @@ class FamiliaController extends Controller
     {
         if($request) 
         {
-           /* $query=trim($request->get('searchText'));
-          $personas=DB::table('persona as p')
-          ->join('usuario as u','p.idPersona','=','u.Persona_idPersona')
-          ->join('rol as r','u.Rol_idRol','=','r.idRol')
-          ->join('distrito as d','p.Distrito_idDistrito','=','d.idDistrito')
-          ->select('p.idPersona','p.Nom_per','p.Apel_pater','p.Apel_mat','p.Telefono','p.DNI','r.Nom_rol','u.Nom_user','u.Estado_user','d.Nom_Dist','u.idUsuario')
-          ->where('u.Nom_user','LIKE','%'.$query.'%')
-            ->orderBy('p.idPersona','desc')
-            ->paginate(7);
-            return view('seguridad.usuario.index',["personas"=>$personas,"searchText"=>$query]);*/
+
         }   
     }
     /**
@@ -79,7 +70,7 @@ class FamiliaController extends Controller
           $historial = new historial_familia();
           $historial->Tipo_Familia=$request->get('Tipo_Familia');
           $historial->Modo_Capta=$request->get('Modo_Capta');
-          $historial->Periodo_Programa_idPeriodo_Programa=1;
+          $historial->Periodo_Programa_idPeriodo_Programa=$request->get('Periodo_Programa_idPeriodo_Programa');
           $historial->Familia_idFamilia = $id;
           $historial->save();
 
@@ -148,6 +139,18 @@ class FamiliaController extends Controller
             $cpn->save();
             $conta = $conta+1;
           }
+
+             /*Insert Blood */
+          $inputs = Input::all();
+          for ($ids = 0; $ids < count(Input::get('Sangre_Periodo')); $ids++)
+          {
+                $es = new Examen_sangre;
+                $es->Madre_idMadre = $idma;
+                $es->Sangre_Periodo = $input['Sangre_Periodo'][$ids];
+                $es->Sangre_cantidad = $input['Sangre_cantidad'][$ids];
+                $es->Sangre_fecha= $input['Sangre_fecha'][$ids];
+                $es->save();
+           }
 
           /* Insert side of Kids */
           $Nino_nom = $request->get('Nino_nom');
@@ -223,12 +226,13 @@ class FamiliaController extends Controller
 
     public function show()
     {
+
         $sesion=DB::table('sesiones')->get();  
         $fam=DB::table('familia')->get();
         $chequeo=DB::table('chequeo')->get();
-  
+        $periodo=DB::table('periodo_programa')->get();
         
-        return view ("home",["sesion"=>$sesion,"chequeo"=>$chequeo]);
+        return view ("home",["sesion"=>$sesion,"chequeo"=>$chequeo,"periodo"=>$periodo]);
     }
   
     public function edit($id)
@@ -275,5 +279,7 @@ class FamiliaController extends Controller
         }
         return Response::json($results);
     }
+
+
 
 }

@@ -62,7 +62,7 @@
     @endif
         
     <div class="row">
-        <div class="col-md-6 mr-auto ml-auto" style="right: 20%;">
+        <div class="col-md-6 mr-auto ml-auto">
             <!--      Wizard container        -->
             <div class="wizard-container">
                 <div class="card card-wizard" data-color="primary" id="wizardProfile">
@@ -154,11 +154,20 @@
 
                                         <div class="col-md-9">
                                             <div class="form-group">
-<<<<<<< HEAD
                                                 <input type="text" style="border: none;border-bottom: 2px dotted black;" name="Fam_direccion" id="Fam_direccion">
-=======
-                                                <input type="text" style="border: none;border-bottom: 2px dotted black;" name="Fam_direccion" >
->>>>>>> 0fd03d5585ff82044cde3f023d3adcc080b2fbf5
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <label class="col-md-3 col-form-label">Periodo:</label>
+
+                                        <div class="col-md-9">
+                                            <div class="form-group">
+                                                <select name="Periodo_Programa_idPeriodo_Programa">
+                                                    @foreach ($periodo as $per)
+                                                    <option value="{{$per->idPeriodo_Programa}}">{{$per->Fecha_Inicio}}</option>
+                                                    @endforeach
+                                                </select>
                                             </div>
                                         </div>
                                     </div>
@@ -446,6 +455,45 @@
                                        </tbody>
                                        </table>
                                     </div>
+                                    <br>
+                                       <div class="row">
+                                        
+                                            <label class="col-md-2 col-form-label">Hb/Hto</label>
+    
+                                            <div class="col-md-2">
+                                                <div class="form-group">
+                                                    <input type="hidden" value="Antes" name="Sangre_Periodo[]">
+                                                    <input type="number" class="" name="Sangre_cantidad[]" placeholder="Cantidad">
+                                                </div>
+                                            </div>        
+                                              
+                                            <div class="col-md-2">
+                                                <div class="form-group">
+                                                    <input type="date" class="" name="Sangre_fecha[]">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div style="border:none; border-top: 1px solid black; border-bottom: 1px solid black;" class="row">
+                                                <label class="col-md-10 col-form-label"><strong>POST PARTO</strong></label>
+                                        </div>
+                                        <div class="row">
+                                        
+                                                <label class="col-md-2 col-form-label">Hb/Hto</label>
+        
+                                                <div class="col-md-2">
+                                                    <div class="form-group">
+                                                        <input type="hidden" value="Post Parto" name="Sangre_Periodo[]">
+                                                        <input type="number" class="" name="Sangre_cantidad[]" placeholder="Cantidad">
+                                                    </div>
+                                                </div>        
+                                                  
+                                                <div class="col-md-2">
+                                                    <div class="form-group">
+                                                        <input type="date" class="" name="Sangre_fecha[]">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                    <br>
 
                                     <div style="border:none; border-top: 2px solid black; border-bottom: 2px solid black;" class="row">
                                         <label class="col-md-10 col-form-label" style="left: 33%;"><strong>PAPANICOLAU</strong></label>
@@ -470,8 +518,8 @@
                                             </span>
                                             </div>
                                         </div>
-                                         
                                     </div>
+
                                     <div class="article">
                                        <label>Obtuvo Resultado</label>
 
@@ -800,7 +848,7 @@
                                       </tr>
                                    </tbody>
                                    </table>
-                                    @include('Familia.two')
+                                    
                             </div>
                 
                         @include('Familia.RegistroSulfato')

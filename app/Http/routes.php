@@ -40,15 +40,14 @@ Route::resource('periodo','PeriodoController');
     Route::group(['middleware' =>['auth','is_operario']], function (){
     Route::get('home', 'FamiliaController@show');
     Route::resource('evaluacion/familia','evalController');
-<<<<<<< HEAD
     Route::get("autocompletar",array('as'=>'autocompletar','uses'=> 'FamiliaController@autocompletar'));
   
-=======
+
     Route::POST('Familia/store','FamiliaController@store');
     Route::POST('eva/store','evalController@store');
      Route::resource('/eva','evalController');
 
->>>>>>> 0fd03d5585ff82044cde3f023d3adcc080b2fbf5
+
 });
 
 
